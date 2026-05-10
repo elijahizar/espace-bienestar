@@ -1,0 +1,462 @@
+---
+import ProposalLayout from '../../layouts/ProposalLayout.astro';
+import { useTranslations } from '../../i18n/utils';
+
+const t = useTranslations('fr');
+const base = import.meta.env.BASE_URL;
+
+const activities = [
+  {
+    key: 'gymnastics',
+    title: t.activities.gymnastics.title,
+    subtitle: 'Mouvement conscient',
+    link: `${base}activities/gymnastics`,
+    cta: 'Découvrir'
+  },
+  {
+    key: 'theatre',
+    title: t.activities.theatre.title,
+    subtitle: 'Expression créative',
+    link: `${base}activities/theatre`,
+    cta: 'Découvrir'
+  }
+];
+---
+
+<ProposalLayout title="Proposition - Forêt" styleName="04 · Forêt">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Proza+Libre:wght@400;500;600&display=swap');
+
+:root {
+  --forest-dark: #1A2E1A;
+  --forest-green: #3D5C3D;
+  --forest-moss: #6B8E5A;
+  --forest-light: #A8C49A;
+  --forest-cream: #F5F2E8;
+  --forest-bark: #4A3728;
+  --forest-mist: #D4DFD0;
+}
+
+html { scroll-behavior: smooth; }
+
+.font-display { font-family: 'Libre Baskerville', serif; }
+.font-body { font-family: 'Proza Libre', sans-serif; }
+
+.forest-page {
+  min-height: 100vh;
+  background: var(--forest-cream);
+  color: var(--forest-dark);
+}
+
+.forest-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 4rem;
+  background: var(--forest-dark);
+  color: var(--forest-cream);
+}
+
+.forest-logo {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+}
+
+.forest-nav {
+  display: flex;
+  gap: 3rem;
+  font-family: 'Proza Libre', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+.forest-nav a {
+  color: var(--forest-light);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.forest-nav a:hover { color: var(--forest-cream); }
+
+.forest-hero {
+  min-height: 85vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.forest-hero-left {
+  padding: 4rem 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--forest-cream);
+}
+
+.forest-kicker {
+  font-family: 'Proza Libre', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--forest-moss);
+  margin-bottom: 2rem;
+}
+
+.forest-headline {
+  font-family: 'Libre Baskerville', serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 400;
+  line-height: 1.25;
+  color: var(--forest-dark);
+  margin-bottom: 1.5rem;
+}
+
+.forest-headline em {
+  font-style: italic;
+  color: var(--forest-moss);
+}
+
+.forest-subtitle {
+  font-family: 'Proza Libre', sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--forest-green);
+  max-width: 360px;
+  line-height: 1.8;
+  margin-bottom: 3rem;
+}
+
+.forest-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: 'Proza Libre', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  background: var(--forest-green);
+  color: var(--forest-cream);
+  text-decoration: none;
+  padding: 1rem 2rem;
+  transition: all 0.3s;
+  width: fit-content;
+}
+
+.forest-btn:hover {
+  background: var(--forest-dark);
+}
+
+.forest-btn svg { width: 1rem; }
+
+.forest-hero-right {
+  position: relative;
+  background: linear-gradient(135deg, var(--forest-moss) 0%, var(--forest-dark) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.forest-hero-right::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 30%, rgba(168, 196, 154, 0.2) 0%, transparent 30%),
+    radial-gradient(circle at 80% 70%, rgba(168, 196, 154, 0.1) 0%, transparent 25%);
+}
+
+.forest-tree {
+  position: relative;
+  width: 200px;
+  height: 280px;
+}
+
+.forest-tree-trunk {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 120px;
+  background: var(--forest-bark);
+  opacity: 0.6;
+}
+
+.forest-tree-canopy {
+  position: absolute;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.forest-tree-canopy::before, .forest-tree-canopy::after, .forest-tree-canopy span {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  background: var(--forest-light);
+  opacity: 0.3;
+}
+
+.forest-tree-canopy::before {
+  width: 120px;
+  height: 120px;
+  top: 0;
+  left: -60px;
+}
+
+.forest-tree-canopy::after {
+  width: 100px;
+  height: 100px;
+  top: -30px;
+  left: -50px;
+}
+
+.forest-tree-canopy span {
+  width: 80px;
+  height: 80px;
+  top: -60px;
+  left: -40px;
+}
+
+.forest-activities {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.forest-activity {
+  position: relative;
+  padding: 4rem;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.forest-activity::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  transition: transform 0.5s ease;
+}
+
+.forest-activity:hover::before { transform: scale(1.02); }
+
+.forest-activity.gymnastics {
+  background: linear-gradient(180deg, var(--forest-light) 0%, var(--forest-moss) 100%);
+}
+
+.forest-activity.gymnastics::before {
+  background: radial-gradient(circle at 70% 20%, rgba(255,255,255,0.2) 0%, transparent 40%);
+}
+
+.forest-activity.theatre {
+  background: linear-gradient(180deg, var(--forest-dark) 0%, #0F1F0F 100%);
+}
+
+.forest-activity.theatre::before {
+  background: radial-gradient(circle at 30% 80%, rgba(107, 142, 90, 0.2) 0%, transparent 40%);
+}
+
+.forest-activity-label {
+  font-family: 'Proza Libre', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.forest-activity.gymnastics .forest-activity-label { color: var(--forest-dark); opacity: 0.7; }
+.forest-activity.theatre .forest-activity-label { color: var(--forest-light); }
+
+.forest-activity-title {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.forest-activity.gymnastics .forest-activity-title { color: var(--forest-dark); }
+.forest-activity.theatre .forest-activity-title { color: var(--forest-cream); }
+
+.forest-activity-desc {
+  font-family: 'Proza Libre', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  max-width: 280px;
+}
+
+.forest-activity.gymnastics .forest-activity-desc { color: var(--forest-green); }
+.forest-activity.theatre .forest-activity-desc { color: var(--forest-mist); }
+
+.forest-activity-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: 'Proza Libre', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+.forest-activity.gymnastics .forest-activity-cta { color: var(--forest-dark); }
+.forest-activity.theatre .forest-activity-cta { color: var(--forest-light); }
+
+.forest-activity-cta svg {
+  width: 1.25rem;
+  transition: transform 0.3s;
+}
+
+.forest-activity:hover .forest-activity-cta svg { transform: translateX(6px); }
+
+.forest-intro {
+  padding: 6rem 4rem;
+  background: var(--forest-cream);
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  border-top: 1px solid var(--forest-mist);
+}
+
+.forest-intro-text {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1.35rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--forest-dark);
+  line-height: 1.8;
+}
+
+.forest-intro-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.forest-intro-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: 'Proza Libre', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--forest-dark);
+  text-decoration: none;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--forest-mist);
+  transition: all 0.2s;
+}
+
+.forest-intro-link:hover {
+  color: var(--forest-moss);
+  padding-left: 0.5rem;
+}
+
+.forest-intro-link svg { width: 1.25rem; }
+
+.forest-footer {
+  padding: 2rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--forest-dark);
+  color: var(--forest-light);
+  font-family: 'Proza Libre', sans-serif;
+  font-size: 0.75rem;
+}
+
+@media (max-width: 900px) {
+  .forest-header { padding: 1rem 1.5rem; flex-direction: column; gap: 1rem; }
+  .forest-nav { gap: 1.5rem; }
+  .forest-hero { grid-template-columns: 1fr; }
+  .forest-hero-left { padding: 5rem 1.5rem 3rem; }
+  .forest-hero-right { min-height: 40vh; }
+  .forest-tree { width: 150px; height: 200px; }
+  .forest-activities { grid-template-columns: 1fr; }
+  .forest-activity { padding: 3rem 1.5rem; }
+  .forest-intro { grid-template-columns: 1fr; padding: 4rem 1.5rem; gap: 2rem; }
+  .forest-footer { flex-direction: column; gap: 1rem; text-align: center; }
+}
+</style>
+
+<div class="forest-page">
+  <header class="forest-header">
+    <div class="forest-logo">Espace Bienestar</div>
+    <nav class="forest-nav">
+<a href={base}>Accueil</a>
+<a href={`${base}activities`}>Activités</a>
+<a href={`${base}about`}>À propos</a>
+<a href={`${base}contact`}>Contact</a>
+    </nav>
+  </header>
+
+  <section class="forest-hero">
+    <div class="forest-hero-left">
+      <span class="forest-kicker">Shinrin-yoku · Billère · France</span>
+      <h1 class="forest-headline">
+        Connexion<br /><em>avec la</em><br />nature
+      </h1>
+      <p class="forest-subtitle">{t.home.intro}</p>
+      <a href={`${base}contact`} class="forest-btn">
+        Commencer
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+    <div class="forest-hero-right">
+      <div class="forest-tree">
+        <div class="forest-tree-trunk"></div>
+        <div class="forest-tree-canopy"><span></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="forest-activities">
+    <a href={activities[0].link} class="forest-activity gymnastics">
+      <span class="forest-activity-label">{activities[0].subtitle}</span>
+      <h2 class="forest-activity-title">{activities[0].title}</h2>
+      <p class="forest-activity-desc">Le mouvement conscient comme les feuilles qui dansent avec le vent.</p>
+      <span class="forest-activity-cta">
+        {activities[0].cta}
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </span>
+    </a>
+
+    <a href={activities[1].link} class="forest-activity theatre">
+      <span class="forest-activity-label">{activities[1].subtitle}</span>
+      <h2 class="forest-activity-title">{activities[1].title}</h2>
+      <p class="forest-activity-desc">L'expression théâtrale comme l'écho de la forêt.</p>
+      <span class="forest-activity-cta">
+        {activities[1].cta}
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </span>
+    </a>
+  </section>
+
+  <section class="forest-intro">
+    <p class="forest-intro-text">{t.home.hero.subtitle} — Là où la forêt enseigne l'art de la présence.</p>
+    <div class="forest-intro-links">
+      <a href={`${base}about`} class="forest-intro-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        Rencontrer Sonia
+      </a>
+      <a href={`${base}schedule`} class="forest-intro-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        Voir les horaires
+      </a>
+    </div>
+  </section>
+
+  <footer class="forest-footer">
+    <span>© 2026 Espace Bienestar</span>
+    <span>Billère, France</span>
+  </footer>
+</div>
+</ProposalLayout>

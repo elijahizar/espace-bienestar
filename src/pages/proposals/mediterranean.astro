@@ -1,0 +1,466 @@
+---
+import ProposalLayout from '../../layouts/ProposalLayout.astro';
+import { useTranslations } from '../../i18n/utils';
+
+const t = useTranslations('fr');
+const base = import.meta.env.BASE_URL;
+
+const activities = [
+  {
+    key: 'gymnastics',
+    title: t.activities.gymnastics.title,
+    subtitle: 'Mouvement conscient',
+    link: `${base}activities/gymnastics`,
+    cta: 'Découvrir'
+  },
+  {
+    key: 'theatre',
+    title: t.activities.theatre.title,
+    subtitle: 'Expression créative',
+    link: `${base}activities/theatre`,
+    cta: 'Découvrir'
+  }
+];
+---
+
+<ProposalLayout title="Proposition - Méditerranée" styleName="06 · Méditerranée">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Source+Sans+Pro:wght@300;400;500;600&display=swap');
+
+:root {
+  --medit-sand: #F4E1C1;
+  --medit-olive: #C9A66B;
+  --medit-gold: #D4B896;
+  --medit-cream: #FAF6F0;
+  --medit-terracotta: #B8704A;
+  --medit-earth: #8B7355;
+  --medit-sea: #7A9BA5;
+  --medit-warm: #E8D5C4;
+}
+
+html { scroll-behavior: smooth; }
+
+.medit-page {
+  min-height: 100vh;
+  background: var(--medit-cream);
+  color: var(--medit-earth);
+}
+
+.medit-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 4rem;
+  background: var(--medit-cream);
+  border-bottom: 1px solid var(--medit-sand);
+}
+
+.medit-logo {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  color: var(--medit-earth);
+}
+
+.medit-nav {
+  display: flex;
+  gap: 3rem;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+.medit-nav a {
+  color: var(--medit-earth);
+  text-decoration: none;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+.medit-nav a:hover { opacity: 1; }
+
+.medit-hero {
+  min-height: 85vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.medit-hero-left {
+  padding: 4rem 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--medit-cream);
+}
+
+.medit-kicker {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--medit-olive);
+  margin-bottom: 2rem;
+}
+
+.medit-headline {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 400;
+  line-height: 1.25;
+  color: var(--medit-earth);
+  margin-bottom: 1.5rem;
+}
+
+.medit-headline em {
+  font-style: italic;
+  color: var(--medit-terracotta);
+}
+
+.medit-subtitle {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--medit-olive);
+  max-width: 360px;
+  line-height: 1.8;
+  margin-bottom: 3rem;
+}
+
+.medit-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  background: var(--medit-olive);
+  color: var(--medit-cream);
+  text-decoration: none;
+  padding: 1rem 2rem;
+  transition: all 0.3s;
+  width: fit-content;
+}
+
+.medit-btn:hover {
+  background: var(--medit-terracotta);
+}
+
+.medit-btn svg { width: 1rem; }
+
+.medit-hero-right {
+  position: relative;
+  background: linear-gradient(135deg, var(--medit-sand) 0%, var(--medit-olive) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.medit-hero-right::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 75% 25%, rgba(255,255,255,0.3) 0%, transparent 35%),
+    radial-gradient(circle at 25% 75%, rgba(122,155,165,0.15) 0%, transparent 30%);
+}
+
+.medit-sun-motif {
+  position: relative;
+  width: 200px;
+  height: 200px;
+}
+
+.medit-sun-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.25);
+}
+
+.medit-sun-ray {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2px;
+  height: 80px;
+  background: rgba(255,255,255,0.12);
+  transform-origin: center top;
+}
+
+.medit-sun-ray:nth-child(2) { transform: translate(-50%, -100%) rotate(0deg); }
+.medit-sun-ray:nth-child(3) { transform: translate(-50%, -100%) rotate(30deg); }
+.medit-sun-ray:nth-child(4) { transform: translate(-50%, -100%) rotate(60deg); }
+.medit-sun-ray:nth-child(5) { transform: translate(-50%, -100%) rotate(90deg); }
+.medit-sun-ray:nth-child(6) { transform: translate(-50%, -100%) rotate(120deg); }
+.medit-sun-ray:nth-child(7) { transform: translate(-50%, -100%) rotate(150deg); }
+
+.medit-leaf {
+  position: absolute;
+  width: 40px;
+  height: 25px;
+  background: rgba(107,142,107,0.15);
+  border-radius: 0 50% 50% 50%;
+  transform: rotate(-30deg);
+}
+
+.medit-leaf:nth-child(8) { bottom: 30px; left: 30px; }
+.medit-leaf:nth-child(9) { bottom: 50px; left: 55px; transform: rotate(-60deg); }
+.medit-leaf:nth-child(10) { bottom: 20px; left: 60px; transform: rotate(-10deg); }
+
+.medit-activities {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.medit-activity {
+  position: relative;
+  padding: 4rem;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.medit-activity::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  transition: transform 0.5s ease;
+}
+
+.medit-activity:hover::before { transform: scale(1.02); }
+
+.medit-activity.gymnastics {
+  background: linear-gradient(180deg, var(--medit-cream) 0%, var(--medit-warm) 100%);
+}
+
+.medit-activity.gymnastics::before {
+  background: radial-gradient(circle at 60% 30%, rgba(201,166,107,0.2) 0%, transparent 50%);
+}
+
+.medit-activity.theatre {
+  background: linear-gradient(180deg, var(--medit-earth) 0%, #5A4A38 100%);
+}
+
+.medit-activity.theatre::before {
+  background: radial-gradient(circle at 40% 70%, rgba(212,184,150,0.15) 0%, transparent 40%);
+}
+
+.medit-activity-label {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.medit-activity.gymnastics .medit-activity-label { color: var(--medit-olive); }
+.medit-activity.theatre .medit-activity-label { color: rgba(255,255,255,0.5); }
+
+.medit-activity-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.medit-activity.gymnastics .medit-activity-title { color: var(--medit-earth); }
+.medit-activity.theatre .medit-activity-title { color: var(--medit-cream); }
+
+.medit-activity-desc {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 300;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  max-width: 280px;
+}
+
+.medit-activity.gymnastics .medit-activity-desc { color: var(--medit-olive); }
+.medit-activity.theatre .medit-activity-desc { color: rgba(255,255,255,0.6); }
+
+.medit-activity-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+.medit-activity.gymnastics .medit-activity-cta { color: var(--medit-earth); }
+.medit-activity.theatre .medit-activity-cta { color: var(--medit-gold); }
+
+.medit-activity-cta svg {
+  width: 1.25rem;
+  transition: transform 0.3s;
+}
+
+.medit-activity:hover .medit-activity-cta svg { transform: translateX(6px); }
+
+.medit-intro {
+  padding: 6rem 4rem;
+  background: var(--medit-cream);
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  border-top: 1px solid var(--medit-sand);
+}
+
+.medit-intro-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.35rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--medit-earth);
+  line-height: 1.8;
+}
+
+.medit-intro-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.medit-intro-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--medit-earth);
+  text-decoration: none;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--medit-sand);
+  transition: all 0.2s;
+}
+
+.medit-intro-link:hover {
+  color: var(--medit-olive);
+  padding-left: 0.5rem;
+}
+
+.medit-intro-link svg { width: 1.25rem; }
+
+.medit-footer {
+  padding: 2rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--medit-cream);
+  border-top: 1px solid var(--medit-sand);
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 0.75rem;
+  color: var(--medit-olive);
+}
+
+@media (max-width: 900px) {
+  .medit-header { padding: 1rem 1.5rem; flex-direction: column; gap: 1rem; }
+  .medit-nav { gap: 1.5rem; }
+  .medit-hero { grid-template-columns: 1fr; }
+  .medit-hero-left { padding: 5rem 1.5rem 3rem; }
+  .medit-hero-right { min-height: 40vh; }
+  .medit-activities { grid-template-columns: 1fr; }
+  .medit-activity { padding: 3rem 1.5rem; }
+  .medit-intro { grid-template-columns: 1fr; padding: 4rem 1.5rem; gap: 2rem; }
+  .medit-footer { flex-direction: column; gap: 1rem; text-align: center; }
+}
+</style>
+
+<div class="medit-page">
+  <header class="medit-header">
+    <div class="medit-logo">Espace Bienestar</div>
+    <nav class="medit-nav">
+<a href={base}>Accueil</a>
+<a href={`${base}activities`}>Activités</a>
+<a href={`${base}about`}>À propos</a>
+<a href={`${base}contact`}>Contact</a>
+    </nav>
+  </header>
+
+  <section class="medit-hero">
+    <div class="medit-hero-left">
+      <span class="medit-kicker">Riviera · Billère · France</span>
+      <h1 class="medit-headline">
+        Chaleur<br />
+        <em>du</em><br />
+        Méditerranée
+      </h1>
+      <p class="medit-subtitle">{t.home.intro}</p>
+      <a href={`${base}contact`} class="medit-btn">
+        Commencer
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+    <div class="medit-hero-right">
+      <div class="medit-sun-motif">
+        <div class="medit-sun-circle"></div>
+        <div class="medit-sun-ray"></div>
+        <div class="medit-sun-ray"></div>
+        <div class="medit-sun-ray"></div>
+        <div class="medit-sun-ray"></div>
+        <div class="medit-sun-ray"></div>
+        <div class="medit-sun-ray"></div>
+        <div class="medit-leaf"></div>
+        <div class="medit-leaf"></div>
+        <div class="medit-leaf"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="medit-activities">
+    <a href={activities[0].link} class="medit-activity gymnastics">
+      <span class="medit-activity-label">{activities[0].subtitle}</span>
+      <h2 class="medit-activity-title">{activities[0].title}</h2>
+      <p class="medit-activity-desc">Le mouvement comme la brise chaude du sud.</p>
+      <span class="medit-activity-cta">
+        {activities[0].cta}
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </span>
+    </a>
+
+    <a href={activities[1].link} class="medit-activity theatre">
+      <span class="medit-activity-label">{activities[1].subtitle}</span>
+      <h2 class="medit-activity-title">{activities[1].title}</h2>
+      <p class="medit-activity-desc">L'expression comme le soleil sur la terrecuite.</p>
+      <span class="medit-activity-cta">
+        {activities[1].cta}
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </span>
+    </a>
+  </section>
+
+  <section class="medit-intro">
+    <p class="medit-intro-text">{t.home.hero.subtitle} — La chaleur du sud comme refuge de bien-être.</p>
+    <div class="medit-intro-links">
+      <a href={`${base}about`} class="medit-intro-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        Rencontrer Sonia
+      </a>
+      <a href={`${base}schedule`} class="medit-intro-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        Voir les horaires
+      </a>
+    </div>
+  </section>
+
+  <footer class="medit-footer">
+    <span>© 2026 Espace Bienestar</span>
+    <span>Billère, France</span>
+  </footer>
+</div>
+</ProposalLayout>

@@ -1,0 +1,330 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #D1E45B;
+  --color-primary-dark: #B8D14A;
+  --color-secondary: #5FA3BA;
+  --color-accent: #d7ccff;
+  --color-accent-dark: #d7ccff;
+  --color-sage-light: #D5E7BE;
+  --color-sage-pale: #D3E8A6;
+  --color-sage-bg: #DBEDDF;
+  --color-violet-light: #d7ccff;
+  --color-violet-medium: #d7ccff;
+  --color-background: #DBEDDF;
+  --color-text: #2D3A35;
+  --color-text-light: #FFFFFF;
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Source Sans Pro', system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-body);
+    background-color: var(--color-background);
+    color: var(--color-text);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--color-text);
+  }
+}
+
+/* Scroll animations */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animate-on-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.stagger-1 { transition-delay: 0.1s; }
+.stagger-2 { transition-delay: 0.2s; }
+.stagger-3 { transition-delay: 0.3s; }
+
+/* Hero gradient - lime to violet */
+.bg-hero-gradient {
+  background: linear-gradient(160deg, #D1E45B 0%, #B8D14A 40%, #d7ccff 100%);
+}
+
+/* Activity block gradients */
+.bg-activity-gymnastics {
+  background: linear-gradient(180deg, #D5E7BE 0%, #D1E45B 100%);
+}
+
+.bg-activity-theatre {
+  background: linear-gradient(180deg, #A78BFA 0%, #7C5CBF 100%);
+}
+
+/* Secondary activity block - teal */
+.bg-activity-secondary {
+  background: linear-gradient(180deg, #5FA3BA 0%, #4A8A9F 100%);
+}
+
+/* Hero blob decoration */
+.hero-blob {
+  position: absolute;
+  right: 5%;
+  top: 15%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, #d7ccff 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Teal blob for variety */
+.hero-blob-teal {
+  position: absolute;
+  left: 5%;
+  bottom: 15%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, #5FA3BA 0%, transparent 70%);
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/* Block Buttons - Activity Cards */
+.btn-block {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem 2.5rem;
+  background: var(--color-violet-light);
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+  overflow: hidden;
+}
+
+.btn-block::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-accent), var(--color-primary));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.btn-block:hover::before {
+  transform: scaleX(1);
+}
+
+.btn-block:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(209, 228, 91, 0.2);
+}
+
+.btn-block .btn-icon {
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-dark));
+  border-radius: 50%;
+  color: white;
+}
+
+.btn-block .btn-content {
+  flex: 1;
+}
+
+.btn-block .btn-title {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-bottom: 0.25rem;
+}
+
+.btn-block .btn-meta {
+  font-size: 0.875rem;
+  color: var(--color-text);
+  opacity: 0.7;
+}
+
+.btn-block .btn-arrow {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--color-accent);
+  border-radius: 50%;
+  color: var(--color-accent);
+  transition: all 0.3s ease;
+}
+
+.btn-block:hover .btn-arrow {
+  background: var(--color-accent);
+  color: white;
+  transform: translateX(4px);
+}
+
+/* Gradient Pill Buttons */
+.btn-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-dark));
+  color: white;
+  border-radius: 9999px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(167, 139, 250, 0.3);
+}
+
+.btn-pill:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(167, 139, 250, 0.4);
+}
+
+.btn-pill-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  background: transparent;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 9999px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-pill-outline:hover {
+  background: white;
+  color: var(--color-primary);
+  border-color: white;
+}
+
+.btn-pill-secondary {
+  background: var(--color-secondary);
+  color: white;
+  box-shadow: none;
+}
+
+.btn-pill-secondary:hover {
+  box-shadow: 0 6px 25px rgba(95, 163, 186, 0.4);
+}
+
+/* Section Titles */
+.section-title {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  font-size: 1.125rem;
+  color: var(--color-text);
+  opacity: 0.7;
+  max-width: 600px;
+}
+
+/* CV Section */
+.cv-section {
+  background: linear-gradient(135deg, var(--color-violet-light) 0%, white 100%);
+  border-radius: 1.5rem;
+  padding: 3rem;
+  position: relative;
+}
+
+.cv-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--color-accent), var(--color-primary));
+  border-radius: 1.5rem 1.5rem 0 0;
+}
+
+.cv-item {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(167, 139, 250, 0.2);
+}
+
+.cv-item:last-child {
+  border-bottom: none;
+}
+
+.cv-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-accent);
+  color: white;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+::selection {
+  background-color: var(--color-accent);
+  color: white;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Landing Variation Theme Utilities */
+.theme-nordic {
+  --color-primary: #E0F2F1;
+  --color-secondary: #A7C7E7;
+  --color-accent: #4A6572;
+  --color-bg: #FFFFFF;
+}
+
+.theme-mediterranean {
+  --color-primary: #F4E1C1;
+  --color-secondary: #C9A66B;
+  --color-accent: #D4B896;
+  --color-bg: #FAF6F0;
+}
+
+.theme-sundown {
+  --color-primary: #FFB88C;
+  --color-secondary: #FF8C42;
+  --color-accent: #5A3E36;
+  --color-bg: #FFF5E6;
+}
+
+.theme-aurora {
+  --color-primary: #D3E8FF;
+  --color-secondary: #8FA9C7;
+  --color-accent: #E0B0FF;
+  --color-bg: #F5FAFD;
+}
+
+.theme-urban {
+  --color-primary: #3E4A5F;
+  --color-secondary: #7A889F;
+  --color-accent: #B0C4DE;
+  --color-bg: #F0F3F7;
+}

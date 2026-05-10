@@ -1,0 +1,146 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { useTranslations, getLangFromUrl } from '../../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const base = import.meta.env.BASE_URL;
+
+const activities = [
+  {
+    key: 'gymnastics',
+    title: t.activities.gymnastics.title,
+    subtitle: 'Movimiento consciente',
+    link: `${base}es/activities/gymnastics`,
+    cta: 'Descubrir'
+  },
+  {
+    key: 'theatre',
+    title: t.activities.theatre.title,
+    subtitle: 'Expresión creativa',
+    link: `${base}es/activities/theatre`,
+    cta: 'Descubrir'
+  }
+];
+---
+
+<BaseLayout title={t.nav.home}>
+  <!-- Hero Section -->
+  <section class="relative min-h-[85vh] flex items-center bg-hero-gradient overflow-hidden">
+    <div class="hero-blob"></div>
+    <div class="hero-blob-teal"></div>
+
+    <div class="max-w-7xl mx-auto px-6 py-20 grid md:grid-cols-2 gap-12 items-center relative z-10 w-full">
+      <div class="animate-on-scroll">
+        <p class="text-white/80 uppercase tracking-[0.3em] text-sm mb-4">Billère · Pau</p>
+        <h1 class="text-6xl md:text-7xl lg:text-8xl font-bold text-[var(--color-primary)] leading-none mb-2">Espace</h1>
+        <h1 class="text-6xl md:text-7xl lg:text-8xl font-bold text-[var(--color-primary)] leading-none mb-6">Bienestar</h1>
+        <p class="text-xl md:text-2xl text-[var(--color-primary)]/80 mb-10 font-light">{t.home.hero.subtitle}</p>
+        <a href={`${base}es/contact`} class="btn-pill-outline">
+          <span>{t.nav.contact}</span>
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </a>
+      </div>
+
+      <div class="hidden md:flex justify-center items-center relative animate-on-scroll stagger-2">
+        <svg class="w-72 h-72 lg:w-96 lg:h-96" viewBox="0 0 400 400" fill="none">
+          <circle cx="200" cy="200" r="180" stroke="#2D3A35" stroke-width="0.5" stroke-opacity="0.2"/>
+          <circle cx="200" cy="200" r="140" stroke="#2D3A35" stroke-width="0.5" stroke-opacity="0.15"/>
+          <circle cx="200" cy="200" r="100" stroke="#2D3A35" stroke-width="0.5" stroke-opacity="0.1"/>
+          <path d="M120 200C120 200 160 120 200 120C240 120 280 200 280 200C280 200 240 280 200 280C160 280 120 200 120 200Z" stroke="#2D3A35" stroke-width="2" stroke-opacity="0.4"/>
+          <circle cx="200" cy="200" r="30" fill="#A78BFA" fill-opacity="0.8"/>
+          <path d="M200 70V120M200 280V330M70 200H120M280 200H330" stroke="#2D3A35" stroke-width="1" stroke-opacity="0.2"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <svg class="w-6 h-6 text-[var(--color-primary)]/50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+    </div>
+  </section>
+
+  <!-- Activity Blocks -->
+  <section class="grid md:grid-cols-2 min-h-[70vh]">
+    <!-- Gymnastics Block - Lime gradient -->
+    <a href={activities[0].link} class="relative group overflow-hidden bg-activity-gymnastics flex items-center justify-center animate-on-scroll stagger-1">
+      <div class="absolute inset-0 bg-black/5 group-hover:bg-black/0 transition-all duration-500"></div>
+
+      <div class="relative z-10 p-12 max-w-md text-center">
+        <div class="mb-8">
+          <svg class="w-24 h-24 mx-auto text-[var(--color-primary)]" viewBox="0 0 100 100" fill="none">
+            <circle cx="50" cy="50" r="45" stroke="currentColor" stroke-width="1.5" stroke-opacity="0.3"/>
+            <path d="M25 50C25 50 35 30 50 30C65 30 75 50 75 50" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M30 55C30 55 40 75 55 70C70 65 70 45 70 45" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <circle cx="50" cy="50" r="8" fill="currentColor" fill-opacity="0.5"/>
+            <path d="M50 35V25M50 65V75" stroke="currentColor" stroke-width="1.5" stroke-opacity="0.5"/>
+          </svg>
+        </div>
+        <p class="text-[var(--color-primary)]/70 uppercase tracking-[0.2em] text-sm mb-3">{activities[0].subtitle}</p>
+        <h2 class="text-4xl md:text-5xl font-bold text-[var(--color-primary)] mb-4">{activities[0].title}</h2>
+        <div class="inline-flex items-center gap-2 text-[var(--color-primary)] border border-[var(--color-text)]/50 px-6 py-3 rounded-full group-hover:bg-[var(--color-text)] group-hover:text-[var(--color-primary)] transition-all duration-300">
+          {activities[0].cta}
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </div>
+      </div>
+    </a>
+
+    <!-- Theatre Block - Violet gradient -->
+    <a href={activities[1].link} class="relative group overflow-hidden bg-activity-theatre flex items-center justify-center animate-on-scroll stagger-2">
+      <div class="absolute inset-0 bg-black/10 group-hover:bg-black/5 transition-all duration-500"></div>
+
+      <div class="relative z-10 p-12 max-w-md text-center">
+        <div class="mb-8">
+          <svg class="w-24 h-24 mx-auto text-white" viewBox="0 0 100 100" fill="none">
+            <circle cx="50" cy="50" r="45" stroke="currentColor" stroke-width="1.5" stroke-opacity="0.3"/>
+            <path d="M35 35L50 25L65 35" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M50 25V55" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <ellipse cx="50" cy="65" rx="20" ry="12" stroke="currentColor" stroke-width="2"/>
+            <path d="M38 60C38 60 44 70 50 70C56 70 62 60 62 60" stroke="currentColor" stroke-width="1.5" stroke-opacity="0.5"/>
+            <circle cx="42" cy="62" r="3" fill="currentColor" fill-opacity="0.5"/>
+            <circle cx="58" cy="62" r="3" fill="currentColor" fill-opacity="0.5"/>
+            <path d="M30 75L50 85L70 75" stroke="currentColor" stroke-width="1.5" stroke-opacity="0.5"/>
+          </svg>
+        </div>
+        <p class="text-white/70 uppercase tracking-[0.2em] text-sm mb-3">{activities[1].subtitle}</p>
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">{activities[1].title}</h2>
+        <div class="inline-flex items-center gap-2 text-white border border-white/50 px-6 py-3 rounded-full group-hover:bg-white group-hover:text-[#7C5CBF] transition-all duration-300">
+          {activities[1].cta}
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+        </div>
+      </div>
+    </a>
+  </section>
+
+  <!-- Intro Section -->
+  <section class="py-20 px-6 bg-[var(--color-background)]">
+    <div class="max-w-3xl mx-auto text-center animate-on-scroll">
+      <p class="text-lg md:text-xl text-[var(--color-text)]/80 leading-relaxed mb-8">
+        {t.home.intro}
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href={`${base}es/about`} class="btn-pill">
+          {t.nav.about}
+        </a>
+        <a href={`${base}es/activities`} class="btn-pill btn-pill-secondary">
+          {t.nav.activities}
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="bg-[var(--color-primary)] py-20 px-6">
+    <div class="max-w-4xl mx-auto text-center animate-on-scroll">
+      <h2 class="text-3xl md:text-4xl font-bold text-[var(--color-text)] mb-6">
+        ¿Listo para comenzar?
+      </h2>
+      <p class="text-[var(--color-text)]/70 text-lg mb-10">
+        Descubra nuestros talleres y encuentre su camino hacia el bienestar.
+      </p>
+      <a href={`${base}es/contact`} class="btn-pill">
+        {t.nav.contact}
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+  </section>
+</BaseLayout>

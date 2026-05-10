@@ -1,0 +1,457 @@
+---
+import ProposalLayout from '../../layouts/ProposalLayout.astro';
+import { useTranslations } from '../../i18n/utils';
+
+const t = useTranslations('fr');
+const base = import.meta.env.BASE_URL;
+
+const activities = [
+  {
+    key: 'gymnastics',
+    title: t.activities.gymnastics.title,
+    subtitle: 'Mouvement conscient',
+    link: `${base}activities/gymnastics`,
+    cta: 'Découvrir'
+  },
+  {
+    key: 'theatre',
+    title: t.activities.theatre.title,
+    subtitle: 'Expression créative',
+    link: `${base}activities/theatre`,
+    cta: 'Découvrir'
+  }
+];
+---
+
+<ProposalLayout title="Proposition - Aurora" styleName="09 · Aurora">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  --aurora-polar: #D3E8FF;
+  --aurora-mist: #8FA9C7;
+  --aurora-violet: #E0B0FF;
+  --aurora-light: #F5FAFD;
+  --aurora-night: #12243D;
+  --aurora-deep: #1A3050;
+  --aurora-ice: #A8C8E8;
+  --aurora-star: #C4D8F0;
+}
+
+html { scroll-behavior: smooth; }
+
+.aurora-page {
+  min-height: 100vh;
+  background: var(--aurora-light);
+  color: var(--aurora-deep);
+}
+
+.aurora-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 4rem;
+  background: var(--aurora-night);
+  color: var(--aurora-polar);
+}
+
+.aurora-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  font-weight: 300;
+  letter-spacing: 0.05em;
+  color: var(--aurora-polar);
+}
+
+.aurora-nav {
+  display: flex;
+  gap: 3rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+.aurora-nav a {
+  color: var(--aurora-ice);
+  text-decoration: none;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+
+.aurora-nav a:hover { opacity: 1; }
+
+.aurora-hero {
+  min-height: 85vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.aurora-hero-left {
+  padding: 4rem 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--aurora-light);
+}
+
+.aurora-kicker {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--aurora-mist);
+  margin-bottom: 2rem;
+}
+
+.aurora-headline {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 300;
+  line-height: 1.25;
+  color: var(--aurora-deep);
+  margin-bottom: 1.5rem;
+}
+
+.aurora-headline em {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--aurora-violet);
+}
+
+.aurora-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--aurora-mist);
+  max-width: 360px;
+  line-height: 1.8;
+  margin-bottom: 3rem;
+}
+
+.aurora-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  background: linear-gradient(135deg, var(--aurora-mist), var(--aurora-violet));
+  color: white;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  transition: all 0.3s;
+  width: fit-content;
+}
+
+.aurora-btn:hover {
+  background: linear-gradient(135deg, var(--aurora-deep), var(--aurora-night));
+}
+
+.aurora-btn svg { width: 1rem; }
+
+.aurora-hero-right {
+  position: relative;
+  background: linear-gradient(135deg, var(--aurora-night) 0%, var(--aurora-deep) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.aurora-hero-right::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 30% 30%, rgba(224,176,255,0.15) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 60%, rgba(143,169,199,0.2) 0%, transparent 50%);
+}
+
+.aurora-ribbon {
+  position: absolute;
+  width: 80%;
+  height: 4px;
+  border-radius: 50%;
+  opacity: 0.2;
+}
+
+.aurora-ribbon:nth-child(1) {
+  top: 25%;
+  left: 10%;
+  background: linear-gradient(90deg, transparent, var(--aurora-violet), transparent);
+  transform: rotate(-8deg);
+}
+
+.aurora-ribbon:nth-child(2) {
+  top: 40%;
+  left: 5%;
+  background: linear-gradient(90deg, transparent, var(--aurora-ice), transparent);
+  transform: rotate(5deg);
+}
+
+.aurora-ribbon:nth-child(3) {
+  top: 55%;
+  left: 15%;
+  background: linear-gradient(90deg, transparent, var(--aurora-polar), transparent);
+  transform: rotate(-3deg);
+  opacity: 0.12;
+}
+
+.aurora-star-dot {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.6);
+}
+
+.aurora-star-dot:nth-child(4) { width: 3px; height: 3px; top: 15%; left: 25%; }
+.aurora-star-dot:nth-child(5) { width: 2px; height: 2px; top: 20%; right: 30%; }
+.aurora-star-dot:nth-child(6) { width: 4px; height: 4px; top: 35%; left: 60%; background: rgba(224,176,255,0.5); }
+.aurora-star-dot:nth-child(7) { width: 2px; height: 2px; top: 60%; left: 20%; }
+.aurora-star-dot:nth-child(8) { width: 3px; height: 3px; top: 70%; right: 25%; background: rgba(168,200,232,0.5); }
+
+.aurora-activities {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.aurora-activity {
+  position: relative;
+  padding: 4rem;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.aurora-activity::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  transition: transform 0.5s ease;
+}
+
+.aurora-activity:hover::before { transform: scale(1.02); }
+
+.aurora-activity.gymnastics {
+  background: linear-gradient(180deg, var(--aurora-light) 0%, var(--aurora-polar) 100%);
+}
+
+.aurora-activity.gymnastics::before {
+  background: radial-gradient(circle at 60% 30%, rgba(143,169,199,0.2) 0%, transparent 50%);
+}
+
+.aurora-activity.theatre {
+  background: linear-gradient(180deg, var(--aurora-deep) 0%, var(--aurora-night) 100%);
+}
+
+.aurora-activity.theatre::before {
+  background: radial-gradient(circle at 40% 70%, rgba(224,176,255,0.12) 0%, transparent 40%);
+}
+
+.aurora-activity-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.aurora-activity.gymnastics .aurora-activity-label { color: var(--aurora-mist); }
+.aurora-activity.theatre .aurora-activity-label { color: var(--aurora-ice); }
+
+.aurora-activity-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+}
+
+.aurora-activity.gymnastics .aurora-activity-title { color: var(--aurora-deep); }
+.aurora-activity.theatre .aurora-activity-title { color: var(--aurora-polar); }
+
+.aurora-activity-desc {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 300;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  max-width: 280px;
+}
+
+.aurora-activity.gymnastics .aurora-activity-desc { color: var(--aurora-mist); }
+.aurora-activity.theatre .aurora-activity-desc { color: rgba(255,255,255,0.6); }
+
+.aurora-activity-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+.aurora-activity.gymnastics .aurora-activity-cta { color: var(--aurora-deep); }
+.aurora-activity.theatre .aurora-activity-cta { color: var(--aurora-violet); }
+
+.aurora-activity-cta svg {
+  width: 1.25rem;
+  transition: transform 0.3s;
+}
+
+.aurora-activity:hover .aurora-activity-cta svg { transform: translateX(6px); }
+
+.aurora-intro {
+  padding: 6rem 4rem;
+  background: var(--aurora-light);
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  border-top: 1px solid var(--aurora-polar);
+}
+
+.aurora-intro-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem;
+  font-weight: 300;
+  font-style: italic;
+  color: var(--aurora-deep);
+  line-height: 1.8;
+}
+
+.aurora-intro-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.aurora-intro-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--aurora-deep);
+  text-decoration: none;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--aurora-polar);
+  transition: all 0.2s;
+}
+
+.aurora-intro-link:hover {
+  color: var(--aurora-violet);
+  padding-left: 0.5rem;
+}
+
+.aurora-intro-link svg { width: 1.25rem; }
+
+.aurora-footer {
+  padding: 2rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--aurora-night);
+  color: var(--aurora-ice);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.75rem;
+}
+
+@media (max-width: 900px) {
+  .aurora-header { padding: 1rem 1.5rem; flex-direction: column; gap: 1rem; }
+  .aurora-nav { gap: 1.5rem; }
+  .aurora-hero { grid-template-columns: 1fr; }
+  .aurora-hero-left { padding: 5rem 1.5rem 3rem; }
+  .aurora-hero-right { min-height: 40vh; }
+  .aurora-activities { grid-template-columns: 1fr; }
+  .aurora-activity { padding: 3rem 1.5rem; }
+  .aurora-intro { grid-template-columns: 1fr; padding: 4rem 1.5rem; gap: 2rem; }
+  .aurora-footer { flex-direction: column; gap: 1rem; text-align: center; }
+}
+</style>
+
+<div class="aurora-page">
+  <header class="aurora-header">
+    <div class="aurora-logo">Espace Bienestar</div>
+    <nav class="aurora-nav">
+      <a href={base}>Accueil</a>
+      <a href={`${base}activities`}>Activités</a>
+      <a href={`${base}about`}>À propos</a>
+      <a href={`${base}contact`}>Contact</a>
+    </nav>
+  </header>
+
+  <section class="aurora-hero">
+    <div class="aurora-hero-left">
+      <span class="aurora-kicker">Aurore boréale · Billère · France</span>
+      <h1 class="aurora-headline">
+        Lumières<br />
+        <em>du</em><br />
+        nord
+      </h1>
+      <p class="aurora-subtitle">{t.home.intro}</p>
+      <a href={`${base}contact`} class="aurora-btn">
+        Commencer
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+    <div class="aurora-hero-right">
+      <div class="aurora-ribbon"></div>
+      <div class="aurora-ribbon"></div>
+      <div class="aurora-ribbon"></div>
+      <div class="aurora-star-dot"></div>
+      <div class="aurora-star-dot"></div>
+      <div class="aurora-star-dot"></div>
+      <div class="aurora-star-dot"></div>
+      <div class="aurora-star-dot"></div>
+    </div>
+  </section>
+
+  <section class="aurora-activities">
+    <a href={activities[0].link} class="aurora-activity gymnastics">
+      <span class="aurora-activity-label">{activities[0].subtitle}</span>
+      <h2 class="aurora-activity-title">{activities[0].title}</h2>
+      <p class="aurora-activity-desc">Le mouvement comme la danse de lumières dans le ciel polaire.</p>
+      <span class="aurora-activity-cta">
+        {activities[0].cta}
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </span>
+    </a>
+
+    <a href={activities[1].link} class="aurora-activity theatre">
+      <span class="aurora-activity-label">{activities[1].subtitle}</span>
+      <h2 class="aurora-activity-title">{activities[1].title}</h2>
+      <p class="aurora-activity-desc">L'expression comme le violet qui illumine la nuit.</p>
+      <span class="aurora-activity-cta">
+        {activities[1].cta}
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </span>
+    </a>
+  </section>
+
+  <section class="aurora-intro">
+    <p class="aurora-intro-text">{t.home.hero.subtitle} — Les lumières du nord comme guide vers l'équilibre.</p>
+    <div class="aurora-intro-links">
+      <a href={`${base}about`} class="aurora-intro-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        Rencontrer Sonia
+      </a>
+      <a href={`${base}schedule`} class="aurora-intro-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        Voir les horaires
+      </a>
+    </div>
+  </section>
+
+  <footer class="aurora-footer">
+    <span>© 2026 Espace Bienestar</span>
+    <span>Billère, France</span>
+  </footer>
+</div>
+</ProposalLayout>

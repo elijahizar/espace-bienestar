@@ -1,0 +1,127 @@
+{
+  "home": {
+    "hero": {
+      "title": "Espace Bienestar",
+      "subtitle": "Cuerpo y Mente en Armonía"
+    },
+    "activities": {
+      "title": "Nuestras Actividades",
+      "subtitle": "Enfoques bienveillantes para su bienestar"
+    },
+    "intro": "Bienvenido a Espace Bienestar, su refugio para el movimiento consciente y el teatro terapéutico en Billère. Proponemos talleres adaptados a todos, sin límite de edad."
+  },
+  "nav": {
+    "home": "Inicio",
+    "activities": "Actividades",
+    "about": "Sobre nosotros",
+    "schedule": "Horarios",
+    "contact": "Contacto"
+  },
+  "activities": {
+    "title": "Nuestras Actividades",
+    "gymnastics": {
+      "title": "Gimnasias Conscientes",
+      "description": "Las Gimnasias Conscientes le invitan a aprender progresivamente a relajarse y conocer mejor sus recursos corporales. La práctica de diferentes ejercicios de tonicidad, flexibilidad y relajación realizados conscientemente le permitirá corregir sus malas posturas y ampliar sus posibilidades de movimiento."
+    },
+    "posturale": {
+      "title": "Gimnasia Postural",
+      "description": "Una actividad a la vez suave y rigurosa, esencial para una práctica corporal sana y duradera.",
+      "schedule": "Lunes 14h30 a 16h",
+      "location": "Salle du Sporting d'Este, Avenue Saint John Perse, Billère 64140",
+      "details": "Trabajo postural para la espalda, cervicales, ciáticas. 1h30 de clase, descalzo con ropa cómoda."
+    },
+    "rythmique": {
+      "title": "Gimnasia Rítmica Expressiva",
+      "description": "El grupo trabaja con músicas de diferentes fuentes para ejercer y mobilizar las zonas del cuerpo correspondientes a cada ritmo.",
+      "schedule": "Jueves 14h a 15h",
+      "location": "Salle du Sporting d'Este, Avenue Saint John Perse, Billère 64140",
+      "details": "Desarrollo del hemisferio derecho del cerebro, ampliación de los registros sensoriales, lúdicos e intuitivos. 1h, descalzo."
+    },
+    "theatre": {
+      "title": "Teatro",
+      "description": "El Teatro puede ser el lugar donde parece que algo pasa. Eugène Ionesco"
+    },
+    "bienetre": {
+      "title": "Teatro y Bienestar",
+      "description": "Enfoque original orientado hacia la importancia de la expresión artística del Teatro como soporte psicoterapéutico. Para personas que sufren de trastornos de ansiedad, fobia social, timidez excesiva, agotamiento profesional o burn-out.",
+      "details": "El juego teatral, el trabajo de conciencia corporal y el grupo de parole son caminos eficaces, lúdicos y creativos."
+    },
+    "amateur": {
+      "title": "Teatro Amateur",
+      "description": "Taller de iniciación a la práctica teatral para descubrir el trabajo del actor y su potencial creativo. Un espacio lúdico y experimental donde se abordarán la improvisación, la creación de personajes, la interpretación de textos y la puesta en escena.",
+      "details": "El taller terminará con una representación de fin de año."
+    }
+  },
+  "stages": {
+    "title": "Talleres Combinados",
+    "subtitle": "Un domingo por la mañana al mes",
+    "schedule": "10h a 12h30",
+    "location": "Salle du Sporting d'Este, Billère 64140",
+    "description": "Talleres combinados de Gimnasia Rítmica Expressiva + Gimnasia Postural",
+    "next": "Próximo taller"
+  },
+  "about": {
+    "title": "Sobre nosotros",
+    "sonia": {
+      "title": "Sonia Cutri",
+      "intro": "Me llamo Sonia Cutri, nací en Argentina, nacionalizada española.",
+      "education": {
+        "title": "Formación",
+        "items": [
+          "Especialización educadora después del Liceo",
+          "Tres años universitarios en Ciencia de la Educación en Buenos Aires",
+          "Diplomada como actriz y monitora de Técnica del Movimiento en la Escuela de Arte Dramático",
+          "Diplomada en Dirección de Escena",
+          "DU/Certificado Internacional de Ecología Humana en la Universidad de Pau y Países del Adour",
+          "Formación en Sensibilización del Análisis de Grupo y Psicodrama en el IFAG (París-Bordeaux)"
+        ]
+      },
+      "experience": {
+        "title": "Experiencia",
+        "items": [
+          "Educadora de teatro en el Instituto para la Vocación Artística (IVA) en Buenos Aires - 10 años",
+          "Actriz, directora de escena y guionista para televisión en Argentina",
+          "Juega y dirige piezas de teatro, performances y recitales poéticos en Francia",
+          "Interviene como educadora de teatro en diferentes escuelas y colegios de la región de Pau",
+          "Talleres de teatro para adultos en el ámbito liberal",
+          "Interveniente teatral para la formación de Ayuda Médico-Psicológica, Monitor Educador y Educador Especializado"
+        ]
+      },
+      "approach": "Mi enseñanza corporal incluye una síntesis personal fruto de mi propio recorrido, incorporando el Hatha yoga, la Técnica Alexander, la danza teatro, las técnicas de Graham, Barre à Terre, el Yoga Iyengar y el Qi-Gong."
+    }
+  },
+  "schedule": {
+    "title": "Horarios y Talleres",
+    "weekly": {
+      "title": "Clases Semanales",
+      "monday": "Gimnasia Postural - Lunes 14h30 a 16h",
+      "thursday": "Gimnasia Rítmica Expressiva - Jueves 14h a 15h"
+    },
+    "monthly": {
+      "title": "Talleres Mensuales",
+      "description": "Un domingo al mes de 10h a 12h30"
+    }
+  },
+  "contact": {
+    "title": "Contacto",
+    "subtitle": "No dude en contactarnos",
+    "location": {
+      "title": "Dirección",
+      "address": "Salle du Sporting d'Este",
+      "street": "Avenue Saint John Perse",
+      "city": "Billère 64140"
+    },
+    "email": "contact@espacebienestar.com",
+    "phone": "+33 6 12 34 56 78",
+    "form": {
+      "name": "Su nombre",
+      "email": "Su email",
+      "message": "Su mensaje",
+      "activity": "Actividad que le interesa",
+      "submit": "Enviar"
+    }
+  },
+  "footer": {
+    "copyright": "© 2026 Espace Bienestar. Todos los derechos reservados."
+  }
+}

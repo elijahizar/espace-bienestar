@@ -1,0 +1,420 @@
+---
+import ProposalLayout from '../../layouts/ProposalLayout.astro';
+import { useTranslations } from '../../i18n/utils';
+
+const t = useTranslations('fr');
+const base = import.meta.env.BASE_URL;
+
+const activities = [
+  {
+    key: 'gymnastics',
+    title: t.activities.gymnastics.title,
+    subtitle: 'Mouvement conscient',
+    link: `${base}activities/gymnastics`,
+    cta: 'Découvrir'
+  },
+  {
+    key: 'theatre',
+    title: t.activities.theatre.title,
+    subtitle: 'Expression créative',
+    link: `${base}activities/theatre`,
+    cta: 'Découvrir'
+  }
+];
+---
+
+<ProposalLayout title="Proposition - Désert Chaud" styleName="07 · Désert Chaud">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Source+Sans+Pro:wght@300;400;600&display=swap');
+
+:root {
+  --desert-terracotta: #C4956A;
+  --desert-sand: #E8D5C4;
+  --desert-violet: #C8B8D9;
+  --desert-cream: #FAF6F0;
+  --desert-clay: #9B7B6C;
+  --desert-rose: #D4A8A8;
+}
+
+html { scroll-behavior: smooth; }
+
+.font-display { font-family: 'Playfair Display', serif; }
+.font-body { font-family: 'Source Sans Pro', sans-serif; }
+
+.warm-page {
+  min-height: 100vh;
+  background: var(--desert-cream);
+  color: var(--desert-clay);
+}
+
+.warm-hero {
+  position: relative;
+  min-height: 85vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+}
+
+.warm-hero-left {
+  padding: 4rem 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--desert-cream);
+  position: relative;
+  z-index: 1;
+}
+
+.warm-kicker {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--desert-terracotta);
+  margin-bottom: 2rem;
+}
+
+.warm-headline {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 400;
+  line-height: 1.2;
+  color: var(--desert-clay);
+  margin-bottom: 1.5rem;
+}
+
+.warm-headline em {
+  font-style: italic;
+  color: var(--desert-violet);
+}
+
+.warm-subtitle {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--desert-clay);
+  max-width: 380px;
+  line-height: 1.8;
+  margin-bottom: 3rem;
+  opacity: 0.85;
+}
+
+.warm-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  background: var(--desert-terracotta);
+  color: white;
+  text-decoration: none;
+  padding: 1rem 2rem;
+  transition: all 0.3s;
+  width: fit-content;
+}
+
+.warm-btn:hover {
+  background: var(--desert-clay);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(196, 149, 106, 0.3);
+}
+
+.warm-btn svg { width: 1rem; }
+
+.warm-hero-right {
+  position: relative;
+  overflow: hidden;
+}
+
+.warm-hero-image {
+  position: absolute;
+  inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1600&q=80');
+  background-size: cover;
+  background-position: center;
+}
+
+.warm-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(196, 149, 106, 0.5) 0%,
+    rgba(200, 184, 217, 0.4) 100%
+  );
+}
+
+.warm-activities {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.warm-activity {
+  position: relative;
+  min-height: 55vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 4rem;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.warm-activity::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  transition: transform 0.6s ease;
+}
+
+.warm-activity:hover::before { transform: scale(1.05); }
+
+.warm-activity.gymnastics {
+  background: linear-gradient(180deg, var(--desert-sand) 0%, #D4C4B0 100%);
+}
+
+.warm-activity.gymnastics .warm-activity-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=1200&q=80');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.35;
+  transition: opacity 0.3s;
+}
+
+.warm-activity.gymnastics:hover .warm-activity-bg { opacity: 0.5; }
+
+.warm-activity.gymnastics::before {
+  background: linear-gradient(
+    180deg,
+    rgba(232, 213, 196, 0.3) 0%,
+    rgba(196, 149, 106, 0.6) 100%
+  );
+}
+
+.warm-activity.theatre {
+  background: linear-gradient(180deg, var(--desert-violet) 0%, #A898B8 100%);
+}
+
+.warm-activity.theatre .warm-activity-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url('https://images.unsplash.com/photo-1516455207990-7a41ce80f7ee?w=1200&q=80');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.25;
+  transition: opacity 0.3s;
+}
+
+.warm-activity.theatre:hover .warm-activity-bg { opacity: 0.4; }
+
+.warm-activity.theatre::before {
+  background: linear-gradient(
+    180deg,
+    rgba(200, 184, 217, 0.4) 0%,
+    rgba(139, 123, 166, 0.7) 100%
+  );
+}
+
+.warm-activity-content {
+  position: relative;
+  z-index: 1;
+}
+
+.warm-activity-label {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.warm-activity.gymnastics .warm-activity-label { color: var(--desert-clay); opacity: 0.8; }
+.warm-activity.theatre .warm-activity-label { color: rgba(255,255,255,0.85); }
+
+.warm-activity-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.warm-activity.gymnastics .warm-activity-title { color: var(--desert-clay); }
+.warm-activity.theatre .warm-activity-title { color: white; }
+
+.warm-activity-desc {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  max-width: 300px;
+}
+
+.warm-activity.gymnastics .warm-activity-desc { color: var(--desert-clay); opacity: 0.85; }
+.warm-activity.theatre .warm-activity-desc { color: rgba(255,255,255,0.85); }
+
+.warm-activity-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+}
+
+.warm-activity.gymnastics .warm-activity-cta { color: var(--desert-terracotta); }
+.warm-activity.theatre .warm-activity-cta { color: white; }
+
+.warm-activity-cta svg {
+  width: 1.25rem;
+  transition: transform 0.3s;
+}
+
+.warm-activity:hover .warm-activity-cta svg { transform: translateX(6px); }
+
+.warm-intro {
+  padding: 6rem 4rem;
+  background: var(--desert-cream);
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  border-top: 1px solid rgba(155, 123, 108, 0.15);
+}
+
+.warm-intro-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--desert-clay);
+  line-height: 1.7;
+}
+
+.warm-intro-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.warm-intro-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--desert-clay);
+  text-decoration: none;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(155, 123, 108, 0.2);
+  transition: all 0.2s;
+}
+
+.warm-intro-link:hover {
+  color: var(--desert-terracotta);
+  padding-left: 0.5rem;
+}
+
+.warm-intro-link svg { width: 1.25rem; }
+
+.warm-footer {
+  padding: 2rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--desert-cream);
+  border-top: 1px solid rgba(155, 123, 108, 0.15);
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 0.75rem;
+  color: var(--desert-clay);
+  opacity: 0.7;
+}
+
+@media (max-width: 900px) {
+  .warm-hero { grid-template-columns: 1fr; min-height: auto; }
+  .warm-hero-left { padding: 5rem 1.5rem 3rem; }
+  .warm-hero-right { min-height: 45vh; }
+  .warm-activities { grid-template-columns: 1fr; }
+  .warm-activity { padding: 3rem 1.5rem; min-height: 45vh; }
+  .warm-intro { grid-template-columns: 1fr; padding: 4rem 1.5rem; gap: 2rem; }
+  .warm-footer { flex-direction: column; gap: 1rem; text-align: center; }
+}
+</style>
+
+<div class="warm-page">
+  <section class="warm-hero">
+    <div class="warm-hero-left">
+      <span class="warm-kicker">Billère · Pau · France</span>
+      <h1 class="warm-headline">
+        Harmonie<br />
+        <em>entre le corps</em><br />
+        et l'esprit
+      </h1>
+      <p class="warm-subtitle">{t.home.intro}</p>
+      <a href={`${base}contact`} class="warm-btn">
+        Commencer
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+    <div class="warm-hero-right">
+      <div class="warm-hero-image"></div>
+      <div class="warm-hero-overlay"></div>
+    </div>
+  </section>
+
+  <section class="warm-activities">
+    <a href={activities[0].link} class="warm-activity gymnastics">
+      <div class="warm-activity-bg"></div>
+      <div class="warm-activity-content">
+        <span class="warm-activity-label">{activities[0].subtitle}</span>
+        <h2 class="warm-activity-title">{activities[0].title}</h2>
+        <p class="warm-activity-desc">Le mouvement conscient comme chemin vers le bien-être integral.</p>
+        <span class="warm-activity-cta">
+          {activities[0].cta}
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </span>
+      </div>
+    </a>
+
+    <a href={activities[1].link} class="warm-activity theatre">
+      <div class="warm-activity-bg"></div>
+      <div class="warm-activity-content">
+        <span class="warm-activity-label">{activities[1].subtitle}</span>
+        <h2 class="warm-activity-title">{activities[1].title}</h2>
+        <p class="warm-activity-desc">L'expression créative comme voie de transformation personnelle.</p>
+        <span class="warm-activity-cta">
+          {activities[1].cta}
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </span>
+      </div>
+    </a>
+  </section>
+
+  <section class="warm-intro">
+    <p class="warm-intro-text">{t.home.hero.subtitle} — Un espace de calme et de découverte personnelle.</p>
+    <div class="warm-intro-links">
+      <a href={`${base}about`} class="warm-intro-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        Rencontrer Sonia
+      </a>
+      <a href={`${base}schedule`} class="warm-intro-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        Voir les horaires
+      </a>
+    </div>
+  </section>
+
+  <footer class="warm-footer">
+    <span>© 2026 Espace Bienestar</span>
+    <span>Billère, France</span>
+  </footer>
+</div>
+</ProposalLayout>

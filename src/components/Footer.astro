@@ -1,0 +1,12 @@
+---
+import { useTranslations, getLangFromUrl } from '../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<footer class="bg-[var(--color-accent-dark)] text-white py-8 mt-16">
+  <div class="max-w-6xl mx-auto px-4 text-center">
+    <p class="text-sm opacity-90">{t.footer.copyright}</p>
+  </div>
+</footer>

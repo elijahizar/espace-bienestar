@@ -1,0 +1,461 @@
+---
+import ProposalLayout from '../../layouts/ProposalLayout.astro';
+import { useTranslations } from '../../i18n/utils';
+
+const t = useTranslations('fr');
+
+const base = import.meta.env.BASE_URL;
+
+const activities = [
+  {
+    key: 'gymnastics',
+    title: t.activities.gymnastics.title,
+    subtitle: 'Mouvement conscient',
+    link: `${base}activities/gymnastics`,
+    cta: 'Découvrir'
+  },
+  {
+    key: 'theatre',
+    title: t.activities.theatre.title,
+    subtitle: 'Expression créative',
+    link: `${base}activities/theatre`,
+    cta: 'Découvrir'
+  }
+];
+---
+
+<ProposalLayout title="Proposition - Éthéré Pastel" styleName="11 · Éthéré Pastel">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap');
+
+:root {
+  --ether-lavender: #E8D5E0;
+  --ether-rose: #D4A5B5;
+  --ether-sky: #B5C7D4;
+  --ether-gold: #E5D5B5;
+  --ether-white: #FAFAFE;
+  --ether-mauve: #9B7A8E;
+  --ether-deep: #5A4455;
+  --ether-mist: #F0E8F0;
+}
+
+html { scroll-behavior: smooth; }
+
+.ether-page {
+  min-height: 100vh;
+  background: var(--ether-white);
+  color: var(--ether-deep);
+}
+
+.ether-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 4rem;
+  background: var(--ether-white);
+  border-bottom: 1px solid var(--ether-lavender);
+}
+
+.ether-logo {
+  font-family: 'Lora', serif;
+  font-size: 1.3rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  color: var(--ether-deep);
+}
+
+.ether-nav {
+  display: flex;
+  gap: 3rem;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 400;
+}
+
+.ether-nav a {
+  color: var(--ether-deep);
+  text-decoration: none;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.ether-nav a:hover { opacity: 1; }
+
+.ether-hero {
+  min-height: 85vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.ether-hero-left {
+  padding: 4rem 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--ether-white);
+}
+
+.ether-kicker {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ether-mauve);
+  margin-bottom: 2rem;
+}
+
+.ether-headline {
+  font-family: 'Lora', serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 400;
+  line-height: 1.25;
+  color: var(--ether-deep);
+  margin-bottom: 1.5rem;
+}
+
+.ether-headline em {
+  font-style: italic;
+  color: var(--ether-rose);
+}
+
+.ether-subtitle {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--ether-mauve);
+  max-width: 360px;
+  line-height: 1.8;
+  margin-bottom: 3rem;
+}
+
+.ether-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  background: var(--ether-mauve);
+  color: var(--ether-white);
+  text-decoration: none;
+  padding: 1rem 2rem;
+  transition: all 0.3s;
+  width: fit-content;
+}
+
+.ether-btn:hover {
+  background: var(--ether-deep);
+}
+
+.ether-btn svg { width: 1rem; }
+
+.ether-hero-right {
+  position: relative;
+  background: linear-gradient(135deg, var(--ether-mist) 0%, var(--ether-lavender) 50%, var(--ether-sky) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.ether-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.5;
+}
+
+.ether-blob:nth-child(1) {
+  width: 200px;
+  height: 200px;
+  top: 15%;
+  left: 15%;
+  background: var(--ether-lavender);
+  animation: ether-float 6s ease-in-out infinite;
+}
+
+.ether-blob:nth-child(2) {
+  width: 160px;
+  height: 160px;
+  top: 50%;
+  right: 15%;
+  background: var(--ether-rose);
+  animation: ether-float 8s ease-in-out infinite;
+}
+
+.ether-blob:nth-child(3) {
+  width: 240px;
+  height: 240px;
+  bottom: 10%;
+  left: 30%;
+  background: var(--ether-sky);
+  animation: ether-float 10s ease-in-out infinite;
+}
+
+.ether-blob:nth-child(4) {
+  width: 120px;
+  height: 120px;
+  top: 30%;
+  right: 35%;
+  background: var(--ether-gold);
+  animation: ether-float 7s ease-in-out infinite;
+}
+
+.ether-blob:nth-child(5) {
+  width: 100px;
+  height: 100px;
+  bottom: 35%;
+  left: 10%;
+  background: var(--ether-lavender);
+  animation: ether-float 9s ease-in-out infinite;
+}
+
+@keyframes ether-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.ether-activities {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.ether-activity {
+  position: relative;
+  padding: 4rem;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  text-decoration: none;
+  overflow: hidden;
+}
+
+.ether-activity::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  transition: transform 0.5s ease;
+}
+
+.ether-activity:hover::before { transform: scale(1.02); }
+
+.ether-activity.gymnastics {
+  background: linear-gradient(180deg, var(--ether-white) 0%, var(--ether-mist) 100%);
+}
+
+.ether-activity.gymnastics::before {
+  background: radial-gradient(circle at 60% 30%, rgba(232,213,224,0.4) 0%, transparent 50%);
+}
+
+.ether-activity.theatre {
+  background: linear-gradient(180deg, var(--ether-deep) 0%, #3D2D3D 100%);
+}
+
+.ether-activity.theatre::before {
+  background: radial-gradient(circle at 40% 70%, rgba(212,165,181,0.12) 0%, transparent 50%);
+}
+
+.ether-activity-label {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.ether-activity.gymnastics .ether-activity-label { color: var(--ether-mauve); }
+.ether-activity.theatre .ether-activity-label { color: rgba(255,255,255,0.5); }
+
+.ether-activity-title {
+  font-family: 'Lora', serif;
+  font-size: 2rem;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+
+.ether-activity.gymnastics .ether-activity-title { color: var(--ether-deep); }
+.ether-activity.theatre .ether-activity-title { color: var(--ether-white); }
+
+.ether-activity-desc {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 300;
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  max-width: 280px;
+}
+
+.ether-activity.gymnastics .ether-activity-desc { color: var(--ether-mauve); }
+.ether-activity.theatre .ether-activity-desc { color: rgba(255,255,255,0.6); }
+
+.ether-activity-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+.ether-activity.gymnastics .ether-activity-cta { color: var(--ether-deep); }
+.ether-activity.theatre .ether-activity-cta { color: var(--ether-rose); }
+
+.ether-activity-cta svg {
+  width: 1.25rem;
+  transition: transform 0.3s;
+}
+
+.ether-activity:hover .ether-activity-cta svg { transform: translateX(6px); }
+
+.ether-intro {
+  padding: 6rem 4rem;
+  background: var(--ether-white);
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  border-top: 1px solid var(--ether-lavender);
+}
+
+.ether-intro-text {
+  font-family: 'Lora', serif;
+  font-size: 1.35rem;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--ether-deep);
+  line-height: 1.8;
+}
+
+.ether-intro-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.ether-intro-link {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: var(--ether-deep);
+  text-decoration: none;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--ether-lavender);
+  transition: all 0.2s;
+}
+
+.ether-intro-link:hover {
+  color: var(--ether-rose);
+  padding-left: 0.5rem;
+}
+
+.ether-intro-link svg { width: 1.25rem; }
+
+.ether-footer {
+  padding: 2rem 4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--ether-white);
+  border-top: 1px solid var(--ether-lavender);
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.75rem;
+  color: var(--ether-mauve);
+}
+
+@media (max-width: 900px) {
+  .ether-header { padding: 1rem 1.5rem; flex-direction: column; gap: 1rem; }
+  .ether-nav { gap: 1.5rem; }
+  .ether-hero { grid-template-columns: 1fr; }
+  .ether-hero-left { padding: 5rem 1.5rem 3rem; }
+  .ether-hero-right { min-height: 40vh; }
+  .ether-activities { grid-template-columns: 1fr; }
+  .ether-activity { padding: 3rem 1.5rem; }
+  .ether-intro { grid-template-columns: 1fr; padding: 4rem 1.5rem; gap: 2rem; }
+  .ether-footer { flex-direction: column; gap: 1rem; text-align: center; }
+}
+</style>
+
+<div class="ether-page">
+  <header class="ether-header">
+    <div class="ether-logo">Espace Bienestar</div>
+    <nav class="ether-nav">
+<a href={base}>Accueil</a>
+    <a href={`${base}activities`}>Activités</a>
+    <a href={`${base}about`}>À propos</a>
+    <a href={`${base}contact`}>Contact</a>
+    </nav>
+  </header>
+
+  <section class="ether-hero">
+    <div class="ether-hero-left">
+      <span class="ether-kicker">Billère · Pau · France</span>
+      <h1 class="ether-headline">
+        Douceur<br />
+        <em>et</em><br />
+        lumière
+      </h1>
+      <p class="ether-subtitle">{t.home.intro}</p>
+      <a href={`${base}contact`} class="ether-btn">
+        Commencer
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+    <div class="ether-hero-right">
+      <div class="ether-blob"></div>
+      <div class="ether-blob"></div>
+      <div class="ether-blob"></div>
+      <div class="ether-blob"></div>
+      <div class="ether-blob"></div>
+    </div>
+  </section>
+
+  <section class="ether-activities">
+    <a href={activities[0].link} class="ether-activity gymnastics">
+      <span class="ether-activity-label">{activities[0].subtitle}</span>
+      <h2 class="ether-activity-title">{activities[0].title}</h2>
+      <p class="ether-activity-desc">Le mouvement comme une brise légère qui caresse l'esprit.</p>
+      <span class="ether-activity-cta">
+        {activities[0].cta}
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </span>
+    </a>
+
+    <a href={activities[1].link} class="ether-activity theatre">
+      <span class="ether-activity-label">{activities[1].subtitle}</span>
+      <h2 class="ether-activity-title">{activities[1].title}</h2>
+      <p class="ether-activity-desc">L'expression comme les couleurs douces de l'aube.</p>
+      <span class="ether-activity-cta">
+        {activities[1].cta}
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </span>
+    </a>
+  </section>
+
+  <section class="ether-intro">
+    <p class="ether-intro-text">{t.home.hero.subtitle} — La douceur comme chemin vers l'équilibre intérieur.</p>
+    <div class="ether-intro-links">
+      <a href={`${base}about`} class="ether-intro-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        Rencontrer Sonia
+      </a>
+      <a href={`${base}schedule`} class="ether-intro-link">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        Voir les horaires
+      </a>
+    </div>
+  </section>
+
+  <footer class="ether-footer">
+    <span>© 2026 Espace Bienestar</span>
+    <span>Billère, France</span>
+  </footer>
+</div>
+</ProposalLayout>

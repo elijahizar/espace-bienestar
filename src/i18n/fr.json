@@ -1,0 +1,127 @@
+{
+  "home": {
+    "hero": {
+      "title": "Espace Bienestar",
+      "subtitle": "Corps et Esprit en Harmonie"
+    },
+    "activities": {
+      "title": "Nos Activités",
+      "subtitle": "Des approches bienveillantes pour votre bien-être"
+    },
+    "intro": "Bienvenue à l'Espace Bienestar, votre refuge pour le mouvement conscient et le théâtre thérapeutique à Billère. Nous proposons des ateliers adaptés à tous, sans limite d'âge."
+  },
+  "nav": {
+    "home": "Accueil",
+    "activities": "Activités",
+    "about": "À propos",
+    "schedule": "Horaires",
+    "contact": "Contact"
+  },
+  "activities": {
+    "title": "Nos Activités",
+    "gymnastics": {
+      "title": "Gymnastiques Conscientes",
+      "description": "Les Gymnastiques Conscientes vous invitent à apprendre progressivement à vous détendre et avoir une meilleure connaissance de vos ressources corporelles. La pratique de différents exercices de tonicité, de flexibilité et de détente réalisés consciemment vous permettra de corriger vos mauvaises postures et d'élargir vos possibilités de mouvement."
+    },
+    "posturale": {
+      "title": "Gymnastique Posturale",
+      "description": "Une activité à la fois douce et rigoureuse, essentielle à une pratique corporelle saine et durable.",
+      "schedule": "Lundi 14h30 à 16h",
+      "location": "Salle du Sporting d'Este, Avenue Saint John Perse, Billère 64140",
+      "details": "Travail postural pour le dos, les cervicales, les sciatiques. 1h30 de cours, pieds nus avec vêtements confortables."
+    },
+    "rythmique": {
+      "title": "Gymnastique Rythmique Expressive",
+      "description": "Le groupe travaille avec des musiques de différentes sources pour exercer et mobiliser les zones du corps correspondant à chaque rythme.",
+      "schedule": "Jeudi 14h à 15h",
+      "location": "Salle du Sporting d'Este, Avenue Saint John Perse, Billère 64140",
+      "details": "Développement de l'hémisphère droit du cerveau, élargissement des registres sensoriels, ludiques et intuitifs. 1h, pieds nus."
+    },
+    "theatre": {
+      "title": "Théâtre",
+      "description": "Le Théâtre peut être le lieu où il semble que quelque chose se passe. Eugène Ionesco"
+    },
+    "bienetre": {
+      "title": "Théâtre et Bien-Être",
+      "description": "Approche originale orientée sur l'importance de l'expression artistique du Théâtre en tant que support psychothérapeutique. Pour les personnes souffrant de troubles d'anxiété, de phobie sociale, de timidité excessive, d'épuisement professionnel ou burn-out.",
+      "details": "Le jeu théâtral, le travail de conscience corporelle et le groupe de parole sont des chemins efficaces, ludiques et créatifs."
+    },
+    "amateur": {
+      "title": "Théâtre Amateur",
+      "description": "Atelier d'initiation à la pratique théâtrale pour découvrir le travail de l'acteur et votre potentiel créatif. Un espace ludique et expérimental où seront abordés l'improvisation, la création de personnages, l'interprétation des textes et la mise en scène.",
+      "details": "L'atelier sera bouclé avec une représentation de fin d'année."
+    }
+  },
+  "stages": {
+    "title": "Stages Combinés",
+    "subtitle": "Un dimanche matin par mois",
+    "schedule": "10h à 12h30",
+    "location": "Salle du Sporting d'Este, Billère 64140",
+    "description": "Stages combinés de Gymnastique Rythmique Expressive + Gymnastique Posturale",
+    "next": "Prochain stage"
+  },
+  "about": {
+    "title": "À propos",
+    "sonia": {
+      "title": "Sonia Cutri",
+      "intro": "Je m'appelle Sonia Cutri, je suis née en Argentine, nationalisée espagnole.",
+      "education": {
+        "title": "Formation",
+        "items": [
+          "Spécialisation éducatrice après le Lycée",
+          "Trois années universitaires en Science de l'Éducation à Buenos Aires",
+          "Diplômée comme comédienne et monitrice du Technique du Mouvement à l'École d'Art Dramatique",
+          "Diplômée en Mise en Scène",
+          "DU/Certificat International d'Écologie Humaine à l'Université de Pau et des Pays de l'Adour",
+          "Formation en Sensibilisation de l'Analyse de Groupe et Psychodrame à l'IFAG (Paris-Bordeaux)"
+        ]
+      },
+      "experience": {
+        "title": "Expérience",
+        "items": [
+          "Éducatrice de théâtre à l'Institut pour la Vocation Artistique (IVA) à Buenos Aires - 10 ans",
+          "Actrice, metteuse en scène et scénariste pour la télévision en Argentine",
+          "Joue et dirige des pièces de théâtre, performances et récitals poétiques en France",
+          "Intervient comme éducatrice de théâtre dans différentes écoles et collèges de la région paloise",
+          "Stages de théâtre pour adultes dans le domaine libéral",
+          "Intervenante théâtrale pour la formation d'Aide Médico-Psychologique, Moniteur Éducateur et Éducateur Spécialisé"
+        ]
+      },
+      "approach": "Mon enseignement corporel comporte une synthèse personnelle fruit de mon propre parcours, incorporant le Hatha yoga, la Technique Alexander, la danse théâtre, les techniques de Graham, Barre à Terre, le Yoga Iyengar et le Qi-Gong."
+    }
+  },
+  "schedule": {
+    "title": "Horaires et Stages",
+    "weekly": {
+      "title": "Cours Hebdomadaires",
+      "monday": "Gymnastique Posturale - Lundi 14h30 à 16h",
+      "thursday": "Gymnastique Rythmique Expressive - Jeudi 14h à 15h"
+    },
+    "monthly": {
+      "title": "Stages Mensuels",
+      "description": "Un dimanche par mois de 10h à 12h30"
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "subtitle": "N'hésitez pas à nous contacter",
+    "location": {
+      "title": "Adresse",
+      "address": "Salle du Sporting d'Este",
+      "street": "Avenue Saint John Perse",
+      "city": "Billère 64140"
+    },
+    "email": "contact@espacebienestar.com",
+    "phone": "+33 6 12 34 56 78",
+    "form": {
+      "name": "Votre nom",
+      "email": "Votre email",
+      "message": "Votre message",
+      "activity": "Activité которая vous intéresse",
+      "submit": "Envoyer"
+    }
+  },
+  "footer": {
+    "copyright": "© 2026 Espace Bienestar. Tous droits réservés."
+  }
+}

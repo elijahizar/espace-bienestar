@@ -1,0 +1,214 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { useTranslations, getLangFromUrl } from '../../../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const theatreTypes = [
+  {
+    key: 'bienetre',
+    title: t.activities.bienetre.title,
+    description: t.activities.bienetre.description,
+    details: t.activities.bienetre.details,
+    icon: `<svg viewBox="0 0 64 64" fill="none" class="w-16 h-16">
+      <circle cx="32" cy="32" r="28" stroke="currentColor" stroke-width="2" stroke-opacity="0.3"/>
+      <path d="M24 24C24 24 28 20 32 20C36 20 40 24 40 24" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <path d="M32 20V30" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <ellipse cx="32" cy="40" rx="12" ry="8" stroke="currentColor" stroke-width="2"/>
+      <path d="M26 38C26 38 29 44 32 44C35 44 38 38 38 38" stroke="currentColor" stroke-width="1.5" stroke-opacity="0.5"/>
+      <circle cx="28" cy="38" r="2" fill="currentColor"/>
+      <circle cx="36" cy="38" r="2" fill="currentColor"/>
+      <path d="M20 52L32 58L44 52" stroke="currentColor" stroke-width="1.5" stroke-opacity="0.5"/>
+    </svg>`
+  },
+  {
+    key: 'amateur',
+    title: t.activities.amateur.title,
+    description: t.activities.amateur.description,
+    details: t.activities.amateur.details,
+    icon: `<svg viewBox="0 0 64 64" fill="none" class="w-16 h-16">
+      <circle cx="32" cy="32" r="28" stroke="currentColor" stroke-width="2" stroke-opacity="0.3"/>
+      <path d="M22 22L26 18L30 22L34 18L38 22L42 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M26 28V38" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <path d="M38 28V38" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      <rect x="24" y="38" width="16" height="10" rx="2" stroke="currentColor" stroke-width="2"/>
+      <path d="M28 42H36" stroke="currentColor" stroke-width="1.5"/>
+      <circle cx="30" cy="46" r="1" fill="currentColor"/>
+      <circle cx="34" cy="46" r="1" fill="currentColor"/>
+    </svg>`
+  }
+];
+
+const stagesInfo = {
+  title: t.stages.title,
+  subtitle: t.stages.subtitle,
+  schedule: t.stages.schedule,
+  location: t.stages.location,
+  description: t.stages.description
+};
+
+const soniaCvTheatre = {
+  title: t.about.sonia.title,
+  education: [
+    lang === 'fr' ? 'Diplômée de l\'École d\'Art Dramatique (Buenos Aires)' : 'Diplomada de la Escuela de Arte Dramático (Buenos Aires)',
+    lang === 'fr' ? 'Formation en Mise en Scène' : 'Formación en Dirección de Escena',
+    lang === 'fr' ? 'Psychodrame à l\'IFAG (Paris-Bordeaux)' : 'Psicodrama en el IFAG (París-Burdeos)',
+    lang === 'fr' ? '10 ans comme éducatrice de théâtre à l\'IVA' : '10 años como educadora de teatro en el IVA'
+  ],
+  approach: lang === 'fr'
+    ? 'Le théâtre comme support psychothérapeutique - une approche originale pour explorer d\'autres façons d\'agir, de penser, de créer.'
+    : 'El teatro como soporte psicoterapéutico - un enfoque original para explorar otras formas de actuar, pensar, crear.'
+};
+---
+
+<BaseLayout title={t.activities.theatre.title}>
+  <!-- Hero Section - violet gradient -->
+  <section class="relative py-20 bg-activity-theatre overflow-hidden">
+    <div class="absolute inset-0 bg-black/10"></div>
+    <div class="max-w-6xl mx-auto px-6 relative z-10">
+      <div class="animate-on-scroll">
+        <p class="text-white/70 uppercase tracking-[0.2em] text-sm mb-4">{lang === 'fr' ? 'Nos ateliers' : 'Nuestros talleres'}</p>
+        <h1 class="text-5xl md:text-6xl font-bold text-white mb-6">{t.activities.theatre.title}</h1>
+        <p class="text-xl text-white/80 max-w-2xl italic">"{t.activities.theatre.description}"</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Theatre Types -->
+  <section class="py-16 px-6">
+    <div class="max-w-5xl mx-auto space-y-6">
+      {theatreTypes.map((type, index) => (
+        <a href={`#${type.key}`} class="btn-block animate-on-scroll" style={`transition-delay: ${index * 0.1}s`}>
+          <div class="btn-icon" set:html={type.icon}></div>
+          <div class="btn-content">
+            <h3 class="btn-title">{type.title}</h3>
+            <p class="btn-meta">{lang === 'fr' ? 'Atelier théâtral' : 'Taller teatral'}</p>
+          </div>
+          <div class="btn-arrow">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+          </div>
+        </a>
+      ))}
+
+      <!-- Stages Block -->
+      <a href="#stages" class="btn-block animate-on-scroll" style="transition-delay: 0.2s">
+        <div class="btn-icon">
+          <svg viewBox="0 0 64 64" fill="none" class="w-10 h-10">
+            <rect x="8" y="16" width="48" height="36" rx="4" stroke="currentColor" stroke-width="2"/>
+            <path d="M8 24h48" stroke="currentColor" stroke-width="2"/>
+            <path d="M20 8v12M44 8v12M8 12h48" stroke="currentColor" stroke-width="1.5"/>
+            <circle cx="24" cy="38" r="4" stroke="currentColor" stroke-width="2"/>
+            <circle cx="40" cy="38" r="4" stroke="currentColor" stroke-width="2"/>
+          </svg>
+        </div>
+        <div class="btn-content">
+          <h3 class="btn-title">{stagesInfo.title}</h3>
+          <p class="btn-meta">{stagesInfo.subtitle} · {stagesInfo.schedule}</p>
+        </div>
+        <div class="btn-arrow">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- Detailed Sections -->
+  <section class="py-16 px-6 bg-[var(--color-background)]">
+    <div class="max-w-5xl mx-auto space-y-20">
+      {theatreTypes.map((type, index) => (
+        <div id={type.key} class="scroll-mt-24">
+          <div class="grid md:grid-cols-2 gap-12 items-start">
+            <div class="animate-on-scroll">
+              <div class="inline-flex items-center gap-3 mb-6">
+                <div class="text-[var(--color-accent)]" set:html={type.icon}></div>
+                <h2 class="text-3xl font-bold text-[var(--color-primary)]">{type.title}</h2>
+              </div>
+              <p class="text-lg text-[var(--color-primary)]/80 mb-6 leading-relaxed">{type.description}</p>
+              <p class="text-[var(--color-primary)]/70 mb-8">{type.details}</p>
+            </div>
+
+            <div class="animate-on-scroll" style={`transition-delay: ${index * 0.2}s`}>
+              <div class="bg-white rounded-2xl p-6 shadow-lg">
+                <div class="flex items-center gap-3 mb-4">
+                  <svg class="w-5 h-5 text-[var(--color-accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+                  <span class="font-medium text-[var(--color-primary)]">{lang === 'fr' ? 'Approche' : 'Enfoque'}</span>
+                </div>
+                <p class="text-[var(--color-primary)]/70">{lang === 'fr' ? 'Exploration créative et bienveillante' : 'Exploración creativa y bienveillante'}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+
+      <!-- Stages Detailed -->
+      <div id="stages" class="scroll-mt-24">
+        <div class="text-center mb-10 animate-on-scroll">
+          <h2 class="text-3xl font-bold text-[var(--color-primary)] mb-4">{stagesInfo.title}</h2>
+          <p class="text-lg text-[var(--color-primary)]/70">{stagesInfo.description}</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6 animate-on-scroll">
+          <div class="bg-[var(--color-accent)] rounded-2xl p-6 text-white text-center">
+            <svg class="w-12 h-12 mx-auto mb-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            <p class="font-semibold mb-2">{lang === 'fr' ? 'Horaires' : 'Horarios'}</p>
+            <p class="text-white/80">{stagesInfo.schedule}</p>
+          </div>
+          <div class="bg-[var(--color-secondary)] rounded-2xl p-6 text-white text-center">
+            <svg class="w-12 h-12 mx-auto mb-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/></svg>
+            <p class="font-semibold mb-2">{lang === 'fr' ? 'Lieu' : 'Ubicación'}</p>
+            <p class="text-white/80">{stagesInfo.location}</p>
+          </div>
+          <div class="bg-[var(--color-primary)] rounded-2xl p-6 text-[var(--color-primary)] text-center">
+            <svg class="w-12 h-12 mx-auto mb-4 text-[var(--color-primary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            <p class="font-semibold mb-2">{lang === 'fr' ? 'Fréquence' : 'Frecuencia'}</p>
+            <p class="text-[var(--color-primary)]/80">{lang === 'fr' ? '1er dimanche du mois' : '1er domingo del mes'}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sonia CV Section -->
+  <section class="py-16 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="cv-section animate-on-scroll">
+        <div class="flex items-center gap-4 mb-8">
+          <div class="w-16 h-16 rounded-full bg-[var(--color-primary)] flex items-center justify-center text-3xl">
+            👩‍🏫
+          </div>
+          <div>
+            <h2 class="text-2xl font-bold text-[var(--color-primary)]">{soniaCvTheatre.title}</h2>
+            <p class="text-[var(--color-primary)]/60">{lang === 'fr' ? 'Enseignante de théâtre' : 'Profesora de teatro'}</p>
+          </div>
+        </div>
+
+        <h3 class="text-xl font-semibold text-[var(--color-accent)] mb-4">{lang === 'fr' ? 'Formation & Parcours' : 'Formación y Trayectoria'}</h3>
+        <div class="space-y-3 mb-8">
+          {soniaCvTheatre.education.map(item => (
+            <div class="cv-item">
+              <div class="cv-icon">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              </div>
+              <p class="text-[var(--color-primary)]">{item}</p>
+            </div>
+          ))}
+        </div>
+
+        <p class="text-[var(--color-primary)]/80 italic">"{soniaCvTheatre.approach}"</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="bg-[var(--color-primary)] py-16 px-6">
+    <div class="max-w-4xl mx-auto text-center animate-on-scroll">
+      <h2 class="text-3xl font-bold text-[var(--color-primary)] mb-4">{lang === 'fr' ? 'Envie d\'explorer ?' : '¿Quieres explorar?'}</h2>
+      <p class="text-[var(--color-primary)]/70 mb-8">{lang === 'fr' ? 'Découvrez le théâtre comme chemin vers le bien-être.' : 'Descubra el teatro como camino hacia el bienestar.'}</p>
+      <a href={lang === 'fr' ? '/contact' : '/es/contact'} class="btn-pill">
+        {t.nav.contact}
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+  </section>
+</BaseLayout>
