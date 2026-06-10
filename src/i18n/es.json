@@ -20,27 +20,60 @@
   },
   "activities": {
     "title": "Nuestras Actividades",
+    "explore": "Explorar",
     "gymnastics": {
       "title": "Gimnasias Conscientes",
-      "description": "Las Gimnasias Conscientes le invitan a aprender progresivamente a relajarse y conocer mejor sus recursos corporales. La práctica de diferentes ejercicios de tonicidad, flexibilidad y relajación realizados conscientemente le permitirá corregir sus malas posturas y ampliar sus posibilidades de movimiento."
+      "subtitle": "Movimiento consciente",
+      "description": "Las Gimnasias Conscientes le invitan a aprender progresivamente a relajarse y conocer mejor sus recursos corporales. La práctica de diferentes ejercicios de tonicidad, flexibilidad y relajación realizados conscientemente le permitirá corregir sus malas posturas y ampliar sus posibilidades de movimiento.",
+      "cardDescription": "Movimiento consciente y relajación para todos",
+      "introTitle": "La Gimnasia Consciente",
+      "introParagraphs": [
+        "La Gimnasia Postural así como la Gimnasia Rítmica Expresiva que les propongo son dos gimnasias que se practican conscientemente, entendiendo la Consciencia como atención perceptiva.",
+        "Estas dos gimnasias tienen en cuenta la relación estrecha entre el cuerpo y el espíritu y es por esta razón que las dos modalidades de talleres adaptados a sus preferencias les proponen una práctica corporal que estimula a los participantes a percibir y comprender mejor su cuerpo como una entidad integrada.",
+        "La práctica de diferentes ejercicios de tonicidad, flexibilidad y distensión le permitirá corregir sus malas posturas, ampliar sus posibilidades de movimiento y tener un mejor conocimiento de sus recursos corporales.",
+        "Con la práctica regular las tensiones se relajan, la flexibilidad vuelve, los movimientos se amplían y usted encuentra así una mejor tonicidad y postura general."
+      ],
+      "introClosing": "La práctica es accesible para todos, sin límite de edad.",
+      "ctaTitle": "¿Quieres probar?",
+      "ctaText": "Únete a nosotros para una primera sesión de descubrimiento.",
+      "kicker": "Nuestros talleres"
     },
     "posturale": {
       "title": "Gimnasia Postural",
       "description": "Una actividad a la vez suave y rigurosa, esencial para una práctica corporal sana y duradera.",
+      "cardDescription": "Trabajo postural para la espalda y cervicales",
       "schedule": "Lunes 14h30 a 16h",
+      "cardSchedule": "Lunes 14h30",
       "location": "Salle du Sporting d'Este, Avenue Saint John Perse, Billère 64140",
       "details": "Trabajo postural para la espalda, cervicales, ciáticas. 1h30 de clase, descalzo con ropa cómoda."
     },
     "rythmique": {
       "title": "Gimnasia Rítmica Expressiva",
       "description": "El grupo trabaja con músicas de diferentes fuentes para ejercer y mobilizar las zonas del cuerpo correspondientes a cada ritmo.",
+      "cardDescription": "Movilización del cuerpo al ritmo de la música",
       "schedule": "Jueves 14h a 15h",
+      "cardSchedule": "Jueves 14h",
       "location": "Salle du Sporting d'Este, Avenue Saint John Perse, Billère 64140",
       "details": "Desarrollo del hemisferio derecho del cerebro, ampliación de los registros sensoriales, lúdicos e intuitivos. 1h, descalzo."
     },
+    "consciente": {
+      "methodTitle": "El método",
+      "methodText": "Se trata de reconectarse con el cuerpo a través de nuestras sensaciones, utilizando nuestra atención \"Ver con el cuerpo\". Esta atención es guiada por el profesor; con el tiempo, esta guía se interioriza y la exploración se vuelve también personal.",
+      "metaphorTitle": "Metáforas inspiradoras",
+      "metaphorText": "Los pies como raíces, las piernas como tronco, las caderas como balanza y fuente, los brazos como alas, los pulmones como flor y pluma, el pecho como cielo, el corazón como sol, las articulaciones como elásticos, la flexibilidad como aceites, la distensión muscular como agua.",
+      "closingText": "Se trata sobre todo de Estar-Aquí, porque todos los momentos son este momento."
+    },
     "theatre": {
       "title": "Teatro",
-      "description": "El Teatro puede ser el lugar donde parece que algo pasa. Eugène Ionesco"
+      "subtitle": "Expresión creativa",
+      "description": "El teatro como camino hacia el bienestar. Descubra un enfoque original donde la expresión artística se convierte en soporte psicoterapéutico.",
+      "cardDescription": "Expresión creativa y bienestar emocional",
+      "kicker": "Nuestros talleres",
+      "introTitle": "",
+      "introParagraphs": [],
+      "introClosing": "",
+      "ctaTitle": "",
+      "ctaText": ""
     },
     "bienetre": {
       "title": "Teatro y Bienestar",
@@ -77,6 +110,7 @@
     "schedule": "10h a 12h30",
     "location": "Salle du Sporting d'Este, Billère 64140",
     "description": "Talleres combinados de Gimnasia Rítmica Expressiva + Gimnasia Postural",
+    "cardDescription": "Un domingo al mes, 10h a 12h30",
     "next": "Próximo taller"
   },
   "about": {

@@ -6,40 +6,58 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 const base = import.meta.env.BASE_URL;
 
-const subPages = [
-  { title: 'Théâtre et Bien-Être', link: `${base}activities/theatre/atelier-bien-etre` },
-  { title: 'Théâtre Amateur', link: `${base}activities/theatre/atelier-amateur` }
+const subActivities = [
+  {
+    title: t.activities.bienetre.title,
+    subtitle: t.activities.theatre.subtitle,
+    description: t.activities.bienetre.description,
+    link: `${base}activities/theatre/atelier-bien-etre`
+  },
+  {
+    title: t.activities.amateur.title,
+    subtitle: t.activities.theatre.subtitle,
+    description: t.activities.amateur.description,
+    link: `${base}activities/theatre/atelier-amateur`
+  }
 ];
 ---
 
 <NordicLayout title={t.activities.theatre.title} pageLang={lang}>
-  <section class="nordic-page-hero theatre">
-    <div class="nordic-page-hero-content">
-      <span class="nordic-page-kicker">{lang === 'fr' ? 'Nos ateliers' : 'Nuestros talleres'}</span>
-      <h1 class="nordic-page-headline">{t.activities.theatre.title}</h1>
-      <p class="nordic-page-subtitle">{t.activities.theatre.description}</p>
-    </div>
-  </section>
+   <section class="nordic-page-hero theatre">
+     <div class="nordic-page-hero-content">
+       <span class="nordic-page-kicker">{t.activities.theatre.kicker}</span>
+       <h1 class="nordic-page-headline">{t.activities.theatre.title}</h1>
+       <p class="nordic-page-subtitle">{t.activities.theatre.subtitle}</p>
+     </div>
+   </section>
 
-  <section class="nordic-section">
-    <div class="nordic-section-inner">
-      <h2 class="nordic-section-title">{lang === 'fr' ? 'Explorer les ateliers' : 'Explorar los talleres'}</h2>
-      <div class="nordic-nav-grid">
-        {subPages.map((page) => (
-          <a href={page.link} class="nordic-nav-card theatre">
-            <span class="nordic-nav-card-title">{page.title}</span>
-            <span class="nordic-nav-card-arrow">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </span>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
+   <section class="nordic-activities">
+     {subActivities.map((activity) => (
+       <a href={activity.link} class="nordic-activity theatre">
+         <span class="nordic-activity-label">{activity.subtitle}</span>
+         <h2 class="nordic-activity-title">{activity.title}</h2>
+         <p class="nordic-activity-desc">{activity.description}</p>
+         <span class="nordic-activity-cta">
+           {t.activities.explore}
+           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+         </span>
+       </a>
+     ))}
+   </section>
 
-  <section class="nordic-cta theatre">
-    <h2 class="nordic-cta-title">{lang === 'fr' ? 'Envie d\'explorer ?' : '¿Quieres explorar?'}</h2>
-    <p class="nordic-cta-text">{lang === 'fr' ? 'Découvrez le théâtre comme chemin vers le bien-être.' : 'Descubra el teatro como camino hacia el bienestar.'}</p>
+   <section class="nordic-section">
+     <div class="nordic-section-inner">
+       <h2 class="nordic-section-title">{t.activities.theatre.introTitle}</h2>
+       {t.activities.theatre.introParagraphs.map((paragraph) => (
+         <p class="nordic-section-text">{paragraph}</p>
+       ))}
+       <p class="nordic-section-text"><strong>{t.activities.theatre.introClosing}</strong></p>
+     </div>
+   </section>
+
+   <section class="nordic-cta theatre">
+     <h2 class="nordic-cta-title">{t.activities.theatre.ctaTitle}</h2>
+     <p class="nordic-cta-text">{t.activities.theatre.ctaText}</p>
     <a href={`${base}${lang === 'es' ? 'es/' : ''}contact`} class="nordic-btn">
       {t.nav.contact}
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>

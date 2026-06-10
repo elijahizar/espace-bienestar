@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Palette Preview</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: system-ui, sans-serif; padding: 2rem; background: #fff; }
+    
+    .section { margin-bottom: 3rem; }
+    .section h2 { margin-bottom: 1rem; font-size: 1rem; color: #333; }
+    
+    .row { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .swatch { 
+      width: 120px; 
+      border-radius: 8px; 
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    .swatch-color { height: 80px; }
+    .swatch-label { 
+      padding: 0.5rem; 
+      font-size: 0.7rem; 
+      background: #f5f5f5; 
+      font-family: monospace;
+    }
+    
+    .preview-card {
+      width: 200px;
+      padding: 2rem;
+      border-radius: 8px;
+      color: white;
+    }
+    .preview-card h3 { font-size: 1rem; margin-bottom: 0.5rem; }
+    .preview-card p { font-size: 0.75rem; opacity: 0.9; }
+    
+    .banner-preview {
+      padding: 2rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+    }
+    .banner-preview h3 { color: #2D3A35; margin-bottom: 0.5rem; }
+    .banner-preview p { color: #666; font-size: 0.85rem; }
+    
+    .cta-preview {
+      padding: 2rem;
+      border-radius: 8px;
+      text-align: center;
+    }
+    .cta-preview h3 { font-size: 1rem; margin-bottom: 0.5rem; }
+    .cta-preview p { font-size: 0.8rem; margin-bottom: 1rem; opacity: 0.9; }
+    .cta-preview button {
+      background: white;
+      color: #2D3A35;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      cursor: pointer;
+    }
+    
+    hr { margin: 2rem 0; border: none; border-top: 1px solid #eee; }
+  </style>
+</head>
+<body>
+
+<div class="section">
+  <h2>Current Colors (Too Muted)</h2>
+  <div class="row">
+    <div class="swatch">
+      <div class="swatch-color" style="background: #87B37A;"></div>
+      <div class="swatch-label">Primary #87B37A</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: #C9A6C6;"></div>
+      <div class="swatch-label">Secondary #C9A6C6</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: #F2F5F1;"></div>
+      <div class="swatch-label">Ice #F2F5F1</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: #F5F2F7;"></div>
+      <div class="swatch-label">Frost #F5F2F7</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: #F7F7F7;"></div>
+      <div class="swatch-label">Mist #F7F7F7</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: #2D3A35;"></div>
+      <div class="swatch-label">Shadow #2D3A35</div>
+    </div>
+  </div>
+  
+  <h3 style="margin: 1.5rem 0 1rem; font-size: 0.9rem;">Page Flow Example (Gymnastics)</h3>
+  <div class="banner-preview" style="background: #87B37A;">
+    <h3 style="color: white;">Gymnastique Consciente</h3>
+    <p style="color: rgba(255,255,255,0.9);">Mouvement conscient · Relaxation · Bien-être</p>
+  </div>
+  
+  <div class="row">
+    <div class="preview-card" style="background: #87B37A;">
+      <h3>Posturale</h3>
+      <p>Relaxation du dos et des cervicales</p>
+    </div>
+    <div class="preview-card" style="background: #87B37A;">
+      <h3>Rythmique</h3>
+      <p>Développement de l'hémisphère droit</p>
+    </div>
+  </div>
+  
+  <p style="margin-top: 1rem; font-size: 0.8rem; color: #888; font-style: italic;">
+    Problem: Banner and cards blend together - no visual hierarchy
+  </p>
+</div>
+
+<hr>
+
+<div class="section">
+  <h2>Proposal A: Soft Wellness (Greener tint)</h2>
+  <div class="row">
+    <div class="swatch">
+      <div class="swatch-color" style="background: #7CB586;"></div>
+      <div class="swatch-label">Primary #7CB586</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: #B794C0;"></div>
+      <div class="swatch-label">Secondary #B794C0</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: #F0F4F1;"></div>
+      <div class="swatch-label">Banner #F0F4F1</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: #E8F0E9;"></div>
+      <div class="swatch-label">Ice #E8F0E9</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: #F5F2F7;"></div>
+      <div class="swatch-label">Frost #F5F2F7</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: #2D3A35;"></div>
+      <div class="swatch-label">Shadow #2D3A35</div>
+    </div>
+  </div>
+  
+  <h3 style="margin: 1.5rem 0 1rem; font-size: 0.9rem;">Page Flow Example (Gymnastics)</h3>
+  <div class="banner-preview" style="background: #F0F4F1; border-left: 4px solid #7CB586;">
+    <h3>Gymnastique Consciente</h3>
+    <p>Mouvement conscient · Relaxation · Bien-être</p>
+  </div>
+  
+  <div class="row">
+    <div class="preview-card" style="background: #7CB586;">
+      <h3>Posturale</h3>
+      <p>Relaxation du dos et des cervicales</p>
+    </div>
+    <div class="preview-card" style="background: #7CB586;">
+      <h3>Rythmique</h3>
+      <p>Développement de l'hémisphère droit</p>
+    </div>
+  </div>
+  
+  <div class="cta-preview" style="background: #7CB586; margin-top: 1rem; color: white;">
+    <h3>Envie d'essayer ?</h3>
+    <p>Rejoignez-nous pour une première séance découverte</p>
+    <button>Contact</button>
+  </div>
+  
+  <h3 style="margin: 1.5rem 0 1rem; font-size: 0.9rem;">Page Flow Example (Theatre)</h3>
+  <div class="banner-preview" style="background: #F0F4F1; border-left: 4px solid #B794C0;">
+    <h3>Théâtre Thérapeutique</h3>
+    <p>Expression créative · Bien-être émotionnel</p>
+  </div>
+  
+  <div class="row">
+    <div class="preview-card" style="background: #B794C0;">
+      <h3>Atelier Bien-Être</h3>
+      <p>Pour ceux qui souffrent d'anxiété</p>
+    </div>
+    <div class="preview-card" style="background: #B794C0;">
+      <h3>Atelier Amateur</h3>
+      <p>Découverte de la pratique théâtrale</p>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<div class="section">
+  <h2>Proposal B: Slightly Warmer (Cream tones)</h2>
+  <div class="row">
+    <div class="swatch">
+      <div class="swatch-color" style="background: #6B9E76;"></div>
+      <div class="swatch-label">Primary #6B9E76</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: #C4A4C0;"></div>
+      <div class="swatch-label">Secondary #C4A4C0</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: #F5F3F0;"></div>
+      <div class="swatch-label">Banner #F5F3F0</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: #EEEBE8;"></div>
+      <div class="swatch-label">Ice #EEEBE8</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: #F2EFF3;"></div>
+      <div class="swatch-label">Frost #F2EFF3</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: #2D3A35;"></div>
+      <div class="swatch-label">Shadow #2D3A35</div>
+    </div>
+  </div>
+  
+  <h3 style="margin: 1.5rem 0 1rem; font-size: 0.9rem;">Page Flow Example (Gymnastics)</h3>
+  <div class="banner-preview" style="background: #F5F3F0; border-left: 4px solid #6B9E76;">
+    <h3>Gymnastique Consciente</h3>
+    <p>Mouvement conscient · Relaxation · Bien-être</p>
+  </div>
+  
+  <div class="row">
+    <div class="preview-card" style="background: #6B9E76;">
+      <h3>Posturale</h3>
+      <p>Relaxation du dos et des cervicales</p>
+    </div>
+    <div class="preview-card" style="background: #6B9E76;">
+      <h3>Rythmique</h3>
+      <p>Développement de l'hémisphère droit</p>
+    </div>
+  </div>
+</div>
+
+<hr>
+
+<div class="section">
+  <h2>Proposal C: Maximum Wellness (Soft Sage + Mauve)</h2>
+  <div class="row">
+    <div class="swatch">
+      <div class="swatch-color" style="background: #8BAF82;"></div>
+      <div class="swatch-label">Primary #8BAF82</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: #C1A8C7;"></div>
+      <div class="swatch-label">Secondary #C1A8C7</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: #F7F6F4;"></div>
+      <div class="swatch-label">Banner #F7F6F4</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: #EBE9E6;"></div>
+      <div class="swatch-label">Ice #EBE9E6</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: #F3F0F5;"></div>
+      <div class="swatch-label">Frost #F3F0F5</div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background: #2D3A35;"></div>
+      <div class="swatch-label">Shadow #2D3A35</div>
+    </div>
+  </div>
+  
+  <h3 style="margin: 1.5rem 0 1rem; font-size: 0.9rem;">Page Flow Example (Gymnastics)</h3>
+  <div class="banner-preview" style="background: #F7F6F4; border-left: 4px solid #8BAF82;">
+    <h3>Gymnastique Consciente</h3>
+    <p>Mouvement conscient · Relaxation · Bien-être</p>
+  </div>
+  
+  <div class="row">
+    <div class="preview-card" style="background: #8BAF82;">
+      <h3>Posturale</h3>
+      <p>Relaxation du dos et des cervicales</p>
+    </div>
+    <div class="preview-card" style="background: #8BAF82;">
+      <h3>Rythmique</h3>
+      <p>Développement de l'hémisphère droit</p>
+    </div>
+  </div>
+  
+  <h3 style="margin: 1.5rem 0 1rem; font-size: 0.9rem;">Page Flow Example (Theatre)</h3>
+  <div class="banner-preview" style="background: #F7F6F4; border-left: 4px solid #C1A8C7;">
+    <h3>Théâtre Thérapeutique</h3>
+    <p>Expression créative · Bien-être émotionnel</p>
+  </div>
+  
+  <div class="row">
+    <div class="preview-card" style="background: #C1A8C7;">
+      <h3>Atelier Bien-Être</h3>
+      <p>Pour ceux qui souffrent d'anxiété</p>
+    </div>
+    <div class="preview-card" style="background: #C1A8C7;">
+      <h3>Atelier Amateur</h3>
+      <p>Découverte de la pratique théâtrale</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

@@ -20,34 +20,72 @@
   },
   "activities": {
     "title": "Nos Activités",
+    "explore": "Découvrir",
     "gymnastics": {
       "title": "Gymnastique Consciente",
-      "description": "Les Gymnastiques Conscientes vous invitent à apprendre progressivement à vous détendre et avoir une meilleure connaissance de vos ressources corporelles. La pratique de différents exercices de tonicité, de flexibilité et de détente réalisés consciemment vous permettra de corriger vos mauvaises postures et d'élargir vos possibilités de mouvement."
+      "subtitle": "Mouvement conscient",
+      "description": "Les Gymnastiques Conscientes vous invitent à apprendre progressivement à vous détendre et avoir une meilleure connaissance de vos ressources corporelles. La pratique de différents exercices de tonicité, de flexibilité et de détente réalisés consciemment vous permettra de corriger vos mauvaises postures et d'élargir vos possibilités de mouvement.",
+      "cardDescription": "Mouvement conscient et détente pour tous",
+      "introTitle": "La Gymnastique Consciente",
+      "introParagraphs": [
+        "La Gymnastique Posturale ainsi que la Gymnastique Rythmique Expressive que je vous propose sont deux gymnastiques qui se pratiquent consciemment, en entendant la Conscience en tant qu'attention perceptive.",
+        "Ces deux gymnastiques tiennent compte de la relation étroite entre le corps et l'esprit et c'est pour cette raison que les deux modalités d'ateliers adaptés à vos préférences vous proposent une pratique corporelle qui stimule les participants à mieux percevoir et comprendre leur corps comme une entité intégrée.",
+        "La pratique de différents exercices de tonicité, de flexibilité et de détente vous permettra de corriger vos mauvaises postures, élargir vos possibilités de mouvement et avoir une meilleure connaissance de vos ressources corporelles.",
+        "Avec la pratique régulière les tensions se relâchent, la flexibilité revient, les mouvements s'élargissent et vous retrouvez ainsi une meilleure tonicité et posture générale."
+      ],
+      "introClosing": "La pratique est accessible à tous, sans limite d'âge.",
+      "ctaTitle": "Envie d'essayer ?",
+      "ctaText": "Rejoignez-nous pour une première séance découverte.",
+      "kicker": "Nos ateliers"
     },
     "posturale": {
       "title": "Gymnastique Posturale",
       "description": "Une activité à la fois douce et rigoureuse, essentielle à une pratique corporelle saine et durable.",
+      "cardDescription": "Travail postural pour le dos et les cervicales",
       "schedule": "Lundi 14h30 à 16h",
+      "cardSchedule": "Lundi 14h30",
       "location": "Salle du Sporting d'Este, Avenue Saint John Perse, Billère 64140",
       "details": "Travail postural pour le dos, les cervicales, les sciatiques. 1h30 de cours, pieds nus avec vêtements confortables."
     },
-    "rythmique": {
+  "rythmique": {
       "title": "Gymnastique Rythmique Expressive",
       "description": "Le groupe travaille avec des musiques de différentes sources pour exercer et mobiliser les zones du corps correspondant à chaque rythme.",
+      "cardDescription": "Mobilisation du corps au rythme de la musique",
       "schedule": "Jeudi 14h à 15h",
+      "cardSchedule": "Jeudi 14h",
       "location": "Salle du Sporting d'Este, Avenue Saint John Perse, Billère 64140",
       "details": "Développement de l'hémisphère droit du cerveau, élargissement des registres sensoriels, ludiques et intuitifs. 1h, pieds nus."
     },
+    "consciente": {
+      "methodTitle": "La méthode",
+      "methodText": "Il s'agit de se reconnecter à son corps par le biais de nos sensations, en utilisant notre attention « Voir avec le corps ». Cette attention est guidée par l'enseignant ; avec le temps, ce guidage s'intériorise et l'exploration devient aussi personnelle.",
+      "metaphorTitle": "Métaphores inspirantes",
+      "metaphorText": "Les pieds comme racines, les jambes comme tronc, les hanches comme balance et source, les bras comme des ailes, les poumons comme fleur et plume, la poitrine comme ciel, le cœur comme soleil, les articulations comme élastiques, la souplesse comme des huiles, la détente musculaire comme de l'eau.",
+      "closingText": "Il s'agit surtout d'Être-Là, car tous les moments sont ce moment."
+    },
     "theatre": {
       "title": "Théâtre",
-      "description": "Bien sûr, nous pouvons affirmer que dans toutes les activités artistiques l’inconscient s’exprime et dévoile la profondeur de la nature humaine, mais ce qui différencie le théâtre des autres domaines des arts, c’est que e théâtre la présence corporel sur scène, entendue comme histoire, comme subjectivité, comme langage, c’est la matière première et directe sur laquelle la personne même travaille. "
+      "subtitle": "Expression créative",
+      "description": "Le théâtre comme chemin vers le bien-être. Découvrez une approche originale où l'expression artistique devient support psychothérapeutique.",
+      "cardDescription": "Expression créative et bien-être émotionnel",
+      "kicker": "Nos ateliers",
+      "introTitle": "",
+      "introParagraphs": [
+      "Bien sûr, nous pouvons affirmer que dans toutes les activités artistiques l’inconscient s’exprime et dévoile la profondeur de la nature humaine, mais ce qui différencie le théâtre des autres domaines des arts, c’est que dans le théâtre la présence corporel sur scène, entendue comme histoire, comme subjectivité, comme langage, c’est la matière première et directe sur laquelle la personne même travaille."],
+      "introClosing": "Sur les trois dimension de la scène, le comédien/ne devient l’artiste de soi-même, il découvre des aptitudes qu’il ignorait avoir et retrouve grâce au jeu théâtral, un motif de joie.",
+      "ctaTitle": "",
+      "ctaText": ""
     },
     "bienetre": {
-      "title": "Théâtre et Bien-Être",
-      "description": "Bien sûr, nous pouvons affirmer que dans toutes les activités artistiques l’inconscient s’exprime et dévoile la profondeur de la nature humaine, mais ce qui différencie le théâtre des autres domaines des arts, c’est que dans le théâtre la présence corporel sur scène, entendue comme histoire, comme subjectivité, comme langage, c’est la matière première et directe sur laquelle la personne même travaille.",
+      "title": "Atelier Théâtre et Bien-Être",
+      "description": "‘Le théâtre peut être le lieu où quelque chose se passe» E. Ionesco",
       "details": "Sur les trois dimension de la scène, le comédien/ne devient l’artiste de soi-même, il découvre des aptitudes qu’il ignorait avoir et retrouve grâce au jeu théâtral, un motif de joie.",
       "paragraphs": [
-        "Dans l'Espace Bienestar, je coordonne un Atelier de Théâtre et Bien-Être pour des personnes souffrant de troubles d'anxiété, de phobie sociale, de timidité excessive, de problèmes d'insertion au travail, d'épuisement professionnel ou burn-out.",
+        "L'Atelier de Théâtre et Bien-être est dirigé aux personnes qui soufrent de troubles d’anxiété, de phobie sociale, de timidité excessive, d’épuisement professionnel ou burn-out et de déprime.",
+        "Cet Atelier est une approche originale qui s'oriente sur l'importance de l'expression artistique du Théâtre en tant que support psychothérapeutique.",
+        "Le jeu théâtral et le travail de conscience corporelle sont des chemins efficaces, ludiques et créatifs qui amènent petit à petit à la personne vers la connaissance de son fonctionnement et d’un équilibre émotionnel.",
+        "Il s'agit d'explorer étape par étape, d'autres façons d'agir, de penser, de créer.", 
+        "Partager son vécu dans un climat bienveillant et non-jugeant permet de prendre conscience que nous sommes jamais seuls.  Ce processus vous permet de développer une force qui transforme vos zones d'ombre en atouts.",
         "Approche originale orientée sur l'importance de l'expression artistique du Théâtre en tant que support psychothérapeutique.",
         "Le jeu théâtral, le travail de conscience corporelle et le groupe de parole sont des chemins efficaces, ludiques et créatifs."
       ],
@@ -61,9 +99,10 @@
       "description": "Atelier d'initiation à la pratique théâtrale pour découvrir le travail de l'acteur et votre potentiel créatif. Un espace ludique et expérimental où seront abordés l'improvisation, la création de personnages, l'interprétation des textes et la mise en scène.",
       "details": "L'atelier sera bouclé avec une représentation de fin d'année.",
       "paragraphs": [
-        "Atelier d'initiation à la pratique théâtrale pour découvrir le travail de l'acteur et votre potentiel créatif.",
-        "Un espace ludique et expérimental où seront abordés l'improvisation, la création de personnages, l'interprétation des textes et la mise en scène.",
-        "L'atelier sera bouclé avec une représentation de fin d'année."
+        "L’Atelier de Théâtre Amateur est dirigé aux personnes qui se disent « J’ai toujours eu envie de faire du théâtre! » et voilà un atelier d’initiation à la pratique théâtrale pour découvrir le travail de l’acteur et votre potentiel créatif.",
+        "Cet atelier de théâtre se veut avant tout un espace ludique, un véritable laboratoire d'expérimentation où seront abordés les thèmes essentiels de l'art dramatique.",
+        "Il permettra d'explorer, entre autres, l'improvisation, la et l'incarnation de personnages, l'interprétation des textes, la mise en scènedans l'espace, ainsi que l'utilisation créative des objets sur scène.",
+        "Ce sera une immersion totale dans les multiples facettes du jeu théâtral.  l’Atelier sera bouclé avec une représentation de fin d’année."
       ],
       "cta": {
         "title": "Envie de jouer ?",
@@ -77,6 +116,7 @@
     "schedule": "10h à 12h30",
     "location": "Salle du Sporting d'Este, Billère 64140",
     "description": "Stages combinés de Gymnastique Rythmique Expressive + Gymnastique Posturale",
+    "cardDescription": "Un dimanche par mois, 10h à 12h30",
     "next": "Prochain stage"
   },
   "about": {
