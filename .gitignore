@@ -22,3 +22,26 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# local development files
+*.log
+*.tmp
+*.temp
+*.swp
+*.swo
+
+# local environment files
+.env.local
+.env.*.local
+
+# pnpm local cache
+.pnpm-store/
+.pnpm-debug.log*
+*.csv
+*.odt
+/*.pdf
+/*.docx
+/*.xlsx
+/*.pptx 
+*.txt
+*.pyc

@@ -1,20 +1,25 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import NordicLayout from '../layouts/NordicLayout.astro';
 import { useTranslations, getLangFromUrl } from '../i18n/utils';
+
+
+
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
+const base = import.meta.env.BASE_URL;
+const navBase = `${base}${lang === 'es' ? 'es/' : ''}`;
 ---
 
-<BaseLayout title={t.about.title}>
+<NordicLayout title={t.about.title} pageLang={lang}>
   <!-- Hero Section - violet gradient -->
-  <section class="relative py-20 bg-activity-theatre overflow-hidden">
+  <section class="nordic-page-hero">
     <div class="absolute inset-0 bg-black/20"></div>
     <div class="max-w-6xl mx-auto px-6 relative z-10">
-      <div class="animate-on-scroll">
-        <p class="text-white/70 uppercase tracking-[0.2em] text-sm mb-4">{lang === 'fr' ? 'La fondatrice' : 'La fundadora'}</p>
-        <h1 class="text-5xl md:text-6xl font-bold text-white mb-6">{t.about.sonia.title}</h1>
-        <p class="text-xl text-white/80 max-w-2xl">{t.about.sonia.intro}</p>
+      <div class="nordic-page-hero-content animate-on-scroll">
+        <p class="nordic-kicker">{lang === 'fr' ? 'La fondatrice' : 'La fundadora'}</p>
+        <h1 class="nordic-headline text-[var(--nordic-shadow)]">{t.about.sonia.title}</h1>
+        <p class="nordic-subtitle text-[var(--nordic-shadow)]/80">{t.about.sonia.intro}</p>
       </div>
     </div>
   </section>
@@ -24,16 +29,16 @@ const t = useTranslations(lang);
     <div class="max-w-4xl mx-auto">
       <div class="cv-section animate-on-scroll">
         <div class="flex items-start gap-6 mb-8">
-          <div class="w-24 h-24 rounded-full bg-[var(--color-primary)] flex items-center justify-center text-4xl flex-shrink-0">
-            👩‍🏫
+          <div class="w-24 h-24 rounded-full bg-[var(--nordic-primary)] flex items-center justify-center text-4xl flex-shrink-0">
+            <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
           </div>
           <div>
-            <h2 class="text-2xl font-bold text-[var(--color-primary)] mb-2">{t.about.sonia.title}</h2>
-            <p class="text-[var(--color-primary)]/60">{lang === 'fr' ? 'Argentine, nationalisée espagnole' : 'Argentina, nacionalizada española'}</p>
+            <h2 class="text-2xl font-bold text-[var(--nordic-primary)] mb-2">{t.about.sonia.title}</h2>
+            <p class="text-[var(--nordic-primary)]/60">{lang === 'fr' ? 'Argentine, nationalisée espagnole' : 'Argentina, nacionalizada española'}</p>
           </div>
         </div>
 
-        <p class="text-lg text-[var(--color-primary)]/80 leading-relaxed mb-8">
+        <p class="text-lg text-[var(--nordic-primary)]/80 leading-relaxed mb-8">
           {lang === 'fr'
             ? 'Mon enseignement corporel comporte une synthèse personnelle fruit de mon propre parcours, incorporant le Hatha yoga, la Technique Alexander, la danse théâtre, les techniques de Graham, Barre à Terre, le Yoga Iyengar et le Qi-Gong.'
             : 'Mi enseñanza corporal incluye una síntesis personal fruto de mi propio recorrido, incorporando el Hatha yoga, la Técnica Alexander, la danza teatro, las técnicas de Graham, Barre à Terre, el Yoga Iyengar y el Qi-Gong.'}
@@ -43,9 +48,9 @@ const t = useTranslations(lang);
   </section>
 
   <!-- Education Section -->
-  <section class="py-16 px-6 bg-[var(--color-background)]">
+  <section class="py-16 px-6 bg-[var(--nordic-mist)]">
     <div class="max-w-4xl mx-auto">
-      <h2 class="text-3xl font-bold text-[var(--color-primary)] mb-8 text-center animate-on-scroll">
+      <h2 class="text-3xl font-bold text-[var(--nordic-primary)] mb-8 text-center animate-on-scroll">
         {t.about.sonia.education.title}
       </h2>
 
@@ -55,7 +60,7 @@ const t = useTranslations(lang);
             <div class="cv-icon">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
             </div>
-            <p class="text-[var(--color-primary)]">{item}</p>
+            <p class="text-[var(--nordic-primary)]">{item}</p>
           </div>
         ))}
       </div>
@@ -65,17 +70,17 @@ const t = useTranslations(lang);
   <!-- Experience Section -->
   <section class="py-16 px-6">
     <div class="max-w-4xl mx-auto">
-      <h2 class="text-3xl font-bold text-[var(--color-primary)] mb-8 text-center animate-on-scroll">
+      <h2 class="text-3xl font-bold text-[var(--nordic-primary)] mb-8 text-center animate-on-scroll">
         {t.about.sonia.experience.title}
       </h2>
 
       <div class="space-y-4">
         {t.about.sonia.experience.items.map((item, index) => (
           <div class="cv-item animate-on-scroll" style={`transition-delay: ${index * 0.1}s`}>
-            <div class="cv-icon" style="background: var(--color-secondary)">
+            <div class="cv-icon" style="background: var(--nordic-frost)">
               <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
             </div>
-            <p class="text-[var(--color-primary)]">{item}</p>
+            <p class="text-[var(--nordic-primary)]">{item}</p>
           </div>
         ))}
       </div>
@@ -83,24 +88,24 @@ const t = useTranslations(lang);
   </section>
 
   <!-- Activities CTA -->
-  <section class="py-16 px-6 bg-[var(--color-background)]">
+  <section class="py-16 px-6 bg-[var(--nordic-mist)]">
     <div class="max-w-4xl mx-auto text-center animate-on-scroll">
-      <h2 class="text-3xl font-bold text-[var(--color-primary)] mb-4">
+      <h2 class="text-3xl font-bold text-[var(--nordic-primary)] mb-4">
         {lang === 'fr' ? 'Découvrez nos ateliers' : 'Descubra nuestros talleres'}
       </h2>
-      <p class="text-[var(--color-primary)]/70 mb-8">
+      <p class="text-[var(--nordic-primary)]/70 mb-8">
         {lang === 'fr'
           ? 'Explorez les activités que je propose pour votre bien-être.'
           : 'Explore las actividades que propongo para su bienestar.'}
       </p>
       <div class="flex flex-wrap justify-center gap-4">
-        <a href={lang === 'fr' ? '/activities/gymnastics' : '/es/activities/gymnastics'} class="btn-pill">
+        <a href={`${navBase}activities/gymnastics`} class="btn-pill">
           {lang === 'fr' ? 'Gymnastiques' : 'Gimnasias'}
         </a>
-        <a href={lang === 'fr' ? '/activities/theatre' : '/es/activities/theatre'} class="btn-pill btn-pill-secondary">
+        <a href={`${navBase}activities/theatre`} class="btn-pill btn-pill-secondary">
           {lang === 'fr' ? 'Théâtre' : 'Teatro'}
         </a>
       </div>
     </div>
   </section>
-</BaseLayout>
+</NordicLayout>

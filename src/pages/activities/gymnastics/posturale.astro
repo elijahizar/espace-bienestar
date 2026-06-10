@@ -1,0 +1,84 @@
+---
+import NordicLayout from '../../../layouts/NordicLayout.astro';
+import { useTranslations, getLangFromUrl } from '../../../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const base = import.meta.env.BASE_URL;
+---
+
+<NordicLayout title="Gymnastique Posturale Consciente – Sonia Cutri" pageLang={lang}>
+  <section class="nordic-page-hero gymnastics">
+    <div class="nordic-page-hero-content">
+      <span class="nordic-page-kicker">{t.activities.posturale.title}</span>
+      <h1 class="nordic-page-headline">{lang === 'fr' ? 'Gymnastique Posturale Consciente' : 'Gimnasia Postural Consciente'}</h1>
+      <p class="nordic-page-subtitle">
+        <em>{lang === 'fr' ? '« Ma réalité est flexible, elle se définit quand "je" m\'observe dans le flux des sensations »' : '« Mi realidad es flexible, se define cuando "yo" me observo en el flujo de las sensaciones »'}</em>
+      </p>
+    </div>
+  </section>
+
+  <section class="nordic-detail">
+    <div class="nordic-detail-meta">
+      <span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        {t.activities.posturale.schedule}
+      </span>
+      <span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Salle du Sporting d'Este, Billère 64140
+      </span>
+    </div>
+
+    <p class="nordic-section-text">
+      {lang === 'fr'
+        ? 'Cette Gymnastique est une activité à la fois douce et rigoureuse, essentielle à une pratique corporelle saine et durable.'
+        : 'Esta Gimnasia es una actividad a la vez suave y rigurosa, esencial para una práctica corporal sana y duradera.'
+      }
+    </p>
+    <p class="nordic-section-text">
+      {lang === 'fr'
+        ? 'Faire un travail postural une ou deux fois par semaine devrait être une pratique de santé régulière et nécessaire, car la position assise prolongée et le sédentarisme malmènent notre dos, nos organes, nos muscles et nos articulations.'
+        : 'Hacer un trabajo postural una o dos veces por semana debería ser una práctica de salud regular y necesaria, ya que la posición sentada prolongada y el sedentarismo maltratan nuestra espalda, nuestros órganos, nuestros músculos y nuestras articulaciones.'
+      }
+    </p>
+    <p class="nordic-section-text">
+      {lang === 'fr'
+        ? 'Parfois une bonne séance de remise en place chez le kiné, bien que très nécessaire, ne suffit pas à se débarrasser des douleurs, car la principale cause des gênes et douleurs s\'origine dans la mauvaise posture.'
+        : 'A veces una buena sesión de remise en place con el kinesiólogo, aunque muy necesaria, no basta para deshacerse de los dolores, ya que la principal causa de las molestias y dolores se origina en la mala postura.'
+      }
+    </p>
+    <p class="nordic-section-text">
+      {lang === 'fr'
+        ? 'Face à un écran d\'ordinateur, un clavier, un portable ou face à la télé, la personne répète les mêmes erreurs durant plusieurs heures d\'enfilée tous les jours. L\'ennui c\'est que cela entraîne plusieurs troubles posturaux, entre autres : maux de cou, de tête, des tensions dans les trapèzes, cervicalgies, tendinites, sciatique, lombalgies, etc.'
+        : 'Frente a una pantalla de ordenador, un teclado, un portátil o frente a la tele, la persona repite los mismos errores durante varias horas seguidas todos los días. El problema es que esto conlleva varios trastornos posturales, entre otros: dolores de cuello, de cabeza, tensiones en los trapecios, cervicalgias, tendinitis, ciática, lumbalgias, etc.'
+      }
+    </p>
+    <p class="nordic-section-text">
+      {lang === 'fr'
+        ? 'Ces troubles musculo-squelettiques peuvent devenir un cauchemar et empêcher de vivre son corps en harmonie, tout ce contre quoi la Gymnastique Posturale va se diriger avec sa pratique régulière, en procurant non seulement des exercices posturaux, mais aussi des corrections de la posture pendant la séance, adaptées à chaque besoin et à chaque difficulté personnelle.'
+        : 'Estos trastornos musculoesqueléticos pueden convertirse en una pesadilla e impedir vivir el cuerpo en armonía, todo aquello contra lo que la Gimnasia Postural se dirigirá con su práctica regular, proporcionando no solo ejercicios posturales, sino también correcciones de la postura durante la sesión, adaptadas a cada necesidad y a cada dificultad personal.'
+      }
+    </p>
+
+    <div class="nordic-detail-meta" style={{ marginTop: '2rem', paddingTop: '1.5rem', borderTop: '1px solid var(--nordic-ice)' }}>
+      <span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 6v6l4 2"/><circle cx="12" cy="12" r="10"/></svg>
+        {lang === 'fr' ? 'Les cours durent une heure et demie' : 'Las clases duran una hora y media'}
+      </span>
+      <span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        {lang === 'fr' ? 'Pieds nus avec des vêtements confortables' : 'Descalzos con ropa cómoda'}
+      </span>
+    </div>
+  </section>
+
+  <section class="nordic-cta gymnastics">
+    <h2 class="nordic-cta-title">{lang === 'fr' ? 'Envie d\'essayer ?' : '¿Quieres probar?'}</h2>
+    <p class="nordic-cta-text">{lang === 'fr' ? 'Rejoignez-nous pour une première séance découverte.' : 'Únase a nosotros para una primera sesión de descubrimiento.'}</p>
+    <a href={`${base}${lang === 'es' ? 'es/' : ''}contact`} class="nordic-btn">
+      {t.nav.contact}
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </section>
+</NordicLayout>

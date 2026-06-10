@@ -15,7 +15,8 @@
     "activities": "Actividades",
     "about": "Sobre nosotros",
     "schedule": "Horarios",
-    "contact": "Contacto"
+    "contact": "Contacto",
+    "skipLink": "Ir al contenido"
   },
   "activities": {
     "title": "Nuestras Actividades",
@@ -122,6 +123,7 @@
     }
   },
   "footer": {
+    "tagline": "Cuerpo y Mente en Armonía",
     "copyright": "© 2026 Espace Bienestar. Todos los derechos reservados."
   }
 }

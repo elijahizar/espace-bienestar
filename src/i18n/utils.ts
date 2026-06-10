@@ -15,12 +15,6 @@ export function getLangFromUrl(url: URL): Language {
   return 'fr';
 }
 
-export function useTranslatedPath(lang: Language) {
-  const translations = useTranslations(lang);
-  return function translatePath(path: string): string {
-    return `/${lang}${path}`;
-  };
-}
 
 export function getLanguageFromCookie(cookieHeader: string | null): Language {
   if (!cookieHeader) return 'fr';

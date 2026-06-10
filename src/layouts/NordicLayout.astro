@@ -26,19 +26,6 @@ const t = useTranslations(effectiveLang);
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
     <style is:global>
-      @import "tailwindcss"; /* Tailwind import */
-
-      @theme {
-        --nordic-ice: #E8F5E9;
-        --nordic-primary: #9BCB93;
-        --nordic-violet: #A78BFA;
-        --nordic-white: #FFFFFF;
-        --nordic-frost: #D4E8F0;
-        --nordic-shadow: #2C3E50;
-        --nordic-mist: #E8F0F5;
-        --nordic-text: #2D3A35;
-      }
-      
       html { scroll-behavior: smooth; }
 
       .nordic-page {
@@ -83,13 +70,13 @@ const t = useTranslations(effectiveLang);
       .nordic-nav a:hover { opacity: 1; }
 
       .nordic-hero {
-        min-height: 85vh;
+        min-height: 40vh;
         display: grid;
         grid-template-columns: 1fr 1fr;
       }
 
       .nordic-hero-left {
-        padding: 4rem 5rem;
+        padding: 2rem 5rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -149,7 +136,8 @@ const t = useTranslations(effectiveLang);
 
       .nordic-hero-right {
         position: relative;
-        background: linear-gradient(135deg, var(--nordic-ice) 0%, var(--nordic-primary) 100%);
+        min-height: 40vh;
+        background: linear-gradient(135deg, var(--nordic-ice) 0%, var(--nordic-secondary) 50%, var(--nordic-primary) 100%);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -161,8 +149,8 @@ const t = useTranslations(effectiveLang);
         position: absolute;
         inset: 0;
         background:
-          radial-gradient(circle at 30% 40%, rgba(255,255,255,0.3) 0%, transparent 40%),
-          radial-gradient(circle at 70% 60%, rgba(74,101,114,0.1) 0%, transparent 35%);
+          radial-gradient(circle at 30% 40%, rgba(255,255,255,0.2) 0%, transparent 40%),
+          radial-gradient(circle at 70% 60%, rgba(19,80,91,0.08) 0%, transparent 35%);
       }
 
       .nordic-crystal { position: relative; width: 160px; height: 200px; }
@@ -198,10 +186,10 @@ const t = useTranslations(effectiveLang);
         transition: transform 0.5s ease;
       }
       .nordic-activity:hover::before { transform: scale(1.02); }
-      .nordic-activity.gymnastics { background: linear-gradient(180deg, var(--nordic-ice) 0%, var(--nordic-primary) 100%); }
-      .nordic-activity.gymnastics::before { background: radial-gradient(circle at 60% 30%, rgba(255,255,255,0.3) 0%, transparent 50%); }
-      .nordic-activity.theatre { background: linear-gradient(180deg, var(--nordic-violet) 0%, var(--nordic-shadow) 100%); }
-      .nordic-activity.theatre::before { background: radial-gradient(circle at 40% 70%, rgba(167,199,231,0.15) 0%, transparent 40%); }
+      .nordic-activity.gymnastics { background: linear-gradient(135deg, var(--nordic-ice) 0%, var(--nordic-secondary) 50%, var(--nordic-primary) 100%); }
+      .nordic-activity.gymnastics::before { background: radial-gradient(circle at 60% 30%, rgba(255,255,255,0.15) 0%, transparent 40%); }
+      .nordic-activity.theatre { background: linear-gradient(135deg, var(--nordic-violet) 0%, #D4956A 50%, var(--nordic-shadow) 100%); }
+      .nordic-activity.theatre::before { background: radial-gradient(circle at 40% 70%, rgba(232,168,124,0.1) 0%, transparent 40%); }
 
       .nordic-activity-label {
         font-family: 'IBM Plex Sans', sans-serif;
@@ -283,13 +271,13 @@ const t = useTranslations(effectiveLang);
         position: relative;
         overflow: hidden;
       }
-      .nordic-page-hero.gymnastics { background: linear-gradient(135deg, var(--nordic-ice) 0%, var(--nordic-primary) 100%); }
-      .nordic-page-hero.theatre { background: linear-gradient(135deg, var(--nordic-violet) 0%, var(--nordic-shadow) 100%); }
+      .nordic-page-hero.gymnastics { background: linear-gradient(135deg, var(--nordic-ice) 0%, var(--nordic-secondary) 50%, var(--nordic-primary) 100%); }
+      .nordic-page-hero.theatre { background: linear-gradient(135deg, var(--nordic-violet) 0%, #D4956A 50%, var(--nordic-shadow) 100%); }
       .nordic-page-hero::before {
         content: '';
         position: absolute;
         inset: 0;
-        background: radial-gradient(circle at 70% 30%, rgba(255,255,255,0.2) 0%, transparent 50%);
+        background: radial-gradient(circle at 70% 30%, rgba(255,255,255,0.12) 0%, transparent 40%);
       }
       .nordic-page-hero-content { position: relative; z-index: 1; max-width: 600px; }
       .nordic-page-kicker {
@@ -361,8 +349,8 @@ const t = useTranslations(effectiveLang);
         overflow: hidden;
       }
       .nordic-nav-card:hover { transform: translateY(-2px); }
-      .nordic-nav-card.gymnastics { background: linear-gradient(135deg, var(--nordic-ice) 0%, var(--nordic-primary) 100%); }
-      .nordic-nav-card.theatre { background: linear-gradient(135deg, var(--nordic-violet) 0%, var(--nordic-shadow) 100%); }
+      .nordic-nav-card.gymnastics { background: linear-gradient(135deg, var(--nordic-ice) 0%, var(--nordic-secondary) 50%, var(--nordic-primary) 100%); }
+      .nordic-nav-card.theatre { background: linear-gradient(135deg, var(--nordic-violet) 0%, #D4956A 50%, var(--nordic-shadow) 100%); }
       .nordic-nav-card-title {
         font-family: 'Inter', sans-serif;
         font-size: 1.25rem;
@@ -474,8 +462,8 @@ const t = useTranslations(effectiveLang);
         padding: 4rem 5rem;
         text-align: center;
       }
-      .nordic-cta.gymnastics { background: linear-gradient(135deg, var(--nordic-ice) 0%, var(--nordic-primary) 100%); }
-      .nordic-cta.theatre { background: linear-gradient(135deg, var(--nordic-violet) 0%, var(--nordic-shadow) 100%); }
+      .nordic-cta.gymnastics { background: linear-gradient(135deg, var(--nordic-ice) 0%, var(--nordic-secondary) 50%, var(--nordic-primary) 100%); }
+      .nordic-cta.theatre { background: linear-gradient(135deg, var(--nordic-violet) 0%, #D4956A 50%, var(--nordic-shadow) 100%); }
       .nordic-cta-title {
         font-family: 'Inter', sans-serif;
         font-size: 1.75rem;
@@ -714,31 +702,6 @@ const t = useTranslations(effectiveLang);
         .nordic-footer-bottom { flex-direction: column; gap: 0.5rem; }
       }
 
-      .skip-link {
-        position: absolute;
-        top: -100%;
-        left: 0;
-        background: var(--nordic-violet);
-        color: white;
-        padding: 0.75rem 1.5rem;
-        z-index: 9999;
-        font-family: 'IBM Plex Sans', sans-serif;
-        font-weight: 500;
-        text-decoration: none;
-        border-radius: 0 0 0.5rem 0;
-        transition: top 0.2s ease;
-      }
-
-      .skip-link:focus {
-        top: 0;
-        outline: 2px solid var(--nordic-shadow);
-        outline-offset: 2px;
-      }
-
-      :focus-visible {
-        outline: 2px solid var(--nordic-violet);
-        outline-offset: 2px;
-      }
     </style>
   </head>
   <body class="min-h-screen flex flex-col bg-[var(--nordic-white)]">

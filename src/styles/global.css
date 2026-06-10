@@ -1,21 +1,33 @@
-@import "tailwindcss";
+@import "tailwindcss"; /* Tailwind import */
 
 @theme {
-  --color-primary: #D1E45B;
-  --color-primary-dark: #B8D14A;
-  --color-secondary: #5FA3BA;
-  --color-accent: #d7ccff;
-  --color-accent-dark: #d7ccff;
-  --color-sage-light: #D5E7BE;
+  /* Nordic Serenity Palette */
+  --color-primary-dark: #13505B;
+  --color-secondary: #A8C5B5;
+  --color-accent: #E8A87C;
+  --color-primary: #13505B;
+  --color-accent-dark: #A8C5B5;
+  --color-sage-light: #D5E7D4;
   --color-sage-pale: #D3E8A6;
   --color-sage-bg: #DBEDDF;
-  --color-violet-light: #d7ccff;
-  --color-violet-medium: #d7ccff;
-  --color-background: #DBEDDF;
+  --color-violet-light: #E8A87C;
+  --color-violet-medium: #D4956A;
+  --color-background: #FAF8F5;
   --color-text: #2D3A35;
   --color-text-light: #FFFFFF;
-  --font-heading: 'Playfair Display', Georgia, serif;
-  --font-body: 'Source Sans Pro', system-ui, sans-serif;
+  --font-heading: 'Inter', sans-serif;
+  --font-body: 'IBM Plex Sans', sans-serif;
+  --nordic-ice: #D5E7D4;
+  --nordic-primary: #13505B;
+  --nordic-secondary: #A8C5B5;
+  --nordic-accent: #E8A87C;
+  --nordic-background: #FAF8F5;
+  --nordic-violet: #E8A87C;
+  --nordic-white: #FAF8F5;
+  --nordic-frost: #D4E8F0;
+  --nordic-shadow: #2C3E50;
+  --nordic-mist: #F0F4F2;
+  --nordic-text: #2D3A35;
 }
 
 @layer base {
@@ -29,6 +41,37 @@
     font-family: var(--font-heading);
     color: var(--color-text);
   }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+  }
+
+  ::selection {
+    background-color: var(--color-accent);
+    color: white;
+  }
+}
+
+/* Skip Link */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  background: var(--color-accent);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  z-index: 9999;
+  font-weight: 500;
+  text-decoration: none;
+  border-radius: 0 0 0.5rem 0;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+  outline: 2px solid var(--color-accent-dark);
+  outline-offset: 2px;
 }
 
 /* Scroll animations */
@@ -49,21 +92,7 @@
 
 /* Hero gradient - lime to violet */
 .bg-hero-gradient {
-  background: linear-gradient(160deg, #D1E45B 0%, #B8D14A 40%, #d7ccff 100%);
-}
-
-/* Activity block gradients */
-.bg-activity-gymnastics {
-  background: linear-gradient(180deg, #D5E7BE 0%, #D1E45B 100%);
-}
-
-.bg-activity-theatre {
-  background: linear-gradient(180deg, #A78BFA 0%, #7C5CBF 100%);
-}
-
-/* Secondary activity block - teal */
-.bg-activity-secondary {
-  background: linear-gradient(180deg, #5FA3BA 0%, #4A8A9F 100%);
+  background: linear-gradient(160deg, var(--color-primary) 0%, var(--color-primary-dark) 40%, var(--color-accent) 100%);
 }
 
 /* Hero blob decoration */
@@ -73,7 +102,7 @@
   top: 15%;
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, #d7ccff 0%, transparent 70%);
+  background: radial-gradient(circle, var(--color-violet-light) 0%, transparent 70%);
   border-radius: 50%;
   filter: blur(100px);
   opacity: 0.5;
@@ -94,92 +123,9 @@
   pointer-events: none;
 }
 
-/* Block Buttons - Activity Cards */
-.btn-block {
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  padding: 2rem 2.5rem;
-  background: var(--color-violet-light);
-  border-radius: 1rem;
-  transition: all 0.3s ease;
-  overflow: hidden;
-}
-
-.btn-block::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, var(--color-accent), var(--color-primary));
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.4s ease;
-}
-
-.btn-block:hover::before {
-  transform: scaleX(1);
-}
-
-.btn-block:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 40px rgba(209, 228, 91, 0.2);
-}
-
-.btn-block .btn-icon {
-  flex-shrink: 0;
-  width: 64px;
-  height: 64px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-dark));
-  border-radius: 50%;
-  color: white;
-}
-
-.btn-block .btn-content {
-  flex: 1;
-}
-
-.btn-block .btn-title {
-  font-family: var(--font-heading);
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--color-primary);
-  margin-bottom: 0.25rem;
-}
-
-.btn-block .btn-meta {
-  font-size: 0.875rem;
-  color: var(--color-text);
-  opacity: 0.7;
-}
-
-.btn-block .btn-arrow {
-  flex-shrink: 0;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid var(--color-accent);
-  border-radius: 50%;
-  color: var(--color-accent);
-  transition: all 0.3s ease;
-}
-
-.btn-block:hover .btn-arrow {
-  background: var(--color-accent);
-  color: white;
-  transform: translateX(4px);
-}
-
 /* Gradient Pill Buttons */
 .btn-pill {
+  background: var(--nordic-shadow);
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -189,57 +135,22 @@
   border-radius: 9999px;
   font-weight: 500;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(167, 139, 250, 0.3);
+  box-shadow: 0 4px 15px rgba(232, 168, 124, 0.3);
 }
 
 .btn-pill:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 25px rgba(167, 139, 250, 0.4);
-}
-
-.btn-pill-outline {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.875rem 1.75rem;
-  background: transparent;
-  color: white;
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  border-radius: 9999px;
-  font-weight: 500;
-  transition: all 0.3s ease;
-}
-
-.btn-pill-outline:hover {
-  background: white;
-  color: var(--color-primary);
-  border-color: white;
+  box-shadow: 0 6px 25px rgba(232, 168, 124, 0.4);
 }
 
 .btn-pill-secondary {
-  background: var(--color-secondary);
+  background: var(--nordic-shadow);
   color: white;
   box-shadow: none;
 }
 
 .btn-pill-secondary:hover {
-  box-shadow: 0 6px 25px rgba(95, 163, 186, 0.4);
-}
-
-/* Section Titles */
-.section-title {
-  font-family: var(--font-heading);
-  font-size: 3rem;
-  font-weight: 700;
-  color: var(--color-primary);
-  margin-bottom: 1rem;
-}
-
-.section-subtitle {
-  font-size: 1.125rem;
-  color: var(--color-text);
-  opacity: 0.7;
-  max-width: 600px;
+  box-shadow: 0 6px 25px rgba(168, 197, 181, 0.4);
 }
 
 /* CV Section */
@@ -265,7 +176,7 @@
   display: flex;
   gap: 1rem;
   padding: 1rem 0;
-  border-bottom: 1px solid rgba(167, 139, 250, 0.2);
+  border-bottom: 1px solid rgba(168, 197, 181, 0.3);
 }
 
 .cv-item:last-child {

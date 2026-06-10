@@ -1,0 +1,92 @@
+---
+import NordicLayout from '../../../layouts/NordicLayout.astro';
+import { useTranslations, getLangFromUrl } from '../../../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const base = import.meta.env.BASE_URL;
+---
+
+<NordicLayout title="Gymnastique Rythmique Expressive – Sonia Cutri" pageLang={lang}>
+  <section class="nordic-page-hero gymnastics">
+    <div class="nordic-page-hero-content">
+      <span class="nordic-page-kicker">{t.activities.rythmique.title}</span>
+      <h1 class="nordic-page-headline">{lang === 'fr' ? 'Gymnastique Rythmique Expressive' : 'Gimnasia Rítmica Expresiva'}</h1>
+      <p class="nordic-page-subtitle">
+        <em>{lang === 'fr' ? '« Tout ce qui ne s\'exprime déprime »' : '« Todo lo que no se expresa, deprime »'}</em>
+      </p>
+    </div>
+  </section>
+
+  <section class="nordic-detail">
+    <div class="nordic-detail-meta">
+      <span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        {t.activities.rythmique.schedule}
+      </span>
+      <span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Salle du Sporting d'Este, Billère 64140
+      </span>
+    </div>
+
+    <h2 class="nordic-section-title">{lang === 'fr' ? 'Pourquoi ces noms ?' : '¿Por qué estos nombres?'}</h2>
+    <p class="nordic-section-text">
+      <strong>{lang === 'fr' ? 'Gymnastique' : 'Gimnasia'}</strong> — {lang === 'fr' ? 'car elle implique un entraînement régulier.' : 'porque implica un entrenamiento regular.'}
+    </p>
+    <p class="nordic-section-text">
+      <strong>{lang === 'fr' ? 'Rythmique' : 'Rítmica'}</strong> — {lang === 'fr' ? 'car elle s\'effectue par le rythme.' : 'porque se efectúa por el ritmo.'}
+    </p>
+    <p class="nordic-section-text">
+      <strong>{lang === 'fr' ? 'Expressive' : 'Expresiva'}</strong> — {lang === 'fr' ? 'car elle permet d\'exprimer son monde intérieur.' : 'porque permite expresar su mundo interior.'}
+    </p>
+
+    <p class="nordic-section-text" style={{ marginTop: '2rem' }}>
+      {lang === 'fr'
+        ? 'Dans cette Gymnastique le groupe travaille avec des musiques de différentes sources pour exercer et mobiliser les zones du corps correspondant à chaque rythme, cherchant à découvrir la plasticité corporelle, évitant ainsi la fixation sur un seul état physique-émotionnel.'
+        : 'En esta Gimnasia el grupo trabaja con músicas de diferentes fuentes para ejercitar y movilizar las zonas del cuerpo correspondientes a cada ritmo, buscando descubrir la plasticidad corporal, evitando así la fijación en un solo estado físico-emocional.'
+      }
+    </p>
+    <p class="nordic-section-text">
+      {lang === 'fr'
+        ? 'Grâce à la musique, la subjectivité s\'exprime, permettant aux émotions de trouver un canal de communication du monde intérieur vers le monde extérieur.'
+        : 'Gracias a la música, la subjetividad se expresa, permitiendo a las emociones encontrar un canal de comunicación del mundo interior hacia el mundo exterior.'
+      }
+    </p>
+    <p class="nordic-section-text">
+      {lang === 'fr'
+        ? 'Cette activité travaille sur le développement de l\'hémisphère droit du cerveau, élargissant les registres sensoriels, ludiques et intuitifs de soi en connexion aux autres.'
+        : 'Esta actividad trabaja sobre el desarrollo del hemisferio derecho del cerebro, ampliando los registros sensoriales, lúdicos e intuitivos de sí en conexión con los demás.'
+      }
+    </p>
+    <p class="nordic-section-text">
+      {lang === 'fr'
+        ? 'La monitrice coordonne la séance par la musique, donc elle participe physiquement au sein du groupe, suggérant aux participants par son mouvement, des différentes manières d\'élargir leurs mouvements.'
+        : 'La monitora coordina la sesión por la música, por lo tanto participa físicamente dentro del grupo, sugiriendo a los participantes por su movimiento, diferentes maneras de ampliar sus movimientos.'
+      }
+    </p>
+    <p class="nordic-section-text">
+      <strong>{lang === 'fr' ? 'La parole n\'est pas utilisée pendant les cours, mais différentes formes de libération vocale le sont.' : 'La palabra no se utiliza durante las clases, pero diferentes formas de liberación vocal sí lo son.'}</strong>
+    </p>
+
+    <div class="nordic-detail-meta" style={{ marginTop: '2rem', paddingTop: '1.5rem', borderTop: '1px solid var(--nordic-ice)' }}>
+      <span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 6v6l4 2"/><circle cx="12" cy="12" r="10"/></svg>
+        {lang === 'fr' ? 'Les cours durent une heure et quart' : 'Las clases duran una hora y cuarto'}
+      </span>
+      <span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        {lang === 'fr' ? 'Pieds nus avec des vêtements confortables' : 'Descalzos con ropa cómoda'}
+      </span>
+    </div>
+  </section>
+
+  <section class="nordic-cta gymnastics">
+    <h2 class="nordic-cta-title">{lang === 'fr' ? 'Envie d\'essayer ?' : '¿Quieres probar?'}</h2>
+    <p class="nordic-cta-text">{lang === 'fr' ? 'Rejoignez-nous pour une première séance découverte.' : 'Únase a nosotros para una primera sesión de descubrimiento.'}</p>
+    <a href={`${base}${lang === 'es' ? 'es/' : ''}contact`} class="nordic-btn">
+      {t.nav.contact}
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </section>
+</NordicLayout>

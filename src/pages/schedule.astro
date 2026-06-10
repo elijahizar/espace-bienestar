@@ -1,22 +1,22 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import NordicLayout from '../layouts/NordicLayout.astro';
 import { useTranslations, getLangFromUrl } from '../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 const stages2026 = [
-  { date: "18 Janvier", title: "Colonne Vertébrale", color: "var(--color-accent)" },
-  { date: "15 Février", title: "Plexus Racine et Lombo-sacré", color: "var(--color-secondary)" },
-  { date: "22 Mars", title: "Plexus Solaire et Cardiaque", color: "var(--color-accent)" },
-  { date: "19 Avril", title: "Plexus Gorge et Front", color: "var(--color-primary)" },
-  { date: "10 Mai", title: "Colonne Vertébrale", color: "var(--color-accent)" },
-  { date: "14 Juin", title: "Plexus Racine et Lombo-sacré", color: "var(--color-secondary)" },
-  { date: "5 Juillet", title: "Plexus Solaire et Cardiaque", color: "var(--color-accent)" },
+  { date: "18 Janvier", title: "Colonne Vertébrale", color: "var(--nordic-violet)" },
+  { date: "15 Février", title: "Plexus Racine et Lombo-sacré", color: "var(--nordic-frost)" },
+  { date: "22 Mars", title: "Plexus Solaire et Cardiaque", color: "var(--nordic-violet)" },
+  { date: "19 Avril", title: "Plexus Gorge et Front", color: "var(--nordic-primary)" },
+  { date: "10 Mai", title: "Colonne Vertébrale", color: "var(--nordic-violet)" },
+  { date: "14 Juin", title: "Plexus Racine et Lombo-sacré", color: "var(--nordic-frost)" },
+  { date: "5 Juillet", title: "Plexus Solaire et Cardiaque", color: "var(--nordic-violet)" },
 ];
 ---
 
-<BaseLayout title={t.schedule.title}>
+<NordicLayout title={t.schedule.title} pageLang={lang}>
   <!-- Hero Section -->
   <section class="relative py-20 bg-hero-gradient overflow-hidden">
     <div class="hero-blob"></div>
@@ -24,8 +24,8 @@ const stages2026 = [
     <div class="max-w-6xl mx-auto px-6 relative z-10">
       <div class="animate-on-scroll">
         <p class="text-white/80 uppercase tracking-[0.2em] text-sm mb-4">{lang === 'fr' ? '2026' : '2026'}</p>
-        <h1 class="text-5xl md:text-6xl font-bold text-[var(--color-primary)] mb-6">{t.schedule.title}</h1>
-        <p class="text-xl text-[var(--color-primary)]/80 max-w-2xl">{lang === 'fr' ? 'Cours hebdomadaires et stages mensuels' : 'Clases semanales y talleres mensuales'}</p>
+        <h1 class="text-5xl md:text-6xl font-bold text-[var(--nordic-primary)] mb-6">{t.schedule.title}</h1>
+        <p class="text-xl text-[var(--nordic-text)]/80 max-w-2xl">{lang === 'fr' ? 'Cours hebdomadaires et stages mensuels' : 'Clases semanales y talleres mensuales'}</p>
       </div>
     </div>
   </section>
@@ -33,26 +33,26 @@ const stages2026 = [
   <!-- Weekly Schedule -->
   <section class="py-16 px-6">
     <div class="max-w-4xl mx-auto">
-      <h2 class="text-3xl font-bold text-[var(--color-primary)] mb-8 text-center animate-on-scroll">
+      <h2 class="text-3xl font-bold text-[var(--nordic-primary)] mb-8 text-center animate-on-scroll">
         {t.schedule.weekly.title}
       </h2>
 
       <div class="grid md:grid-cols-2 gap-6">
-        <div class="bg-activity-gymnastics rounded-2xl p-8 text-[var(--color-primary)] animate-on-scroll">
+        <div class="bg-[var(--nordic-mist)] rounded-2xl p-8 text-[var(--nordic-text)] animate-on-scroll">
           <div class="flex items-center gap-4 mb-4">
             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
             <span class="text-2xl font-bold">{lang === 'fr' ? 'Lundi' : 'Lunes'}</span>
           </div>
           <h3 class="text-xl font-semibold mb-2">{t.activities.posturale.title}</h3>
-          <p class="text-[var(--color-primary)]/80">14h30 - 16h00</p>
+          <p class="text-[var(--nordic-text)]/80">14h30 - 16h00</p>
         </div>
 
-        <div class="bg-[var(--color-secondary)] rounded-2xl p-8 text-white animate-on-scroll" style="transition-delay: 0.1s">
+        <div class="bg-[var(--nordic-frost)] rounded-2xl p-8 text-white animate-on-scroll" style="transition-delay: 0.1s">
           <div class="flex items-center gap-4 mb-4">
             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
             <span class="text-2xl font-bold">{lang === 'fr' ? 'Jeudi' : 'Jueves'}</span>
           </div>
-          <h3 class="text-xl font-semibold mb-2 text-[var(--color-primary)]">{t.activities.rythmique.title}</h3>
+          <h3 class="text-xl font-semibold mb-2 text-[var(--nordic-primary)]">{t.activities.rythmique.title}</h3>
           <p class="text-white/80">14h00 - 15h00</p>
         </div>
       </div>
@@ -60,12 +60,12 @@ const stages2026 = [
   </section>
 
   <!-- Monthly Stages -->
-  <section class="py-16 px-6 bg-[var(--color-background)]">
+  <section class="py-16 px-6 bg-[var(--nordic-mist)]">
     <div class="max-w-5xl mx-auto">
       <div class="text-center mb-12 animate-on-scroll">
-        <h2 class="text-3xl font-bold text-[var(--color-primary)] mb-4">{t.schedule.monthly.title}</h2>
-        <p class="text-lg text-[var(--color-primary)]/70">{t.schedule.monthly.description}</p>
-        <p class="text-[var(--color-accent)] font-medium mt-2">10h00 - 12h30</p>
+        <h2 class="text-3xl font-bold text-[var(--nordic-primary)] mb-4">{t.schedule.monthly.title}</h2>
+        <p class="text-lg text-[var(--nordic-primary)]/70">{t.schedule.monthly.description}</p>
+        <p class="text-[var(--nordic-violet)] font-medium mt-2">10h00 - 12h30</p>
       </div>
 
       <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
@@ -86,21 +86,21 @@ const stages2026 = [
   <section class="py-16 px-6">
     <div class="max-w-4xl mx-auto text-center animate-on-scroll">
       <div class="bg-white rounded-2xl p-8 shadow-lg inline-block">
-        <svg class="w-12 h-12 mx-auto mb-4 text-[var(--color-accent)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/></svg>
-        <p class="text-xl font-semibold text-[var(--color-primary)] mb-2">{lang === 'fr' ? 'Lieu' : 'Ubicación'}</p>
-        <p class="text-[var(--color-primary)]/70">Salle du Sporting d'Este</p>
-        <p class="text-[var(--color-primary)]/70">Avenue Saint John Perse, Billère 64140</p>
+        <svg class="w-12 h-12 mx-auto mb-4 text-[var(--nordic-violet)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/></svg>
+        <p class="text-xl font-semibold text-[var(--nordic-primary)] mb-2">{lang === 'fr' ? 'Lieu' : 'Ubicación'}</p>
+        <p class="text-[var(--nordic-primary)]/70">Salle du Sporting d'Este</p>
+        <p class="text-[var(--nordic-primary)]/70">Avenue Saint John Perse, Billère 64140</p>
       </div>
     </div>
   </section>
 
   <!-- CTA -->
-  <section class="bg-[var(--color-primary)] py-16 px-6">
+  <section class="bg-[var(--nordic-shadow)] py-16 px-6">
     <div class="max-w-4xl mx-auto text-center animate-on-scroll">
-      <h2 class="text-3xl font-bold text-[var(--color-primary)] mb-4">
+      <h2 class="text-3xl font-bold text-[var(--nordic-primary)] mb-4">
         {lang === 'fr' ? 'Réservez votre place' : 'Reserve su lugar'}
       </h2>
-      <p class="text-[var(--color-primary)]/70 mb-8">
+      <p class="text-white/70 mb-8">
         {lang === 'fr'
           ? 'Contactez-nous pour vous inscrire aux stages ou cours.'
           : 'Contáctenos para inscribirse a los talleres o clases.'}
@@ -111,4 +111,4 @@ const stages2026 = [
       </a>
     </div>
   </section>
-</BaseLayout>
+</NordicLayout>

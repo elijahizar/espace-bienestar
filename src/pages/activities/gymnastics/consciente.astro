@@ -1,0 +1,76 @@
+---
+import NordicLayout from '../../../layouts/NordicLayout.astro';
+import { useTranslations, getLangFromUrl } from '../../../i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const base = import.meta.env.BASE_URL;
+---
+
+<NordicLayout title="Gymnastique Consciente – Sonia Cutri" pageLang={lang}>
+  <section class="nordic-page-hero gymnastics">
+    <div class="nordic-page-hero-content">
+      <span class="nordic-page-kicker">{lang === 'fr' ? 'Gymnastique Consciente' : 'Gimnasia Consciente'}</span>
+      <h1 class="nordic-page-headline">{lang === 'fr' ? 'Vitalité · Flexibilité · Tonicité' : 'Vitalidad · Flexibilidad · Tonicidad'}</h1>
+    </div>
+  </section>
+
+  <section class="nordic-detail">
+    <p class="nordic-section-text">
+      {lang === 'fr'
+        ? 'La Gymnastique Posturale ainsi que la Gymnastique Rythmique Expressive que je vous propose sont deux gymnastiques qui se pratiquent consciemment, en entendant la Conscience en tant qu\'attention perceptive.'
+        : 'La Gimnasia Postural así como la Gimnasia Rítmica Expresiva que les propongo son dos gimnasias que se practican conscientemente, entendiendo la Consciencia como atención perceptiva.'
+      }
+    </p>
+    <p class="nordic-section-text">
+      {lang === 'fr'
+        ? 'Ces deux gymnastiques tiennent compte de la relation étroite entre le corps et l\'esprit et c\'est pour cette raison que les deux modalités d\'ateliers adaptés à vos préférences vous proposent une pratique corporelle qui stimule les participants à mieux percevoir et comprendre leur corps comme une entité intégrée.'
+        : 'Estas dos gimnasias tienen en cuenta la relación estrecha entre el cuerpo y el espíritu y es por esta razón que las dos modalidades de talleres adaptados a sus preferencias les proponen una práctica corporal que estimula a los participantes a percibir y comprender mejor su cuerpo como una entidad integrada.'
+      }
+    </p>
+    <p class="nordic-section-text">
+      {lang === 'fr'
+        ? 'La pratique de différents exercices de tonicité, de flexibilité et de détente vous permettra de corriger vos mauvaises postures, d\'élargir vos possibilités de mouvement et avoir une meilleure connaissance de vos ressources corporelles.'
+        : 'La práctica de diferentes ejercicios de tonicidad, flexibilidad y distensión le permitirá corregir sus malas posturas, ampliar sus posibilidades de movimiento y tener un mejor conocimiento de sus recursos corporales.'
+      }
+    </p>
+    <p class="nordic-section-text">
+      {lang === 'fr'
+        ? 'Avec la pratique régulière les tensions se relâchent, la flexibilité revient, les mouvements s\'élargissent et vous retrouvez ainsi une meilleure tonicité et posture générale.'
+        : 'Con la práctica regular las tensiones se relajan, la flexibilidad vuelve, los movimientos se amplían y usted encuentra así una mejor tonicidad y postura general.'
+      }
+    </p>
+    <p class="nordic-section-text">
+      <strong>{lang === 'fr' ? 'La pratique est accessible à tous et à toutes, sans limite d\'âge.' : 'La práctica es accesible para todos, sin límite de edad.'}</strong>
+    </p>
+
+    <h2 class="nordic-section-title" style={{ marginTop: '3rem' }}>{lang === 'fr' ? 'La méthode' : 'El método'}</h2>
+    <p class="nordic-section-text">
+      {lang === 'fr'
+        ? 'Il s\'agit de se reconnecter à son corps par le biais de nos sensations, en utilisant notre attention « Voir avec le corps ». Cette attention est guidée par l\'enseignant ; avec le temps, ce guidage s\'intériorise et l\'exploration devient aussi personnelle.'
+        : 'Se trata de reconectarse con el cuerpo a través de nuestras sensaciones, utilizando nuestra atención "Ver con el cuerpo". Esta atención es guiada por el profesor; con el tiempo, esta guía se interioriza y la exploración se vuelve también personal.'
+      }
+    </p>
+
+    <h2 class="nordic-section-title">{lang === 'fr' ? 'Métaphores inspirantes' : 'Metáforas inspiradoras'}</h2>
+    <p class="nordic-section-text">
+      {lang === 'fr'
+        ? 'Les pieds comme racines, les jambes comme tronc, les hanches comme balance et source, les bras comme des ailes, les poumons comme fleur et plume, la poitrine comme ciel, le cœur comme soleil, les articulations comme élastiques, la souplesse comme des huiles, la détente musculaire comme de l\'eau.'
+        : 'Los pies como raíces, las piernas como tronco, las caderas como balanza y fuente, los brazos como alas, los pulmones como flor y pluma, el pecho como cielo, el corazón como sol, las articulaciones como elásticos, la flexibilidad como aceites, la distensión muscular como agua.'
+      }
+    </p>
+
+    <p class="nordic-section-text">
+      <em>{lang === 'fr' ? 'Il s\'agit surtout d\'Être-Là, car tous les moments sont ce moment.' : 'Se trata sobre todo de Estar-Aquí, porque todos los momentos son este momento.'}</em>
+    </p>
+  </section>
+
+  <section class="nordic-cta gymnastics">
+    <h2 class="nordic-cta-title">{lang === 'fr' ? 'Envie d\'essayer ?' : '¿Quieres probar?'}</h2>
+    <p class="nordic-cta-text">{lang === 'fr' ? 'Rejoignez-nous pour une première séance découverte.' : 'Únase a nosotros para una primera sesión de descubrimiento.'}</p>
+    <a href={`${base}${lang === 'es' ? 'es/' : ''}contact`} class="nordic-btn">
+      {t.nav.contact}
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </section>
+</NordicLayout>
