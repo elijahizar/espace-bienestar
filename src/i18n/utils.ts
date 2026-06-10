@@ -15,6 +15,18 @@ export function getLangFromUrl(url: URL): Language {
   return 'fr';
 }
 
+export function getLangPrefix(lang: Language): string {
+  return lang === 'es' ? 'es/' : '';
+}
+
+export function localizePath(relativePath: string, lang: Language): string {
+  const trimmed = relativePath.replace(/^\/+/, '');
+  return `${import.meta.env.BASE_URL}${getLangPrefix(lang)}${trimmed}`;
+}
+
+export function translate(lang: Language, strings: { fr: string; es: string }): string {
+  return strings[lang];
+}
 
 export function getLanguageFromCookie(cookieHeader: string | null): Language {
   if (!cookieHeader) return 'fr';

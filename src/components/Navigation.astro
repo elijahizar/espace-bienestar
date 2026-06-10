@@ -1,16 +1,16 @@
 ---
-import { useTranslations, getLangFromUrl } from '../i18n/utils';
+import { useTranslations, getLangFromUrl, localizePath } from '../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
-const base = import.meta.env.BASE_URL;
+const altLang = lang === 'fr' ? 'es' : 'fr';
 
 const navItems = [
-  { key: 'home', href: lang === 'fr' ? `${base}` : `${base}es` },
-  { key: 'activities', href: lang === 'fr' ? `${base}activities` : `${base}es/activities` },
-  { key: 'about', href: lang === 'fr' ? `${base}about` : `${base}es/about` },
-  { key: 'schedule', href: lang === 'fr' ? `${base}schedule` : `${base}es/schedule` },
-  { key: 'contact', href: lang === 'fr' ? `${base}contact` : `${base}es/contact` },
+  { key: 'home', href: localizePath('', lang) },
+  { key: 'activities', href: localizePath('activities', lang) },
+  { key: 'about', href: localizePath('about', lang) },
+  { key: 'schedule', href: localizePath('schedule', lang) },
+  { key: 'contact', href: localizePath('contact', lang) },
 ];
 
 const currentPath = Astro.url.pathname;
@@ -21,7 +21,7 @@ const isActive = (href: string) => currentPath === href || currentPath === href 
 <nav class="bg-[var(--color-primary)] sticky top-0 z-50 shadow-lg">
   <div class="max-w-7xl mx-auto px-6">
     <div class="flex justify-between items-center h-20">
-      <a href={lang === 'fr' ? base : `${base}es`} class="flex items-center gap-3 group cursor-pointer">
+      <a href={localizePath('', lang)} class="flex items-center gap-3 group cursor-pointer">
         <svg class="w-10 h-10 transition-transform duration-300 group-hover:scale-110" viewBox="0 0 40 40" fill="none">
           <circle cx="20" cy="20" r="18" stroke="white" stroke-width="2"/>
           <path d="M20 8C20 8 12 16 12 22C12 28 20 32 20 32C20 32 28 28 28 22C28 16 20 8 20 8Z" fill="white" opacity="0.3"/>
@@ -46,10 +46,10 @@ const isActive = (href: string) => currentPath === href || currentPath === href 
       </div>
 
       <a
-        href={lang === 'fr' ? `${base}es` : base}
+        href={localizePath('', altLang)}
         class="bg-[var(--color-accent)] text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-[var(--color-accent-dark)] transition-colors duration-200"
       >
-        {lang === 'fr' ? 'ES' : 'FR'}
+        {altLang.toUpperCase()}
       </a>
 
       <button class="md:hidden text-[var(--color-text)] p-2" id="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">

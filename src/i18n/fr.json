@@ -40,17 +40,35 @@
     },
     "theatre": {
       "title": "Théâtre",
-      "description": "Le Théâtre peut être le lieu où il semble que quelque chose se passe. Eugène Ionesco"
+      "description": "Bien sûr, nous pouvons affirmer que dans toutes les activités artistiques l’inconscient s’exprime et dévoile la profondeur de la nature humaine, mais ce qui différencie le théâtre des autres domaines des arts, c’est que e théâtre la présence corporel sur scène, entendue comme histoire, comme subjectivité, comme langage, c’est la matière première et directe sur laquelle la personne même travaille. "
     },
     "bienetre": {
       "title": "Théâtre et Bien-Être",
-      "description": "Approche originale orientée sur l'importance de l'expression artistique du Théâtre en tant que support psychothérapeutique. Pour les personnes souffrant de troubles d'anxiété, de phobie sociale, de timidité excessive, d'épuisement professionnel ou burn-out.",
-      "details": "Le jeu théâtral, le travail de conscience corporelle et le groupe de parole sont des chemins efficaces, ludiques et créatifs."
+      "description": "Bien sûr, nous pouvons affirmer que dans toutes les activités artistiques l’inconscient s’exprime et dévoile la profondeur de la nature humaine, mais ce qui différencie le théâtre des autres domaines des arts, c’est que dans le théâtre la présence corporel sur scène, entendue comme histoire, comme subjectivité, comme langage, c’est la matière première et directe sur laquelle la personne même travaille.",
+      "details": "Sur les trois dimension de la scène, le comédien/ne devient l’artiste de soi-même, il découvre des aptitudes qu’il ignorait avoir et retrouve grâce au jeu théâtral, un motif de joie.",
+      "paragraphs": [
+        "Dans l'Espace Bienestar, je coordonne un Atelier de Théâtre et Bien-Être pour des personnes souffrant de troubles d'anxiété, de phobie sociale, de timidité excessive, de problèmes d'insertion au travail, d'épuisement professionnel ou burn-out.",
+        "Approche originale orientée sur l'importance de l'expression artistique du Théâtre en tant que support psychothérapeutique.",
+        "Le jeu théâtral, le travail de conscience corporelle et le groupe de parole sont des chemins efficaces, ludiques et créatifs."
+      ],
+      "cta": {
+        "title": "Envie d'explorer ?",
+        "text": "Découvrez le théâtre comme chemin vers le bien-être."
+      }
     },
     "amateur": {
       "title": "Théâtre Amateur",
       "description": "Atelier d'initiation à la pratique théâtrale pour découvrir le travail de l'acteur et votre potentiel créatif. Un espace ludique et expérimental où seront abordés l'improvisation, la création de personnages, l'interprétation des textes et la mise en scène.",
-      "details": "L'atelier sera bouclé avec une représentation de fin d'année."
+      "details": "L'atelier sera bouclé avec une représentation de fin d'année.",
+      "paragraphs": [
+        "Atelier d'initiation à la pratique théâtrale pour découvrir le travail de l'acteur et votre potentiel créatif.",
+        "Un espace ludique et expérimental où seront abordés l'improvisation, la création de personnages, l'interprétation des textes et la mise en scène.",
+        "L'atelier sera bouclé avec une représentation de fin d'année."
+      ],
+      "cta": {
+        "title": "Envie de jouer ?",
+        "text": "Rejoignez notre atelier et explorez votre potentiel créatif."
+      }
     }
   },
   "stages": {
@@ -65,30 +83,53 @@
     "title": "À propos",
     "sonia": {
       "title": "Sonia Cutri",
-      "intro": "Je m'appelle Sonia Cutri, je suis née en Argentine, nationalisée espagnole.",
+      "nationality": "Argentine, nationalisée espagnole",
+      "intro": "Mon enseignement corporel comporte une synthèse personnelle fruit de mon propre parcours.",
+      "bio": [
+        "Après le Lycée spécialisation pédagogie, j'ai fait trois années universitaires dans la carrière de Science de l'Éducation à Buenos Aires et ensuite j'ai passé le concours à l'École d'Art Dramatique où j'ai été diplômée comme comédienne et monitrice du Technique du Mouvement.",
+        "Des années après, j'ai passé à nouveau le concours pour être admise dans la carrière de Metteur en Scène, d'où je suis sortie diplômée.",
+        "En Argentine, Buenos Aires, j'ai travaillé comme éducatrice de théâtre dans l'Institut pour la Vocation Artistique (IVA) où j'ai enseigné pendant dix ans l'Éducation par Intermédiaire de l'Art. J'ai aussi travaillé comme actriz, metteuse en scène et scénariste pour la télévision.",
+        "En France, j'ai obtenu le DU/Certificat International d'Écologie Humaine à l'Université de Pau et des Pays de l'Adour, ainsi que la formation en Sensibilisation de l'Analyse de Groupe et Psychodrame à l'IFAG (Paris-Bordeaux). J'ai joué et dirigé de nombreuses pièces de théâtre, performances et récitals poétiques."
+      ],
+      "approach": "Au long de mon parcours de vie et en tant que comédienne et metteur en scène, je me suis intéressée à expérimenter différentes approches de travail corporel telles que le Hatha yoga, la Technique Alexander, la danse théâtre, la technique mixte de danse classique, la technique Graham et Barre à Terre, des différents types d'entraînement pour l'acteur, notamment dans le Théâtre Anthropologique, la Technique Rythmique Expressive de Centres d'énergie et le Yoga Iyengar, discipline que j'ai continué à pratiquer en France. Dans l'actualité je pratique aussi le Qi-Gong.",
       "education": {
         "title": "Formation",
         "items": [
-          "Spécialisation éducatrice après le Lycée",
-          "Trois années universitaires en Science de l'Éducation à Buenos Aires",
-          "Diplômée comme comédienne et monitrice du Technique du Mouvement à l'École d'Art Dramatique",
-          "Diplômée en Mise en Scène",
-          "DU/Certificat International d'Écologie Humaine à l'Université de Pau et des Pays de l'Adour",
-          "Formation en Sensibilisation de l'Analyse de Groupe et Psychodrame à l'IFAG (Paris-Bordeaux)"
+          "Spécialisation pédagogie après le Lycée",
+          "Trois années en Science de l'Éducation à Buenos Aires",
+          "Diplômée Comédie & Technique du Mouvement - École d'Art Dramatique",
+          "Diplômée Mise en Scène",
+          "DU/Certificat International d'Écologie Humaine - Université de Pau",
+          "Sensibilisation Analyse de Groupe & Psychodrame - IFAG (Paris-Bordeaux)"
         ]
       },
       "experience": {
         "title": "Expérience",
         "items": [
-          "Éducatrice de théâtre à l'Institut pour la Vocation Artistique (IVA) à Buenos Aires - 10 ans",
-          "Actrice, metteuse en scène et scénariste pour la télévision en Argentine",
-          "Joue et dirige des pièces de théâtre, performances et récitals poétiques en France",
-          "Intervient comme éducatrice de théâtre dans différentes écoles et collèges de la région paloise",
-          "Stages de théâtre pour adultes dans le domaine libéral",
-          "Intervenante théâtrale pour la formation d'Aide Médico-Psychologique, Moniteur Éducateur et Éducateur Spécialisé"
+          "Éducatrice de théâtre à l'IVA, Buenos Aires - 10 ans",
+          "Actrice, metteuse en scène et scénariste TV",
+          "Pièces de théâtre, performances et récitals poétiques en France",
+          "Intervenante théâtre en écoles et collèges région paloise",
+          "Stages de théâtre pour adultes",
+          "Formatrice: AMP, Moniteur Éducateur, Éducateur Spécialisé"
         ]
       },
-      "approach": "Mon enseignement corporel comporte une synthèse personnelle fruit de mon propre parcours, incorporant le Hatha yoga, la Technique Alexander, la danse théâtre, les techniques de Graham, Barre à Terre, le Yoga Iyengar et le Qi-Gong."
+      "currentRole": {
+        "title": "Aujourd'hui à l'Espace Bienestar",
+        "description": "À l'Espace Bienestar, je coordonne les activités suivantes pour votre bien-être :",
+        "activities": [
+          {
+            "name": "Atelier de Théâtre et Bien-Être",
+            "for": "Pour personnes souffrant de troubles d'anxiété, phobie sociale, timidité excessive, problèmes d'insertion professionnelle ou burn-out",
+            "focus": "Expression artistique comme support psychothérapeutique"
+          },
+          {
+            "name": "Atelier Théâtre Amateur",
+            "for": "Pour tous ceux qui souhaitent découvrir la pratique théâtrale",
+            "focus": "Improvisation, création de personnages, interprétation et mise en scène"
+          }
+        ]
+      }
     }
   },
   "schedule": {

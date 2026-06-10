@@ -1,9 +1,8 @@
 ---
-import { useTranslations, getLangFromUrl } from '../i18n/utils';
+import { useTranslations, getLangFromUrl, localizePath } from '../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
-const base = import.meta.env.BASE_URL;
 ---
 
 <footer class="bg-[var(--color-accent-dark)] text-white py-12 mt-16">
@@ -12,7 +11,7 @@ const base = import.meta.env.BASE_URL;
       <div>
         <h3 class="font-heading text-lg font-semibold mb-4">Espace Bienestar</h3>
         <p class="text-sm opacity-80 leading-relaxed">
-          {lang === 'fr' ? 'Corps et Esprit en Harmonie' : 'Cuerpo y Mente en Armonía'}
+          {t.footer.tagline}
         </p>
         <p class="text-sm opacity-60 mt-2">
           <svg class="w-4 h-4 inline-block mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
@@ -24,20 +23,20 @@ const base = import.meta.env.BASE_URL;
 
       <div>
         <h3 class="font-heading text-lg font-semibold mb-4">
-          {lang === 'fr' ? 'Navigation' : 'Navegación'}
+          {t.footer.navigation}
         </h3>
         <ul class="space-y-2 text-sm opacity-80">
-          <li><a href={lang === 'fr' ? base : `${base}es`} class="hover:opacity-100 transition-opacity">{t.nav.home}</a></li>
-          <li><a href={lang === 'fr' ? `${base}activities` : `${base}es/activities`} class="hover:opacity-100 transition-opacity">{t.nav.activities}</a></li>
-          <li><a href={lang === 'fr' ? `${base}about` : `${base}es/about`} class="hover:opacity-100 transition-opacity">{t.nav.about}</a></li>
-          <li><a href={lang === 'fr' ? `${base}schedule` : `${base}es/schedule`} class="hover:opacity-100 transition-opacity">{t.nav.schedule}</a></li>
-          <li><a href={lang === 'fr' ? `${base}contact` : `${base}es/contact`} class="hover:opacity-100 transition-opacity">{t.nav.contact}</a></li>
+          <li><a href={localizePath('', lang)} class="hover:opacity-100 transition-opacity">{t.nav.home}</a></li>
+          <li><a href={localizePath('activities', lang)} class="hover:opacity-100 transition-opacity">{t.nav.activities}</a></li>
+          <li><a href={localizePath('about', lang)} class="hover:opacity-100 transition-opacity">{t.nav.about}</a></li>
+          <li><a href={localizePath('schedule', lang)} class="hover:opacity-100 transition-opacity">{t.nav.schedule}</a></li>
+          <li><a href={localizePath('contact', lang)} class="hover:opacity-100 transition-opacity">{t.nav.contact}</a></li>
         </ul>
       </div>
 
       <div>
         <h3 class="font-heading text-lg font-semibold mb-4">
-          {lang === 'fr' ? 'Contact' : 'Contacto'}
+          {t.footer.contact}
         </h3>
         <ul class="space-y-2 text-sm opacity-80">
           <li>

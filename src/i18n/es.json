@@ -45,12 +45,30 @@
     "bienetre": {
       "title": "Teatro y Bienestar",
       "description": "Enfoque original orientado hacia la importancia de la expresión artística del Teatro como soporte psicoterapéutico. Para personas que sufren de trastornos de ansiedad, fobia social, timidez excesiva, agotamiento profesional o burn-out.",
-      "details": "El juego teatral, el trabajo de conciencia corporal y el grupo de parole son caminos eficaces, lúdicos y creativos."
+      "details": "El juego teatral, el trabajo de conciencia corporal y el grupo de parole son caminos eficaces, lúdicos y creativos.",
+      "paragraphs": [
+        "En el Espace Bienestar, coordino un Taller de Teatro y Bienestar para personas que sufren de trastornos de ansiedad, fobia social, timidez excesiva, problemas de inserción en el trabajo, agotamiento profesional o burn-out.",
+        "Enfoque original orientado sobre la importancia de la expresión artística del Teatro como soporte psicoterapéutico.",
+        "El juego teatral, el trabajo de consciencia corporal y el grupo de palabra son caminos eficaces, lúdicos y creativos."
+      ],
+      "cta": {
+        "title": "¿Quieres explorar?",
+        "text": "Descubra el teatro como camino hacia el bienestar."
+      }
     },
     "amateur": {
       "title": "Teatro Amateur",
       "description": "Taller de iniciación a la práctica teatral para descubrir el trabajo del actor y su potencial creativo. Un espacio lúdico y experimental donde se abordarán la improvisación, la creación de personajes, la interpretación de textos y la puesta en escena.",
-      "details": "El taller terminará con una representación de fin de año."
+      "details": "El taller terminará con una representación de fin de año.",
+      "paragraphs": [
+        "Taller de iniciación a la práctica teatral para descubrir el trabajo del actor y su potencial creativo.",
+        "Un espacio lúdico y experimental donde se abordarán la improvisación, la creación de personajes, la interpretación de textos y la puesta en escena.",
+        "El taller terminará con una representación de fin de año."
+      ],
+      "cta": {
+        "title": "¿Quieres actuar?",
+        "text": "Únase a nuestro taller y explore su potencial creativo."
+      }
     }
   },
   "stages": {
@@ -65,30 +83,53 @@
     "title": "Sobre nosotros",
     "sonia": {
       "title": "Sonia Cutri",
-      "intro": "Me llamo Sonia Cutri, nací en Argentina, nacionalizada española.",
+      "nationality": "Argentina, nacionalizada española",
+      "intro": "Mi enseñanza corporal incluye una síntesis personal fruto de mi propio recorrido.",
+      "bio": [
+        "Después del Liceo con especialización pedagógica, cursé tres años universitarios en la carrera de Ciencia de la Educación en Buenos Aires y luego aprobé el concurso de acceso a la Escuela de Arte Dramático donde me diplomé como actriz y monitora de Técnica del Movimiento.",
+        "Años después, volví a aprobar el concurso para ser admitida en la carrera de Dirección de Escena, de donde salí diplomada.",
+        "En Argentina, Buenos Aires, trabajé como educadora de teatro en el Instituto para la Vocación Artística (IVA) donde enseñé durante diez años la Educación por Intermedio del Arte. También trabajé como actriz, directora de escena y guionista para televisión.",
+        "En Francia, obtuve el DU/Certificado Internacional de Ecología Humana en la Universidad de Pau y Países del Adour, así como la formación en Sensibilización del Análisis de Grupo y Psicodrama en el IFAG (París-Bordeaux). He interpretado y dirigido numerosas piezas de teatro, performances y recitales poéticos en Francia."
+      ],
+      "approach": "A lo largo de mi parcours de vida y como actriz y directora de escena, me he interesado en experimentar diferentes enfoques de trabajo corporal como el Hatha yoga, la Técnica Alexander, la danza teatro, la técnica mixta de danza clásica, la técnica Graham y Barre à Terre, diferentes tipos de entrenamiento para el actor, especialmente en el Teatro Antropológico, la Técnica Rítmica Expressiva de Centros de energía y el Yoga Iyengar, disciplina que he seguido practicando en Francia. Actualmente también practico Qi-Gong.",
       "education": {
         "title": "Formación",
         "items": [
-          "Especialización educadora después del Liceo",
-          "Tres años universitarios en Ciencia de la Educación en Buenos Aires",
-          "Diplomada como actriz y monitora de Técnica del Movimiento en la Escuela de Arte Dramático",
-          "Diplomada en Dirección de Escena",
-          "DU/Certificado Internacional de Ecología Humana en la Universidad de Pau y Países del Adour",
-          "Formación en Sensibilización del Análisis de Grupo y Psicodrama en el IFAG (París-Bordeaux)"
+          "Especialización pedagógica después del Liceo",
+          "Tres años en Ciencia de la Educación en Buenos Aires",
+          "Diplomada Actuación & Técnica del Movimiento - Escuela de Arte Dramático",
+          "Diplomada Dirección de Escena",
+          "DU/Certificado Internacional de Ecología Humana - Universidad de Pau",
+          "Sensibilización Análisis de Grupo & Psicodrama - IFAG (París-Bordeaux)"
         ]
       },
       "experience": {
         "title": "Experiencia",
         "items": [
-          "Educadora de teatro en el Instituto para la Vocación Artística (IVA) en Buenos Aires - 10 años",
-          "Actriz, directora de escena y guionista para televisión en Argentina",
-          "Juega y dirige piezas de teatro, performances y recitales poéticos en Francia",
-          "Interviene como educadora de teatro en diferentes escuelas y colegios de la región de Pau",
-          "Talleres de teatro para adultos en el ámbito liberal",
-          "Interveniente teatral para la formación de Ayuda Médico-Psicológica, Monitor Educador y Educador Especializado"
+          "Educadora de teatro en el IVA, Buenos Aires - 10 años",
+          "Actriz, directora de escena y guionista de televisión",
+          "Piezas de teatro, performances y recitales poéticos en Francia",
+          "Interviniente de teatro en escuelas y colegios de la región de Pau",
+          "Talleres de teatro para adultos",
+          "Formadora: AMP, Monitor Educador, Educador Especializado"
         ]
       },
-      "approach": "Mi enseñanza corporal incluye una síntesis personal fruto de mi propio recorrido, incorporando el Hatha yoga, la Técnica Alexander, la danza teatro, las técnicas de Graham, Barre à Terre, el Yoga Iyengar y el Qi-Gong."
+      "currentRole": {
+        "title": "Hoy en el Espace Bienestar",
+        "description": "En el Espace Bienestar, coordino las siguientes actividades para su bienestar:",
+        "activities": [
+          {
+            "name": "Taller de Teatro y Bienestar",
+            "for": "Para personas que sufren de trastornos de ansiedad, fobia social, timidez excesiva, problemas de inserción profesional o burn-out",
+            "focus": "Expresión artística como apoyo psicoterapéutico"
+          },
+          {
+            "name": "Taller de Teatro Amateur",
+            "for": "Para todos los que deseen descubrir la práctica teatral",
+            "focus": "Improvisación, creación de personajes, interpretación y puesta en escena"
+          }
+        ]
+      }
     }
   },
   "schedule": {

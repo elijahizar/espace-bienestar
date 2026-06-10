@@ -1,32 +1,27 @@
 @import "tailwindcss"; /* Tailwind import */
 
-@theme {
-  /* Nordic Serenity Palette */
-  --color-primary-dark: #13505B;
-  --color-secondary: #A8C5B5;
-  --color-accent: #E8A87C;
-  --color-primary: #13505B;
-  --color-accent-dark: #A8C5B5;
-  --color-sage-light: #D5E7D4;
-  --color-sage-pale: #D3E8A6;
-  --color-sage-bg: #DBEDDF;
-  --color-violet-light: #E8A87C;
-  --color-violet-medium: #D4956A;
-  --color-background: #FAF8F5;
+:root {
+  /* Simplified Nordic palette */
+  --color-primary: #87B37A;
+  --color-secondary: #C9A6C6;
+  --color-accent: var(--color-secondary);
+  --color-accent-dark: var(--color-primary);
+  --color-violet-light: var(--color-secondary);
+  --color-violet-medium: var(--color-secondary);
+  --color-background: #FFFFFF;
   --color-text: #2D3A35;
   --color-text-light: #FFFFFF;
   --font-heading: 'Inter', sans-serif;
   --font-body: 'IBM Plex Sans', sans-serif;
-  --nordic-ice: #D5E7D4;
-  --nordic-primary: #13505B;
-  --nordic-secondary: #A8C5B5;
-  --nordic-accent: #E8A87C;
-  --nordic-background: #FAF8F5;
-  --nordic-violet: #E8A87C;
-  --nordic-white: #FAF8F5;
-  --nordic-frost: #D4E8F0;
-  --nordic-shadow: #2C3E50;
-  --nordic-mist: #F0F4F2;
+  --nordic-primary: #87B37A;
+  --nordic-secondary: #C9A6C6;
+  --nordic-white: #FFFFFF;
+  --nordic-background: #FFFFFF;
+  --nordic-ice: #F2F5F1;
+  --nordic-frost: #F5F2F7;
+  --nordic-shadow: rgba(44, 62, 80, 0.979);
+  --nordic-violet: #C9A6C6;
+  --nordic-mist: #F7F7F7;
   --nordic-text: #2D3A35;
 }
 
@@ -43,12 +38,12 @@
   }
 
   :focus-visible {
-    outline: 2px solid var(--color-accent);
+    outline: 2px solid var(--color-secondary);
     outline-offset: 2px;
   }
 
   ::selection {
-    background-color: var(--color-accent);
+    background-color: var(--color-secondary);
     color: white;
   }
 }
@@ -58,7 +53,7 @@
   position: absolute;
   top: -100%;
   left: 0;
-  background: var(--color-accent);
+  background: var(--color-secondary);
   color: white;
   padding: 0.75rem 1.5rem;
   z-index: 9999;
@@ -70,7 +65,7 @@
 
 .skip-link:focus {
   top: 0;
-  outline: 2px solid var(--color-accent-dark);
+  outline: 2px solid var(--color-primary);
   outline-offset: 2px;
 }
 
@@ -90,9 +85,9 @@
 .stagger-2 { transition-delay: 0.2s; }
 .stagger-3 { transition-delay: 0.3s; }
 
-/* Hero gradient - lime to violet */
+/* Hero background */
 .bg-hero-gradient {
-  background: linear-gradient(160deg, var(--color-primary) 0%, var(--color-primary-dark) 40%, var(--color-accent) 100%);
+  background-color: var(--color-primary);
 }
 
 /* Hero blob decoration */
@@ -102,7 +97,7 @@
   top: 15%;
   width: 400px;
   height: 400px;
-  background: radial-gradient(circle, var(--color-violet-light) 0%, transparent 70%);
+  background-color: rgba(201, 166, 198, 0.18);
   border-radius: 50%;
   filter: blur(100px);
   opacity: 0.5;
@@ -116,46 +111,45 @@
   bottom: 15%;
   width: 300px;
   height: 300px;
-  background: radial-gradient(circle, #5FA3BA 0%, transparent 70%);
+  background-color: rgba(135, 179, 122, 0.18);
   border-radius: 50%;
   filter: blur(80px);
   opacity: 0.3;
   pointer-events: none;
 }
 
-/* Gradient Pill Buttons */
+/* Solid Pill Buttons */
 .btn-pill {
-  background: var(--nordic-shadow);
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
   padding: 0.875rem 1.75rem;
-  background: linear-gradient(135deg, var(--color-accent), var(--color-accent-dark));
+  background-color: var(--color-primary);
   color: white;
   border-radius: 9999px;
   font-weight: 500;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(232, 168, 124, 0.3);
+  box-shadow: 0 4px 15px rgba(44, 62, 80, 0.12);
 }
 
 .btn-pill:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 25px rgba(232, 168, 124, 0.4);
+  box-shadow: 0 6px 25px rgba(44, 62, 80, 0.16);
 }
 
 .btn-pill-secondary {
-  background: var(--nordic-shadow);
+  background-color: var(--color-secondary);
   color: white;
   box-shadow: none;
 }
 
 .btn-pill-secondary:hover {
-  box-shadow: 0 6px 25px rgba(168, 197, 181, 0.4);
+  box-shadow: 0 6px 25px rgba(44, 62, 80, 0.12);
 }
 
 /* CV Section */
 .cv-section {
-  background: linear-gradient(135deg, var(--color-violet-light) 0%, white 100%);
+  background-color: var(--color-secondary);
   border-radius: 1.5rem;
   padding: 3rem;
   position: relative;
@@ -168,7 +162,7 @@
   left: 0;
   right: 0;
   height: 4px;
-  background: linear-gradient(90deg, var(--color-accent), var(--color-primary));
+  background-color: var(--color-primary);
   border-radius: 1.5rem 1.5rem 0 0;
 }
 
@@ -189,7 +183,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--color-accent);
+  background-color: var(--color-primary);
   color: white;
   border-radius: 50%;
   flex-shrink: 0;
@@ -202,40 +196,4 @@
 
 html {
   scroll-behavior: smooth;
-}
-
-/* Landing Variation Theme Utilities */
-.theme-nordic {
-  --color-primary: #E0F2F1;
-  --color-secondary: #A7C7E7;
-  --color-accent: #4A6572;
-  --color-bg: #FFFFFF;
-}
-
-.theme-mediterranean {
-  --color-primary: #F4E1C1;
-  --color-secondary: #C9A66B;
-  --color-accent: #D4B896;
-  --color-bg: #FAF6F0;
-}
-
-.theme-sundown {
-  --color-primary: #FFB88C;
-  --color-secondary: #FF8C42;
-  --color-accent: #5A3E36;
-  --color-bg: #FFF5E6;
-}
-
-.theme-aurora {
-  --color-primary: #D3E8FF;
-  --color-secondary: #8FA9C7;
-  --color-accent: #E0B0FF;
-  --color-bg: #F5FAFD;
-}
-
-.theme-urban {
-  --color-primary: #3E4A5F;
-  --color-secondary: #7A889F;
-  --color-accent: #B0C4DE;
-  --color-bg: #F0F3F7;
 }

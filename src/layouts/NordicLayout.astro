@@ -137,7 +137,7 @@ const t = useTranslations(effectiveLang);
       .nordic-hero-right {
         position: relative;
         min-height: 40vh;
-        background: linear-gradient(135deg, var(--nordic-ice) 0%, var(--nordic-secondary) 50%, var(--nordic-primary) 100%);
+        background-color: var(--nordic-secondary);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -148,12 +148,19 @@ const t = useTranslations(effectiveLang);
         content: '';
         position: absolute;
         inset: 0;
-        background:
-          radial-gradient(circle at 30% 40%, rgba(255,255,255,0.2) 0%, transparent 40%),
-          radial-gradient(circle at 70% 60%, rgba(19,80,91,0.08) 0%, transparent 35%);
+        background: radial-gradient(circle at 40% 40%, rgba(155, 203, 147, 0.18), transparent 90%);
+        pointer-events: none;
       }
 
-      .nordic-crystal { position: relative; width: 160px; height: 200px; }
+      .nordic-hero-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        opacity: 0.56;
+        filter: brightness(1.03) contrast(1.03) saturate(0.98);
+        transition: filter 0.3s ease, opacity 0.3s ease;
+      }
       .nordic-crystal-shape {
         position: absolute;
         border: 1px solid rgba(255,255,255,0.5);
@@ -186,10 +193,10 @@ const t = useTranslations(effectiveLang);
         transition: transform 0.5s ease;
       }
       .nordic-activity:hover::before { transform: scale(1.02); }
-      .nordic-activity.gymnastics { background: linear-gradient(135deg, var(--nordic-ice) 0%, var(--nordic-secondary) 50%, var(--nordic-primary) 100%); }
-      .nordic-activity.gymnastics::before { background: radial-gradient(circle at 60% 30%, rgba(255,255,255,0.15) 0%, transparent 40%); }
-      .nordic-activity.theatre { background: linear-gradient(135deg, var(--nordic-violet) 0%, #D4956A 50%, var(--nordic-shadow) 100%); }
-      .nordic-activity.theatre::before { background: radial-gradient(circle at 40% 70%, rgba(232,168,124,0.1) 0%, transparent 40%); }
+      .nordic-activity.gymnastics { background-color: var(--nordic-primary); }
+      .nordic-activity.gymnastics::before { background: none; }
+      .nordic-activity.theatre { background-color: var(--nordic-secondary); }
+      .nordic-activity.theatre::before { background: none; }
 
       .nordic-activity-label {
         font-family: 'IBM Plex Sans', sans-serif;
@@ -200,16 +207,17 @@ const t = useTranslations(effectiveLang);
         margin-bottom: 0.75rem;
       }
       .nordic-activity.gymnastics .nordic-activity-label { color: var(--nordic-text); opacity: 0.7; }
-      .nordic-activity.theatre .nordic-activity-label { color: var(--nordic-frost); }
+      .nordic-activity.theatre .nordic-activity-label { color: var(--nordic-text); }
 
       .nordic-activity-title {
+        color: black;
         font-family: 'Inter', sans-serif;
         font-size: 2rem;
         font-weight: 300;
         margin-bottom: 1rem;
       }
-      .nordic-activity.gymnastics .nordic-activity-title { color: var(--nordic-shadow); }
-      .nordic-activity.theatre .nordic-activity-title { color: var(--nordic-white); }
+      .nordic-activity.gymnastics .nordic-activity-title { color: var(--nordic-text); }
+      .nordic-activity.theatre .nordic-activity-title { color: var(--nordic-text); }
 
       .nordic-activity-desc {
         font-family: 'IBM Plex Sans', sans-serif;
@@ -220,7 +228,7 @@ const t = useTranslations(effectiveLang);
         max-width: 280px;
       }
       .nordic-activity.gymnastics .nordic-activity-desc { color: var(--nordic-text); }
-      .nordic-activity.theatre .nordic-activity-desc { color: rgba(255,255,255,0.6); }
+      .nordic-activity.theatre .nordic-activity-desc { color: var(--nordic-text); }
 
       .nordic-activity-cta { display: inline-flex; align-items: center; gap: 0.75rem; font-family: 'IBM Plex Sans', sans-serif; font-size: 0.75rem; font-weight: 500; letter-spacing: 0.05em; }
       .nordic-activity.gymnastics .nordic-activity-cta { color: var(--nordic-text); }
@@ -271,13 +279,13 @@ const t = useTranslations(effectiveLang);
         position: relative;
         overflow: hidden;
       }
-      .nordic-page-hero.gymnastics { background: linear-gradient(135deg, var(--nordic-ice) 0%, var(--nordic-secondary) 50%, var(--nordic-primary) 100%); }
-      .nordic-page-hero.theatre { background: linear-gradient(135deg, var(--nordic-violet) 0%, #D4956A 50%, var(--nordic-shadow) 100%); }
+      .nordic-page-hero.gymnastics { background-color: var(--nordic-primary); }
+      .nordic-page-hero.theatre { background-color: var(--nordic-secondary); }
       .nordic-page-hero::before {
         content: '';
         position: absolute;
         inset: 0;
-        background: radial-gradient(circle at 70% 30%, rgba(255,255,255,0.12) 0%, transparent 40%);
+        background: none;
       }
       .nordic-page-hero-content { position: relative; z-index: 1; max-width: 600px; }
       .nordic-page-kicker {
@@ -299,7 +307,7 @@ const t = useTranslations(effectiveLang);
         margin-bottom: 1rem;
       }
       .nordic-page-hero.gymnastics .nordic-page-headline { color: var(--nordic-shadow); }
-      .nordic-page-hero.theatre .nordic-page-headline { color: var(--nordic-white); }
+      .nordic-page-hero.theatre .nordic-page-headline { color: var(--nordic-text);}
       .nordic-page-subtitle {
         font-family: 'IBM Plex Sans', sans-serif;
         font-size: 1rem;
@@ -308,7 +316,7 @@ const t = useTranslations(effectiveLang);
         max-width: 480px;
       }
       .nordic-page-hero.gymnastics .nordic-page-subtitle { color: var(--nordic-text); }
-      .nordic-page-hero.theatre .nordic-page-subtitle { color: rgba(255,255,255,0.7); }
+      .nordic-page-hero.theatre .nordic-page-subtitle { color: var(--nordic-text); }
 
       /* Content Sections */
       .nordic-section { padding: 4rem 5rem; }
@@ -349,8 +357,8 @@ const t = useTranslations(effectiveLang);
         overflow: hidden;
       }
       .nordic-nav-card:hover { transform: translateY(-2px); }
-      .nordic-nav-card.gymnastics { background: linear-gradient(135deg, var(--nordic-ice) 0%, var(--nordic-secondary) 50%, var(--nordic-primary) 100%); }
-      .nordic-nav-card.theatre { background: linear-gradient(135deg, var(--nordic-violet) 0%, #D4956A 50%, var(--nordic-shadow) 100%); }
+      .nordic-nav-card.gymnastics { background-color: var(--nordic-primary); }
+      .nordic-nav-card.theatre { background-color: var(--nordic-secondary); }
       .nordic-nav-card-title {
         font-family: 'Inter', sans-serif;
         font-size: 1.25rem;
@@ -462,8 +470,8 @@ const t = useTranslations(effectiveLang);
         padding: 4rem 5rem;
         text-align: center;
       }
-      .nordic-cta.gymnastics { background: linear-gradient(135deg, var(--nordic-ice) 0%, var(--nordic-secondary) 50%, var(--nordic-primary) 100%); }
-      .nordic-cta.theatre { background: linear-gradient(135deg, var(--nordic-violet) 0%, #D4956A 50%, var(--nordic-shadow) 100%); }
+      .nordic-cta.gymnastics { background-color: var(--nordic-primary); }
+      .nordic-cta.theatre { background-color: var(--nordic-secondary); }
       .nordic-cta-title {
         font-family: 'Inter', sans-serif;
         font-size: 1.75rem;
