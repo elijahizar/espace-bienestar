@@ -28,12 +28,12 @@ jobs:
         with:
           node-version: 22
 
-        - name: Setup pnpm
+      - name: Setup pnpm
           uses: pnpm/action-setup@v2
           with:
             version: 9
 
-        - name: Cache pnpm store
+      - name: Cache pnpm store
           uses: actions/cache@v3
           with:
             path: ~/.pnpm-store
@@ -41,13 +41,13 @@ jobs:
             restore-keys: |
               ${{ runner.os }}-pnpm-
 
-        - name: Install dependencies
+      - name: Install dependencies
           run: pnpm install --frozen-lockfile --ignore-scripts
 
-        - name: Security audit
+      - name: Security audit
           run: pnpm audit --audit-level=high
 
-        - name: Build
+      - name: Build
           run: pnpm run build
 
       - name: Upload artifact

@@ -1,32 +1,112 @@
 ---
 import NordicLayout from '../../layouts/NordicLayout.astro';
-import { useTranslations } from '/src/i18n/utils';
+import { useTranslations } from '../../i18n/utils';
 
 const t = useTranslations('es');
 const base = import.meta.env.BASE_URL;
+
+const stages2026 = [
+  { date: "18 Enero", title: "Columna Vertebral", color: "var(--nordic-violet)" },
+  { date: "15 Febrero", title: "Plexo Raíz y Lumbosacro", color: "var(--nordic-frost)" },
+  { date: "22 Marzo", title: "Plexo Solar y Cardíaco", color: "var(--nordic-violet)" },
+  { date: "19 Abril", title: "Plexo Garganta y Frente", color: "var(--nordic-primary)" },
+  { date: "10 Mayo", title: "Columna Vertebral", color: "var(--nordic-violet)" },
+  { date: "14 Junio", title: "Plexo Raíz y Lumbosacro", color: "var(--nordic-frost)" },
+  { date: "5 Julio", title: "Plexo Solar y Cardíaco", color: "var(--nordic-violet)" },
+];
 ---
 
 <NordicLayout title="Horarios" description="Horarios de las actividades en Espace Bienestar" pageLang="es">
-  <section class="nordic-page-hero schedule">
-    <div class="nordic-page-hero-content">
-      <span class="nordic-page-kicker">Horarios</span>
-      <h1 class="nordic-page-headline">Horarios de las actividades</h1>
-      <p class="nordic-page-subtitle">Clases semanales y talleres mensuales</p>
+  <!-- Hero Section -->
+  <section class="relative py-20 bg-hero-gradient overflow-hidden">
+    <div class="hero-blob"></div>
+    <div class="hero-blob-teal"></div>
+    <div class="max-w-6xl mx-auto px-6 relative z-10">
+      <div class="animate-on-scroll">
+        <p class="text-white/80 uppercase tracking-[0.2em] text-sm mb-4">2026</p>
+        <h1 class="text-5xl md:text-6xl font-bold text-[var(--nordic-primary)] mb-6">Horarios</h1>
+        <p class="text-xl text-[var(--nordic-text)]/80 max-w-2xl">Clases semanales y talleres mensuales</p>
+      </div>
     </div>
   </section>
 
-  <section class="nordic-section">
-    <div class="nordic-section-inner">
-      <h2 class="nordic-section-title">Clases semanales</h2>
-      <p class="nordic-section-text">Consulte nuestros horarios regulares para gimnasia y teatro.</p>
+  <!-- Weekly Schedule -->
+  <section class="py-16 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-bold text-[var(--nordic-primary)] mb-8 text-center animate-on-scroll">
+        Clases semanales
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-[var(--nordic-mist)] rounded-2xl p-8 text-[var(--nordic-text)] animate-on-scroll">
+          <div class="flex items-center gap-4 mb-4">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            <span class="text-2xl font-bold">Lunes</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">{t.activities.posturale.title}</h3>
+          <p class="text-[var(--nordic-text)]/80">14h30 - 16h00</p>
+        </div>
+
+        <div class="bg-[var(--nordic-frost)] rounded-2xl p-8 text-[var(--nordic-shadow)] animate-on-scroll" style="transition-delay: 0.1s">
+          <div class="flex items-center gap-4 mb-4">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+            <span class="text-2xl font-bold">Jueves</span>
+          </div>
+          <h3 class="text-xl font-semibold mb-2 text-[var(--nordic-primary)]">{t.activities.rythmique.title}</h3>
+          <p class="text-[var(--nordic-shadow)]/80">14h00 - 15h00</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="nordic-section nordic-section-alt">
-    <div class="nordic-section-inner">
-      <h2 class="nordic-section-title">Talleres mensuales</h2>
-      <p class="nordic-section-text">{t.stages.description}</p>
-      <p class="nordic-section-text"><strong>{t.stages.schedule}</strong> - {t.stages.location}</p>
+  <!-- Monthly Stages -->
+  <section class="py-16 px-6 bg-[var(--nordic-mist)]">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-12 animate-on-scroll">
+        <h2 class="text-3xl font-bold text-[var(--nordic-primary)] mb-4">Talleres mensuales</h2>
+        <p class="text-lg text-[var(--nordic-primary)]/70">{t.schedule.monthly.description}</p>
+        <p class="text-[var(--nordic-violet)] font-medium mt-2">10h00 - 12h30</p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        {stages2026.map((stage, index) => (
+          <div
+            class="rounded-2xl p-6 text-center animate-on-scroll {stage.color.includes('nordic-frost') || stage.color.includes('nordic-ice') ? 'text-[var(--nordic-shadow)]' : 'text-white'}"
+            style={`background: ${stage.color}; transition-delay: ${index * 0.05}s`}
+          >
+            <p class="font-bold text-lg">{stage.date}</p>
+            <p class="text-[var(--nordic-shadow)]/90 text-sm mt-2">{stage.title}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Location -->
+  <section class="py-16 px-6">
+    <div class="max-w-4xl mx-auto text-center animate-on-scroll">
+      <div class="bg-white rounded-2xl p-8 shadow-lg inline-block">
+        <svg class="w-12 h-12 mx-auto mb-4 text-[var(--nordic-violet)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/></svg>
+        <p class="text-xl font-semibold text-[var(--nordic-primary)] mb-2">Ubicación</p>
+        <p class="text-[var(--nordic-primary)]/70">Salle du Sporting d'Este</p>
+        <p class="text-[var(--nordic-primary)]/70">Avenue Saint John Perse, Billère 64140</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="bg-[var(--nordic-shadow)] py-16 px-6">
+    <div class="max-w-4xl mx-auto text-center animate-on-scroll">
+      <h2 class="text-3xl font-bold text-[var(--nordic-primary)] mb-4">
+        Reserve su lugar
+      </h2>
+      <p class="text-white/70 mb-8">
+        Contáctenos para inscribirse a los talleres o clases.
+      </p>
+      <a href={`${base}es/contact`} class="btn-pill">
+        {t.nav.contact}
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
     </div>
   </section>
 </NordicLayout>
