@@ -1,0 +1,9 @@
+allowBuilds:
+  esbuild: false
+  sharp: false
+
+packages:
+  - .
+
+overrides:
+  esbuild: ^0.28.1
