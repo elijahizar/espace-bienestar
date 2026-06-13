@@ -1,0 +1,31 @@
+---
+import NordicLayout from '../../layouts/NordicLayout.astro';
+import { useTranslations } from '/src/i18n/utils';
+
+const t = useTranslations('es');
+const base = import.meta.env.BASE_URL;
+---
+
+<NordicLayout title="Sobre nosotros" description="Conozca a Sonia Cutri y Espace Bienestar" pageLang="es">
+  <section class="nordic-page-hero about">
+    <div class="nordic-page-hero-content">
+      <span class="nordic-page-kicker">Sobre nosotros</span>
+      <h1 class="nordic-page-headline">Sobre nosotros</h1>
+      <p class="nordic-page-subtitle">Conozca a Sonia Cutri y su enfoque de bienestar</p>
+    </div>
+  </section>
+
+  <section class="nordic-section">
+    <div class="nordic-section-inner">
+      <h2 class="nordic-section-title">Sonia Cutri</h2>
+      <div class="nordic-section-text">
+        <p><strong>{t.about.sonia.title}</strong> - {t.about.sonia.nationality}</p>
+        <p>{t.about.sonia.intro}</p>
+        {t.about.sonia.bio?.map((paragraph: string) => (
+          <p>{paragraph}</p>
+        ))}
+        <p>{t.about.sonia.approach}</p>
+      </div>
+    </div>
+  </section>
+</NordicLayout>

@@ -11,7 +11,8 @@ interface Props {
 const { title, description = "Espace Bienestar - Corps et Esprit en Harmonie. Gymnastique consciente et théâtre thérapeutique à Billère.", pageLang } = Astro.props;
 const base = import.meta.env.BASE_URL;
 const effectiveLang = pageLang ?? getLangFromUrl(Astro.url);
-const navBase = `${base}${effectiveLang === 'es' ? 'es/' : ''}`;
+const langPrefix = effectiveLang === 'es' ? 'es/' : '';
+const navBase = `${base}${langPrefix}`;
 const t = useTranslations(effectiveLang);
 ---
 
@@ -769,11 +770,11 @@ const t = useTranslations(effectiveLang);
     <div class="nordic-page">
       <header class="nordic-header">
         <div class="nordic-logo">Espace Bienestar</div>
-        <div class="nordic-lang-switch">
-          <a href={base} class={effectiveLang !== 'es' ? 'active' : ''}>FR</a>
-          <span class="nordic-lang-divider">·</span>
-          <a href={`${base}es`} class={effectiveLang === 'es' ? 'active' : ''}>ES</a>
-        </div>
+         <div class="nordic-lang-switch">
+           <a href={base} class={effectiveLang !== 'es' ? 'active' : ''}>FR</a>
+           <span class="nordic-lang-divider">·</span>
+           <a href={`${base}es/`} class={effectiveLang === 'es' ? 'active' : ''}>ES</a>
+         </div>
         <nav class="nordic-nav">
 <a href={navBase}>{t.nav.home}</a>
 <a href={`${navBase}activities`}>{t.nav.activities}</a>
@@ -884,11 +885,11 @@ const t = useTranslations(effectiveLang);
         <a href={`${navBase}schedule`}>Horaires</a>
         <a href={`${navBase}contact`}>Contact</a>
       </nav>
-      <div class="mobile-lang-switch">
-        <a href={base} class={effectiveLang !== 'es' ? 'active' : ''}>FR</a>
-        <span>·</span>
-        <a href={`${base}es`} class={effectiveLang === 'es' ? 'active' : ''}>ES</a>
-      </div>
+       <div class="mobile-lang-switch">
+         <a href={base} class={effectiveLang !== 'es' ? 'active' : ''}>FR</a>
+         <span>·</span>
+         <a href={`${base}es/`} class={effectiveLang === 'es' ? 'active' : ''}>ES</a>
+       </div>
     </div>
   </body>
 </html>

@@ -40,28 +40,41 @@
     },
     "posturale": {
       "title": "Gimnasia Postural",
+      "kicker": "Trabajo postural",
+      "subtitle": "Una actividad suave y rigurosa para una práctica corporal sana",
       "description": "Una actividad a la vez suave y rigurosa, esencial para una práctica corporal sana y duradera.",
       "cardDescription": "Trabajo postural para la espalda y cervicales",
       "schedule": "Lunes 14h30 a 16h",
       "cardSchedule": "Lunes 14h30",
       "location": "Salle du Sporting d'Este, Avenue Saint John Perse, Billère 64140",
-      "details": "Trabajo postural para la espalda, cervicales, ciáticas. 1h30 de clase, descalzo con ropa cómoda."
+      "details": "Trabajo postural para la espalda, cervicales, ciáticas. 1h30 de clase, descalzo con ropa cómoda.",
+      "ctaTitle": "¿Quieres probar?",
+      "ctaText": "Únete a nosotros para una primera sesión de descubrimiento."
     },
     "rythmique": {
       "title": "Gimnasia Rítmica Expressiva",
+      "kicker": "Movimiento rítmico",
+      "subtitle": "Movilización del cuerpo al ritmo de la música",
       "description": "El grupo trabaja con músicas de diferentes fuentes para ejercer y mobilizar las zonas del cuerpo correspondientes a cada ritmo.",
       "cardDescription": "Movilización del cuerpo al ritmo de la música",
       "schedule": "Jueves 14h a 15h",
       "cardSchedule": "Jueves 14h",
       "location": "Salle du Sporting d'Este, Avenue Saint John Perse, Billère 64140",
-      "details": "Desarrollo del hemisferio derecho del cerebro, ampliación de los registros sensoriales, lúdicos e intuitivos. 1h, descalzo."
+      "details": "Desarrollo del hemisferio derecho del cerebro, ampliación de los registros sensoriales, lúdicos e intuitivos. 1h, descalzo.",
+      "ctaTitle": "¿Quieres explorar?",
+      "ctaText": "Descubra los beneficios del movimiento rítmico."
     },
     "consciente": {
+      "title": "Gimnasia Consciente",
+      "kicker": "Nuestro enfoque",
+      "subtitle": "Reconectarse con el cuerpo a través del movimiento consciente",
       "methodTitle": "El método",
       "methodText": "Se trata de reconectarse con el cuerpo a través de nuestras sensaciones, utilizando nuestra atención \"Ver con el cuerpo\". Esta atención es guiada por el profesor; con el tiempo, esta guía se interioriza y la exploración se vuelve también personal.",
       "metaphorTitle": "Metáforas inspiradoras",
       "metaphorText": "Los pies como raíces, las piernas como tronco, las caderas como balanza y fuente, los brazos como alas, los pulmones como flor y pluma, el pecho como cielo, el corazón como sol, las articulaciones como elásticos, la flexibilidad como aceites, la distensión muscular como agua.",
-      "closingText": "Se trata sobre todo de Estar-Aquí, porque todos los momentos son este momento."
+      "closingText": "Se trata sobre todo de Estar-Aquí, porque todos los momentos son este momento.",
+      "ctaTitle": "¿Quieres explorar?",
+      "ctaText": "Descubra la gimnasia consciente y sus beneficios."
     },
     "theatre": {
       "title": "Teatro",
@@ -77,20 +90,26 @@
     },
     "bienetre": {
       "title": "Teatro y Bienestar",
+      "kicker": "Taller terapéutico",
+      "subtitle": "El teatro como soporte psicoterapéutico",
       "description": "Enfoque original orientado hacia la importancia de la expresión artística del Teatro como soporte psicoterapéutico. Para personas que sufren de trastornos de ansiedad, fobia social, timidez excesiva, agotamiento profesional o burn-out.",
       "details": "El juego teatral, el trabajo de conciencia corporal y el grupo de parole son caminos eficaces, lúdicos y creativos.",
       "paragraphs": [
         "En el Espace Bienestar, coordino un Taller de Teatro y Bienestar para personas que sufren de trastornos de ansiedad, fobia social, timidez excesiva, problemas de inserción en el trabajo, agotamiento profesional o burn-out.",
         "Enfoque original orientado sobre la importancia de la expresión artística del Teatro como soporte psicoterapéutico.",
-        "El juego teatral, el trabajo de consciencia corporal y el grupo de palabra son caminos eficaces, lúdicos y creativos."
+        "El juego teatral, el trabajo de consciencia corporal y el grupo de palabra son caminos eficaces, lúdicos y creativos"
       ],
       "cta": {
         "title": "¿Quieres explorar?",
         "text": "Descubra el teatro como camino hacia el bienestar."
-      }
+      },
+      "ctaTitle": "¿Quieres explorar?",
+      "ctaText": "Descubra el teatro como camino hacia el bienestar."
     },
     "amateur": {
       "title": "Teatro Amateur",
+      "kicker": "Taller creativo",
+      "subtitle": "Iniciación a la práctica teatral",
       "description": "Taller de iniciación a la práctica teatral para descubrir el trabajo del actor y su potencial creativo. Un espacio lúdico y experimental donde se abordarán la improvisación, la creación de personajes, la interpretación de textos y la puesta en escena.",
       "details": "El taller terminará con una representación de fin de año.",
       "paragraphs": [
@@ -101,20 +120,31 @@
       "cta": {
         "title": "¿Quieres actuar?",
         "text": "Únase a nuestro taller y explore su potencial creativo."
-      }
+      },
+      "ctaTitle": "¿Quieres actuar?",
+      "ctaText": "Únase a nuestro taller y explore su potencial creativo."
     }
   },
   "stages": {
     "title": "Talleres Combinados",
+    "kicker": "Talleres mensuales",
     "subtitle": "Un domingo por la mañana al mes",
     "schedule": "10h a 12h30",
     "location": "Salle du Sporting d'Este, Billère 64140",
     "description": "Talleres combinados de Gimnasia Rítmica Expressiva + Gimnasia Postural",
     "cardDescription": "Un domingo al mes, 10h a 12h30",
-    "next": "Próximo taller"
+    "next": "Próximo taller",
+    "ctaTitle": "¿Quieres participar?",
+    "ctaText": "Únete a nuestros talleres mensuales combinados."
   },
   "about": {
     "title": "Sobre nosotros",
+    "kicker": "La fundadora",
+    "headline": "Sonia Cutri",
+    "subtitle": "Directora de escena y monitora de Gimnasia Consciente",
+    "meta": {
+      "description": "Descubra el recorrido profesional de Sonia Cutri, directora de escena y monitora de Gimnasia Consciente, combinando teatro, pedagogía corporal y bienestar."
+    },
     "sonia": {
       "title": "Sonia Cutri",
       "nationality": "Argentina, nacionalizada española",
@@ -179,22 +209,28 @@
     }
   },
   "contact": {
-    "title": "Contacto",
-    "subtitle": "No dude en contactarnos",
+    "kicker": "Contacto",
+    "title": "Contáctenos",
+    "subtitle": "Estamos aquí para responder a sus preguntas",
     "location": {
-      "title": "Dirección",
+      "title": "Dónde encontrarnos",
       "address": "Salle du Sporting d'Este",
       "street": "Avenue Saint John Perse",
       "city": "Billère 64140"
     },
     "email": "contact@espacebienestar.com",
     "phone": "+33 6 12 34 56 78",
+    "emailLabel": "Email",
+    "phoneLabel": "Teléfono",
     "form": {
+      "title": "Envíenos un mensaje",
       "name": "Su nombre",
       "email": "Su email",
       "message": "Su mensaje",
       "activity": "Actividad que le interesa",
-      "submit": "Enviar"
+      "activityPlaceholder": "Seleccione una actividad",
+      "submit": "Enviar",
+      "other": "Otro"
     }
   },
   "footer": {

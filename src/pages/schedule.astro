@@ -47,13 +47,13 @@ const stages2026 = [
           <p class="text-[var(--nordic-text)]/80">14h30 - 16h00</p>
         </div>
 
-        <div class="bg-[var(--nordic-frost)] rounded-2xl p-8 text-white animate-on-scroll" style="transition-delay: 0.1s">
+        <div class="bg-[var(--nordic-frost)] rounded-2xl p-8 text-[var(--nordic-shadow)] animate-on-scroll" style="transition-delay: 0.1s">
           <div class="flex items-center gap-4 mb-4">
             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
             <span class="text-2xl font-bold">{lang === 'fr' ? 'Jeudi' : 'Jueves'}</span>
           </div>
           <h3 class="text-xl font-semibold mb-2 text-[var(--nordic-primary)]">{t.activities.rythmique.title}</h3>
-          <p class="text-white/80">14h00 - 15h00</p>
+          <p class="text-[var(--nordic-shadow)]/80">14h00 - 15h00</p>
         </div>
       </div>
     </div>
@@ -68,17 +68,17 @@ const stages2026 = [
         <p class="text-[var(--nordic-violet)] font-medium mt-2">10h00 - 12h30</p>
       </div>
 
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-        {stages2026.map((stage, index) => (
-          <div
-            class="rounded-2xl p-6 text-center animate-on-scroll text-white"
-            style={`background: ${stage.color}; transition-delay: ${index * 0.05}s`}
-          >
-            <p class="font-bold text-lg">{stage.date}</p>
-            <p class="text-white/90 text-sm mt-2">{stage.title}</p>
-          </div>
-        ))}
-      </div>
+       <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+         {stages2026.map((stage, index) => (
+           <div
+             class="rounded-2xl p-6 text-center animate-on-scroll {stage.color.includes('nordic-frost') || stage.color.includes('nordic-ice') ? 'text-[var(--nordic-shadow)]' : 'text-white'}"
+             style={`background: ${stage.color}; transition-delay: ${index * 0.05}s`}
+           >
+             <p class="font-bold text-lg">{stage.date}</p>
+             <p class="text-[var(--nordic-shadow)]/90 text-sm mt-2">{stage.title}</p>
+           </div>
+         ))}
+       </div>
     </div>
   </section>
 

@@ -1,0 +1,32 @@
+---
+import NordicLayout from '../../layouts/NordicLayout.astro';
+import { useTranslations } from '/src/i18n/utils';
+
+const t = useTranslations('es');
+const base = import.meta.env.BASE_URL;
+---
+
+<NordicLayout title="Horarios" description="Horarios de las actividades en Espace Bienestar" pageLang="es">
+  <section class="nordic-page-hero schedule">
+    <div class="nordic-page-hero-content">
+      <span class="nordic-page-kicker">Horarios</span>
+      <h1 class="nordic-page-headline">Horarios de las actividades</h1>
+      <p class="nordic-page-subtitle">Clases semanales y talleres mensuales</p>
+    </div>
+  </section>
+
+  <section class="nordic-section">
+    <div class="nordic-section-inner">
+      <h2 class="nordic-section-title">Clases semanales</h2>
+      <p class="nordic-section-text">Consulte nuestros horarios regulares para gimnasia y teatro.</p>
+    </div>
+  </section>
+
+  <section class="nordic-section nordic-section-alt">
+    <div class="nordic-section-inner">
+      <h2 class="nordic-section-title">Talleres mensuales</h2>
+      <p class="nordic-section-text">{t.stages.description}</p>
+      <p class="nordic-section-text"><strong>{t.stages.schedule}</strong> - {t.stages.location}</p>
+    </div>
+  </section>
+</NordicLayout>

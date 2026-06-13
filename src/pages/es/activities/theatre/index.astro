@@ -1,0 +1,52 @@
+---
+import NordicLayout from '../../../../layouts/NordicLayout.astro';
+import { useTranslations } from '/src/i18n/utils';
+
+const t = useTranslations('es');
+const base = import.meta.env.BASE_URL;
+---
+
+<NordicLayout title={t.activities.theatre.title} description={t.activities.theatre.description} pageLang="es">
+  <section class="nordic-page-hero theatre">
+    <div class="nordic-page-hero-content">
+      <span class="nordic-page-kicker">{t.activities.theatre.kicker}</span>
+      <h1 class="nordic-page-headline">{t.activities.theatre.title}</h1>
+      <p class="nordic-page-subtitle">{t.activities.theatre.subtitle}</p>
+    </div>
+  </section>
+
+  <section class="nordic-section">
+    <div class="nordic-section-inner">
+      <p class="nordic-section-text">{t.activities.theatre.description}</p>
+      <div class="nordic-nav-grid">
+        <a href={`${base}es/activities/theatre`} class="nordic-nav-card theatre">
+          <span class="nordic-nav-card-title">Teatro y Bienestar</span>
+          <span class="nordic-nav-card-arrow">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </span>
+        </a>
+        <a href={`${base}es/activities/theatre`} class="nordic-nav-card theatre">
+          <span class="nordic-nav-card-title">Teatro Amateur</span>
+          <span class="nordic-nav-card-arrow">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="nordic-cta theatre">
+    <h2 class="nordic-cta-title">Descubra el teatro</h2>
+    <p class="nordic-cta-text">Expresión creativa y bienestar emocional</p>
+    <a href={`${base}es/contact`} class="nordic-btn">
+      Contacto
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M5 12h14M12 5l7 7-7 7"/>
+      </svg>
+    </a>
+  </section>
+</NordicLayout>

@@ -1,0 +1,59 @@
+---
+import NordicLayout from '../../../layouts/NordicLayout.astro';
+import { useTranslations } from '/src/i18n/utils';
+
+const t = useTranslations('es');
+const base = import.meta.env.BASE_URL;
+---
+
+<NordicLayout title={t.activities.title} description={t.activities.title} pageLang="es">
+  <section class="nordic-page-hero activities">
+    <div class="nordic-page-hero-content">
+      <span class="nordic-page-kicker">{t.activities.gymnastics.kicker}</span>
+      <h1 class="nordic-page-headline">{t.activities.title}</h1>
+      <p class="nordic-page-subtitle">{t.home.intro}</p>
+    </div>
+  </section>
+
+  <section class="nordic-activity-group gymnastics">
+    <div class="nordic-activity-group-header">
+      <div class="nordic-activity-group-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M4.5 12.75l6 6 9-13.5"/>
+        </svg>
+      </div>
+      <h2 class="nordic-activity-group-title">{t.activities.gymnastics.title}</h2>
+    </div>
+    <div class="nordic-subcard-grid gymnastics">
+      <a href={`${base}es/activities/gymnastics`} class="nordic-subcard gymnastics">
+        <span class="nordic-subcard-label">Gimnasias Conscientes</span>
+        <h3 class="nordic-subcard-title">{t.activities.gymnastics.title}</h3>
+        <p class="nordic-subcard-desc">{t.activities.gymnastics.cardDescription}</p>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="nordic-subcard-arrow">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <section class="nordic-activity-group theatre">
+    <div class="nordic-activity-group-header">
+      <div class="nordic-activity-group-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+        </svg>
+      </div>
+      <h2 class="nordic-activity-group-title">{t.activities.theatre.title}</h2>
+    </div>
+    <div class="nordic-subcard-grid theatre">
+      <a href={`${base}es/activities/theatre`} class="nordic-subcard theatre">
+        <span class="nordic-subcard-label">Teatro</span>
+        <h3 class="nordic-subcard-title">{t.activities.theatre.title}</h3>
+        <p class="nordic-subcard-desc">{t.activities.theatre.cardDescription}</p>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="nordic-subcard-arrow">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+</NordicLayout>

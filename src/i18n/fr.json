@@ -120,54 +120,48 @@
     "next": "Prochain stage"
   },
   "about": {
-    "title": "À propos",
-    "sonia": {
-      "title": "Sonia Cutri",
-      "nationality": "Argentine, nationalisée espagnole",
-      "intro": "Mon enseignement corporel comporte une synthèse personnelle fruit de mon propre parcours.",
-      "bio": [
-        "Après le Lycée spécialisation pédagogie, j'ai fait trois années universitaires dans la carrière de Science de l'Éducation à Buenos Aires et ensuite j'ai passé le concours à l'École d'Art Dramatique où j'ai été diplômée comme comédienne et monitrice du Technique du Mouvement.",
-        "Des années après, j'ai passé à nouveau le concours pour être admise dans la carrière de Metteur en Scène, d'où je suis sortie diplômée.",
-        "En Argentine, Buenos Aires, j'ai travaillé comme éducatrice de théâtre dans l'Institut pour la Vocation Artistique (IVA) où j'ai enseigné pendant dix ans l'Éducation par Intermédiaire de l'Art. J'ai aussi travaillé comme actriz, metteuse en scène et scénariste pour la télévision.",
-        "En France, j'ai obtenu le DU/Certificat International d'Écologie Humaine à l'Université de Pau et des Pays de l'Adour, ainsi que la formation en Sensibilisation de l'Analyse de Groupe et Psychodrame à l'IFAG (Paris-Bordeaux). J'ai joué et dirigé de nombreuses pièces de théâtre, performances et récitals poétiques."
-      ],
-      "approach": "Au long de mon parcours de vie et en tant que comédienne et metteur en scène, je me suis intéressée à expérimenter différentes approches de travail corporel telles que le Hatha yoga, la Technique Alexander, la danse théâtre, la technique mixte de danse classique, la technique Graham et Barre à Terre, des différents types d'entraînement pour l'acteur, notamment dans le Théâtre Anthropologique, la Technique Rythmique Expressive de Centres d'énergie et le Yoga Iyengar, discipline que j'ai continué à pratiquer en France. Dans l'actualité je pratique aussi le Qi-Gong.",
-      "education": {
-        "title": "Formation",
-        "items": [
-          "Spécialisation pédagogie après le Lycée",
-          "Trois années en Science de l'Éducation à Buenos Aires",
-          "Diplômée Comédie & Technique du Mouvement - École d'Art Dramatique",
-          "Diplômée Mise en Scène",
-          "DU/Certificat International d'Écologie Humaine - Université de Pau",
-          "Sensibilisation Analyse de Groupe & Psychodrame - IFAG (Paris-Bordeaux)"
+    "title": "À propos - Espace Bienestar",
+    "meta": {
+      "description": "Découvrez le parcours professionnel de Sonia Cutri, metteuse en scène et monitrice de Gymnastique Consciente, alliant théâtre, pédagogie corporelle et bien-être."
+    },
+    "kicker": "La fondatrice",
+    "headline": "Sonia Cutri",
+    "subtitle": "Metteuse en scène et monitrice de Gymnastique Consciente",
+    "cv": {
+      "origines": {
+        "title": "Bio",
+        "content": [
+          "Je m’appelle Sonia Cutri, née en Argentine et nationalisée espagnole. Après un lycée spécialisé en pédagogie, j’ai suivi trois années d’études universitaires en Sciences de l’Éducation à Buenos Aires. J’ai ensuite intégré l’École d’Art Dramatique, où j’ai obtenu mon diplôme de comédienne et monitrice en Technique du Mouvement. Plus tard, j’ai réussi le concours pour la formation de Metteur en Scène, dont je suis également diplômée.",
+          "En France, j’ai complété mon parcours par le DU/Certificat International d’Écologie Humaine (Université de Pau et des Pays de l’Adour, Faculté des Lettres et Sciences Humaines) et une formation en Sensibilisation à l’Analyse de Groupe et Psychodrame (IFAG, Paris-Bordeaux)."
+        ]
+      },
+      "parcours": {
+        "title": "Parcours Artistique et Corporel",
+        "content": [
+          "Mon expérience artistique et corporelle s’étend sur plusieurs disciplines : théâtre (actrice, metteuse en scène et scénariste pour la télévision et des pièces), ainsi qu’une exploration approfondie des méthodes corporelles.",
+          "J’ai pratiqué et intégré des approches variées : Hatha Yoga, Technique Alexander, danse-théâtre, danse classique (technique mixte), technique Graham, Barre à Terre, Théâtre Anthropologique, Technique Rythmique Expressive des Centres d’Énergie, Yoga Iyengar (pratiqué en France), et actuellement le Qi-Gong. Mon enseignement corporel synthétise ces approches, fruit de mon expérience personnelle et professionnelle."
         ]
       },
       "experience": {
-        "title": "Expérience",
-        "items": [
-          "Éducatrice de théâtre à l'IVA, Buenos Aires - 10 ans",
-          "Actrice, metteuse en scène et scénariste TV",
-          "Pièces de théâtre, performances et récitals poétiques en France",
-          "Intervenante théâtre en écoles et collèges région paloise",
-          "Stages de théâtre pour adultes",
-          "Formatrice: AMP, Moniteur Éducateur, Éducateur Spécialisé"
+        "title": "Expérience Professionnelle",
+        "content": [
+          "En Argentine (Buenos Aires), j’ai travaillé comme éducatrice de théâtre à l’Institut pour la Vocation Artistique (IVA), où j’ai enseigné pendant 10 ans l’Éducation par l’Art. J’ai également travaillé comme actrice, metteuse en scène et scénariste pour la télévision.",
+          "En France, j’ai joué et dirigé de nombreuses pièces de théâtre, performances et récitals poétiques. J’ai intervenu comme éducatrice de théâtre et metteuse en scène dans différentes écoles et collèges de la région paloise, et j’ai réalisé des stages de théâtre pour adultes dans le domaine libéral.",
+          "J’ai également travaillé comme intervenante théâtrale pour la formation d’Aide Médico-Psychologique, Dynamique Emploi, Moniteur Éducateur et Éducateur Spécialisé au Centre de Formation Développement d’Etcharry, à l’Institut de Travail Social (ITS) à Pau, et dans l’Association ATS (À tout Service) à Mourenx et Orthez."
         ]
       },
       "currentRole": {
-        "title": "Aujourd'hui à l'Espace Bienestar",
-        "description": "À l'Espace Bienestar, je coordonne les activités suivantes pour votre bien-être :",
-        "activities": [
-          {
-            "name": "Atelier de Théâtre et Bien-Être",
-            "for": "Pour personnes souffrant de troubles d'anxiété, phobie sociale, timidité excessive, problèmes d'insertion professionnelle ou burn-out",
-            "focus": "Expression artistique comme support psychothérapeutique"
-          },
-          {
-            "name": "Atelier Théâtre Amateur",
-            "for": "Pour tous ceux qui souhaitent découvrir la pratique théâtrale",
-            "focus": "Improvisation, création de personnages, interprétation et mise en scène"
-          }
+        "title": "À l’Espace Bienestar",
+        "content": [
+          "À l’Espace Bienestar, je coordonne l’ensemble des ateliers, tant en Gymnastique Consciente (Posturale et Rythmique Expressive) qu’en Théâtre (Bien-Être et Amateur).",
+          "Ces ateliers s’adressent aux personnes souffrant de troubles d’anxiété, de phobie sociale, de timidité excessive, de problèmes d’insertion au travail, d’épuisement professionnel ou burn-out, ainsi qu’à tous ceux qui souhaitent découvrir la pratique théâtrale ou la gymnastique consciente."
+        ]
+      },
+      "philosophieEtEngagement": {
+        "title": "Philosophie et Engagement",
+        "content": [
+          "Mon enseignement corporel repose sur une synthèse personnelle issue de mon parcours. Il m’a permis, en tant que monitrice, d’enseigner non seulement ce que je sais, mais aussi ce que je suis.",
+          "À l’Espace Bienestar, je coordonne l’ensemble des ateliers, tant en Gymnastique Consciente (Posturale et Rythmique Expressive) qu’en Théâtre (Bien-Être et Amateur). Ces ateliers s’adressent aux personnes souffrant de troubles d’anxiété, de phobie sociale, de timidité excessive, de problèmes d’insertion au travail, d’épuisement professionnel ou burn-out, ainsi qu’à tous ceux qui souhaitent découvrir la pratique théâtrale ou la gymnastique consciente."
         ]
       }
     }
@@ -185,22 +179,28 @@
     }
   },
   "contact": {
-    "title": "Contact",
-    "subtitle": "N'hésitez pas à nous contacter",
+    "kicker": "Contact",
+    "title": "Contactez-nous",
+    "subtitle": "Nous sommes là pour répondre à vos questions",
     "location": {
-      "title": "Adresse",
+      "title": "Où nous trouver",
       "address": "Salle du Sporting d'Este",
       "street": "Avenue Saint John Perse",
       "city": "Billère 64140"
     },
     "email": "contact@espacebienestar.com",
     "phone": "+33 6 12 34 56 78",
+    "emailLabel": "Email",
+    "phoneLabel": "Téléphone",
     "form": {
+      "title": "Envoyez-nous un message",
       "name": "Votre nom",
       "email": "Votre email",
       "message": "Votre message",
-      "activity": "Activité которая vous intéresse",
-      "submit": "Envoyer"
+      "activity": "Activité qui vous intéresse",
+      "activityPlaceholder": "Sélectionnez une activité",
+      "submit": "Envoyer",
+      "other": "Autre"
     }
   },
   "footer": {
