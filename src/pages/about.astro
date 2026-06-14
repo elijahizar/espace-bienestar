@@ -1,6 +1,7 @@
 ---
 import NordicLayout from '../layouts/NordicLayout.astro';
 import { useTranslations, getLangFromUrl } from '../i18n/utils';
+import soniaImg from '../assets/img/soniacutribio.jpg';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -21,8 +22,7 @@ const navBase = `${base}${lang === 'es' ? 'es/' : ''}`;
       <p class="nordic-subtitle">{t.about.subtitle}</p>
     </div>
     <div class="nordic-hero-right">
-      <div class="hero-blob-green"></div>
-      <div class="hero-blob-violet"></div>
+      <img width="100%" src={soniaImg.src} alt="Sonia Cutri" class="sonia-hero-img" />
     </div>
   </section>
 
@@ -123,6 +123,18 @@ const navBase = `${base}${lang === 'es' ? 'es/' : ''}`;
     border-radius: 50%;
     filter: blur(50px);
     pointer-events: none;
+  }
+
+    .sonia-hero-img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 1rem;
+    object-fit: cover;
+    box-shadow: 0 4px 12px rgba(44, 62, 80, 0.1);
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
   }
 
   /* CV Sections */
@@ -258,6 +270,14 @@ const navBase = `${base}${lang === 'es' ? 'es/' : ''}`;
       width: 100%;
       max-width: 280px;
       justify-content: center;
+    }
+  }
+
+
+  @media (max-width: 900px) {
+    .sonia-hero-img {
+      width: 100%;
+      margin: 1rem auto;
     }
   }
 </style>

@@ -1,6 +1,6 @@
 ---
 import NordicLayout from '../layouts/NordicLayout.astro';
-import { useTranslations, getLangFromUrl } from '../i18n/utils';
+import { useTranslations, getLangFromUrl, localizePath } from '../i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -105,10 +105,10 @@ const stages2026 = [
           ? 'Contactez-nous pour vous inscrire aux stages ou cours.'
           : 'Contáctenos para inscribirse a los talleres o clases.'}
       </p>
-      <a href={lang === 'fr' ? '/contact' : '/es/contact'} class="btn-pill">
-        {t.nav.contact}
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-      </a>
+          <a href={localizePath('contact', lang)} class="nordic-btn">
+      {t.nav.contact}
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
     </div>
   </section>
 </NordicLayout>

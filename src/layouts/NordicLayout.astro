@@ -135,33 +135,34 @@ const t = useTranslations(effectiveLang);
       .nordic-btn:hover { background: var(--nordic-shadow); }
       .nordic-btn svg { width: 1rem; }
 
-      .nordic-hero-right {
-        position: relative;
-        min-height: 40vh;
-        background-color: var(--nordic-secondary);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        overflow: hidden;
-      }
+        .nordic-hero-right {
+          position: relative;
+          min-height: 40vh;
+          background-color: var(--nordic-secondary);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          overflow: hidden;
+          z-index: 1;
+        }
 
-      .nordic-hero-right::before {
-        content: '';
-        position: absolute;
-        inset: 0;
-        background: radial-gradient(circle at 40% 40%, rgba(155, 203, 147, 0.18), transparent 90%);
-        pointer-events: none;
-      }
+       .nordic-hero-right::before {
+         content: '';
+         position: absolute;
+         inset: 0;
+         background: radial-gradient(circle at 40% 40%, rgba(155, 203, 147, 0.18), transparent 90%);
+         pointer-events: none;
+       }
 
-      .nordic-hero-image {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
-        opacity: 0.56;
-        filter: brightness(1.03) contrast(1.03) saturate(0.98);
-        transition: filter 0.3s ease, opacity 0.3s ease;
-      }
+       .nordic-hero-image {
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+         object-position: center;
+         opacity: 0.6;
+         filter: brightness(1.03) contrast(1.03) saturate(0.98);
+         transition: filter 0.3s ease, opacity 0.3s ease;
+       }
       .nordic-crystal-shape {
         position: absolute;
         border: 1px solid rgba(255,255,255,0.5);
@@ -242,7 +243,7 @@ const t = useTranslations(effectiveLang);
         font-weight: 300;
         line-height: 1.7;
         margin-bottom: 2rem;
-        max-width: 280px;
+        max-width: 480px;
       }
       .nordic-activity.gymnastics .nordic-activity-desc { color: var(--nordic-text); }
       .nordic-activity.theatre .nordic-activity-desc { color: var(--nordic-text); }
@@ -769,7 +770,7 @@ const t = useTranslations(effectiveLang);
     <a href="#main-content" class="skip-link">{t.nav.skipLink}</a>
     <div class="nordic-page">
       <header class="nordic-header">
-        <div class="nordic-logo">Espace Bienestar</div>
+        <div class="nordic-logo"><a href={navBase}>Espace bienestar</a></div>
          <div class="nordic-lang-switch">
            <a href={base} class={effectiveLang !== 'es' ? 'active' : ''}>FR</a>
            <span class="nordic-lang-divider">·</span>
