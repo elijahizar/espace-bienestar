@@ -8,7 +8,13 @@
       "title": "Nuestras Actividades",
       "subtitle": "Enfoques bienveillantes para su bienestar"
     },
-    "intro": "Bienvenido a Espace Bienestar, su refugio para el movimiento consciente y el teatro terapéutico en Billère. Proponemos talleres adaptados a todos, sin límite de edad."
+    "introText": "Bienvenido a Espace Bienestar, su refugio para el movimiento consciente y el teatro terapéutico en Billère. Proponemos talleres adaptados a todos, sin límite de edad.",
+    "ateliers": [
+      "Gimnasia Postural Consciente",
+      "Gimnasia Rítmica Expresiva",
+      "Teatro y Bienestar",
+      "Teatro Aficionado"
+    ]
   },
   "nav": {
     "home": "Inicio",

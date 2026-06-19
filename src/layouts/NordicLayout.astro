@@ -72,6 +72,7 @@ const t = useTranslations(effectiveLang);
 
       .nordic-hero {
         min-height: 40vh;
+        max-height: 50vh;
         display: grid;
         grid-template-columns: 1fr 1fr;
       }
@@ -96,7 +97,7 @@ const t = useTranslations(effectiveLang);
 
       .nordic-headline {
         font-family: 'Inter', sans-serif;
-        font-size: clamp(2.5rem, 5vw, 4rem);
+        font-size: clamp(2rem, 4vw, 3rem);
         font-weight: 300;
         line-height: 1.25;
         color: var(--nordic-shadow);
@@ -107,13 +108,42 @@ const t = useTranslations(effectiveLang);
 
       .nordic-subtitle {
         font-family: 'IBM Plex Sans', sans-serif;
-        font-size: 1rem;
+        font-size: 1.2rem;
         font-weight: 300;
         color: var(--nordic-text);
         opacity: 0.7;
-        max-width: 360px;
+        max-width: 660px;
         line-height: 1.8;
-        margin-bottom: 3rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .nordic-hero-ateliers {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        margin-bottom: 2rem;
+      }
+
+      .nordic-hero-ateliers li {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        font-family: 'IBM Plex Sans', sans-serif;
+        font-size: 0.85rem;
+        font-weight: 300;
+        color: var(--nordic-text);
+        opacity: 0.8;
+      }
+
+      .nordic-hero-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--nordic-primary);
+        flex-shrink: 0;
       }
 
       .nordic-btn {
@@ -135,9 +165,10 @@ const t = useTranslations(effectiveLang);
       .nordic-btn:hover { background: var(--nordic-shadow); }
       .nordic-btn svg { width: 1rem; }
 
-        .nordic-hero-right {
+         .nordic-hero-right {
           position: relative;
           min-height: 40vh;
+          max-height: 50vh;
           background-color: var(--nordic-secondary);
           display: flex;
           align-items: center;
@@ -755,7 +786,7 @@ const t = useTranslations(effectiveLang);
         .nordic-mobile-toggle { display: block; }
         .nordic-hero { grid-template-columns: 1fr; }
         .nordic-hero-left { padding: 5rem 1.5rem 3rem; }
-        .nordic-hero-right { min-height: 40vh; }
+        .nordic-hero-right { min-height: 40vh; max-height: 50vh; }
         .nordic-activities { grid-template-columns: 1fr; }
         .nordic-activity { padding: 3rem 1.5rem; }
         .nordic-intro { grid-template-columns: 1fr; padding: 4rem 1.5rem; gap: 2rem; }

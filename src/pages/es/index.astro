@@ -6,7 +6,7 @@ const t = useTranslations('es');
 const base = import.meta.env.BASE_URL;
 ---
 
-<NordicLayout title={t.home.hero.title} description={t.home.intro} pageLang="es">
+<NordicLayout title={t.home.hero.title} description={t.home.introText} pageLang="es">
   <section class="nordic-hero">
     <div class="nordic-hero-left">
       <span class="nordic-kicker">{t.activities.gymnastics.kicker}</span>
@@ -55,7 +55,7 @@ const base = import.meta.env.BASE_URL;
   </section>
 
   <section class="nordic-intro">
-    <p class="nordic-intro-text">{t.home.intro}</p>
+    <p class="nordic-intro-text">{t.home.introText}</p>
     <div class="nordic-intro-links">
       <a href={`${base}es/about`} class="nordic-intro-link">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">

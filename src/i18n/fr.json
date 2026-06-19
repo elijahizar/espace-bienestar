@@ -8,7 +8,13 @@
       "title": "Nos Activités",
       "subtitle": "Des approches bienveillantes pour votre bien-être"
     },
-    "intro": "Bienvenue à l'Espace Bienestar à Billère. Gymnastique (posturale et rythmique) ou Théâtre (amateur et bien-être) : découvrez des ateliers bienveillants, adaptés à toutes les générations."
+    "introText": "Bienvenue à l'Espace BIENESTAR à Billère, et découvrez ses Ateliers de :",
+    "ateliers": [
+      "Gymnastique Posturale Consciente",
+      "Gymnastique Rythmique Expressive",
+      "Théâtre et Bien-Être",
+      "Théâtre Amateur"
+    ]
   },
   "nav": {
     "home": "Accueil",
@@ -22,7 +28,7 @@
     "title": "Nos Activités",
     "explore": "Découvrir",
     "gymnastics": {
-      "title": "Gymnastique Consciente",
+      "title": "Les Gymnastiques",
       "subtitle": "Mouvement conscient",
       "description": "Les Gymnastiques Conscientes vous invitent à apprendre progressivement à vous détendre et avoir une meilleure connaissance de vos ressources corporelles. La pratique de différents exercices de tonicité, de flexibilité et de détente réalisés consciemment vous permettra de corriger vos mauvaises postures et d'élargir vos possibilités de mouvement.",
       "cardDescription": "Mouvement conscient et détente pour tous",
