@@ -27,7 +27,7 @@ const activities = [
 <NordicLayout title="Espace Bienestar – Accueil" pageLang={lang}>
   <section class="nordic-hero">
     <div class="nordic-hero-left">
-      <span class="nordic-kicker">Espace Bienestar · Billère · France</span>
+      <span class="nordic-kicker">Espace Bienestar · Billère 64140 · France</span>
       <h2 class="nordic-headline">
         L'Art et Le Corps.
       </h2>
@@ -40,13 +40,18 @@ const activities = [
           </li>
         ))}
       </ul>
-      <a href={`${base}contact`} class="nordic-btn">
-        Commencer
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      <a href={`${base}about`} class="nordic-intro-link">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12h14M12 5l7 7-7 7"/>
+        </svg>
+        Coordinatrice SONIA CUTRI
       </a>
     </div>
     <div class="nordic-hero-right">
-       <img src={`${base}img/siluetas.webp`} alt="Espace Bienestar hero" class="nordic-hero-image" />
+       <div class="nordic-hero-carousel">
+         <img src={`${base}img/siluetas.webp`} alt="Espace Bienestar hero" class="nordic-hero-slide active" />
+         <img src={`${base}img/atelier.webp`} alt="Espace Bienestar atelier" class="nordic-hero-slide" />
+       </div>
     </div>
   </section>
 

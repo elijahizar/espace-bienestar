@@ -30,7 +30,14 @@
     "gymnastics": {
       "title": "Les Gymnastiques",
       "subtitle": "Mouvement conscient",
-      "description": "Les Gymnastiques Conscientes vous invitent à apprendre progressivement à vous détendre et avoir une meilleure connaissance de vos ressources corporelles. La pratique de différents exercices de tonicité, de flexibilité et de détente réalisés consciemment vous permettra de corriger vos mauvaises postures et d'élargir vos possibilités de mouvement.",
+      "description": ["La Gymnastique Posturale Consciente ainsi que la Gymnastique Rythmique Expressive sont deux techniques qui stimulent la vitalité, la flexibilité, la tonicité, la souplesse, l’expression et la détente.",
+
+"Ces deux gymnastiques tiennent compte de la relation étroite entre le corps et l'esprit, de ce fait elles vous amènent à mieux percevoir et comprendre votre corps comme une entité intégrée.",
+"Lors du temps et avec une pratique consciente et régulière vous allez élargir votre capacité de mouvements, avoir une meilleure posture générale, ainsi qu’une plus grande conscience de vos ressources corporelles.",
+
+"Sachez que vous pouvez essayer gratuitement les deux techniques pour savoir laquelle des deux s’adapte le mieux à vos besoins et préférences.",
+
+"La pratique est accessible à tous et sans limite d'âge"],
       "cardDescription": "Mouvement conscient et détente pour tous",
       "introTitle": "La Gymnastique Consciente",
       "introParagraphs": [
@@ -119,17 +126,17 @@
     "schedule": "10h à 12h30",
     "location": "Salle du Sporting d'Este, Billère 64140",
     "description": "Stages combinés de Gymnastique Rythmique Expressive + Gymnastique Posturale",
-    "cardDescription": "Un dimanche par mois, 10h à 12h30",
+    "cardDescription": "Un dimanche matin par mois, de 10h à 12h30",
     "next": "Prochain stage"
   },
   "about": {
     "title": "À propos - Espace Bienestar",
     "meta": {
-      "description": "Découvrez le parcours professionnel de Sonia Cutri, metteuse en scène et monitrice de Gymnastique Consciente, alliant théâtre, pédagogie corporelle et bien-être."
+      "description": "Découvrez le parcours professionnel de Sonia Cutri, Comédienne, Metteuse en Scène et Monitrice de Gymnastique Posturale Consciente et Gymnastique Rythmique Expressive."
     },
     "kicker": "La fondatrice",
     "headline": "Sonia Cutri",
-    "subtitle": "Metteuse en scène et monitrice de Gymnastique Consciente et Théâtre",
+    "subtitle": "Comédienne, Metteuse en Scène et Monitrice de Gymnastique Posturale Consciente et Gymnastique Rythmique Expressive",
     "cv": {
       "origines": {
         "title": "Bio",
@@ -142,7 +149,7 @@
         "title": "Parcours Artistique et Corporel",
         "content": [
           "Mon expérience artistique et corporelle s’étend sur plusieurs disciplines : théâtre (actrice, metteuse en scène et scénariste pour la télévision et des pièces), ainsi qu’une exploration approfondie des méthodes corporelles.",
-          "J’ai pratiqué et intégré des approches variées : Hatha Yoga, Technique Alexander, danse-théâtre, danse classique (technique mixte), technique Graham, Barre à Terre, Théâtre Anthropologique, Technique Rythmique Expressive des Centres d’Énergie, Yoga Iyengar (pratiqué en France), et actuellement le Qi-Gong. Mon enseignement corporel synthétise ces approches, fruit de mon expérience personnelle et professionnelle."
+          "J’ai pratiqué et intégré des approches variées : Hatha Yoga, Technique Alexander, danse-théâtre, danse classique (technique mixte), technique Graham, Barre à Terre, Théâtre Anthropologique, Technique Rythmique Expressive des Centres d’Énergie,  Yoga Iyengar, pratique continué en France, et actuellement le Qi-Gong. Mon enseignement corporel synthétise ces approches, fruit de mon expérience personnelle et professionnelle."
         ]
       },
       "experience": {
@@ -164,7 +171,7 @@
         "title": "Philosophie et Engagement",
         "content": [
           "Mon enseignement corporel repose sur une synthèse personnelle issue de mon parcours. Il m’a permis, en tant que monitrice, d’enseigner non seulement ce que je sais, mais aussi ce que je suis.",
-          "À l’Espace Bienestar, je coordonne l’ensemble des ateliers, tant en Gymnastique Consciente (Posturale et Rythmique Expressive) qu’en Théâtre (Bien-Être et Amateur). Ces ateliers s’adressent aux personnes souffrant de troubles d’anxiété, de phobie sociale, de timidité excessive, de problèmes d’insertion au travail, d’épuisement professionnel ou burn-out, ainsi qu’à tous ceux qui souhaitent découvrir la pratique théâtrale ou la gymnastique consciente."
+          "À l’ESPACE BIENESTAR je coordonne l’ensemble des activités, tant <b>l'Atelier de Gymnastique Posturale Consciente</b> que  <b>l'Atelier de Gymnastique Rythmique Expressive</b>, ainsi que <b>l'Atelier de Théâtre Amateur</b> adressé aux amateurs du Théâtre que <b>l'Atelier de Théâtre et Bien-Être</b> adressé aux personnes souffrant de troubles d’anxiété, de phobie sociale, de timidité excessive et d’épuisement professionnel ou burn-out."
         ]
       }
     }

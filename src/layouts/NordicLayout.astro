@@ -40,8 +40,8 @@ const t = useTranslations(effectiveLang);
         justify-content: space-between;
         align-items: center;
         padding: 1.5rem 4rem;
-        background: var(--nordic-white);
-        border-bottom: 1px solid var(--nordic-ice);
+        background: var(--nordic-header-bg);
+        border-bottom: 1px solid var(--nordic-header-border);
       }
 
       .nordic-logo {
@@ -64,7 +64,7 @@ const t = useTranslations(effectiveLang);
       .nordic-nav a {
         color: var(--nordic-text);
         text-decoration: none;
-        opacity: 0.6;
+        opacity: 0.9;
         transition: opacity 0.2s;
       }
 
@@ -87,12 +87,12 @@ const t = useTranslations(effectiveLang);
 
       .nordic-kicker {
         font-family: 'IBM Plex Sans', sans-serif;
-        font-size: 0.7rem;
+        font-size: 0.9rem;
         font-weight: 500;
         letter-spacing: 0.2em;
         text-transform: uppercase;
         color: var(--nordic-primary);
-        margin-bottom: 2rem;
+        margin-bottom: 0.2rem;
       }
 
       .nordic-headline {
@@ -181,18 +181,30 @@ const t = useTranslations(effectiveLang);
          content: '';
          position: absolute;
          inset: 0;
-         background: radial-gradient(circle at 40% 40%, rgba(155, 203, 147, 0.18), transparent 90%);
+         background: radial-gradient(circle at 40% 40%, rgba(125, 170, 111, 0.18), transparent 90%);
          pointer-events: none;
        }
 
-       .nordic-hero-image {
+       .nordic-hero-carousel {
+         position: relative;
+         width: 100%;
+         height: 100%;
+       }
+
+       .nordic-hero-slide {
+         position: absolute;
+         inset: 0;
          width: 100%;
          height: 100%;
          object-fit: cover;
          object-position: center;
-         opacity: 0.6;
          filter: brightness(1.03) contrast(1.03) saturate(0.98);
-         transition: filter 0.3s ease, opacity 0.3s ease;
+         opacity: 0;
+         transition: opacity 0.8s ease-in-out;
+       }
+
+       .nordic-hero-slide.active {
+         opacity: 1;
        }
       .nordic-crystal-shape {
         position: absolute;
@@ -301,8 +313,8 @@ const t = useTranslations(effectiveLang);
 
       .nordic-subcard { display: flex; flex-direction: column; padding: 2rem; min-height: 260px; text-decoration: none; transition: all 0.3s ease; border-radius: 2px; }
       .nordic-subcard:hover { transform: translateY(-4px); }
-      .nordic-subcard.gymnastics { background: var(--nordic-white); border-left: 3px solid var(--nordic-primary); box-shadow: 0 2px 8px rgba(44,62,80,0.08); }
-      .nordic-subcard.theatre { background: var(--nordic-white); border-left: 3px solid var(--nordic-secondary); box-shadow: 0 2px 8px rgba(44,62,80,0.08); }
+      .nordic-subcard.gymnastics { background: var(--nordic-card); border-left: 3px solid var(--nordic-primary); box-shadow: 0 2px 8px rgba(45,58,53,0.08); }
+      .nordic-subcard.theatre { background: var(--nordic-card); border-left: 3px solid var(--nordic-secondary); box-shadow: 0 2px 8px rgba(45,58,53,0.08); }
 
       .nordic-subcard-label { font-size: 0.7rem; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.6; margin-bottom: 0.5rem; }
       .nordic-subcard-title { font-family: 'Inter', sans-serif; font-size: 1.25rem; font-weight: 400; color: var(--nordic-shadow); margin-bottom: 0.75rem; }
@@ -373,6 +385,7 @@ const t = useTranslations(effectiveLang);
         background: none;
       }
       .nordic-page-hero-content { position: relative; z-index: 1; max-width: 600px; }
+      .nordic-page-hero.gymnastics .nordic-page-hero-content { max-width: 100%; width: 100%; }
       .nordic-page-kicker {
         font-family: 'IBM Plex Sans', sans-serif;
         font-size: 0.7rem;
@@ -400,7 +413,7 @@ const t = useTranslations(effectiveLang);
         line-height: 1.8;
         max-width: 480px;
       }
-      .nordic-page-hero.gymnastics .nordic-page-subtitle { color: var(--nordic-text); }
+      .nordic-page-hero.gymnastics .nordic-page-subtitle { color: var(--nordic-text); max-width: 1080px;}
       .nordic-page-hero.theatre .nordic-page-subtitle { color: var(--nordic-text); }
 
       /* Content Sections */
@@ -590,8 +603,8 @@ const t = useTranslations(effectiveLang);
 
       .nordic-footer {
         padding: 3rem 4rem;
-        background: var(--nordic-white);
-        border-top: 1px solid var(--nordic-ice);
+        background: var(--nordic-header-bg);
+        border-top: 1px solid var(--nordic-header-border);
         font-family: 'IBM Plex Sans', sans-serif;
       }
 
@@ -713,7 +726,7 @@ const t = useTranslations(effectiveLang);
         left: 0;
         right: 0;
         bottom: 0;
-        background: var(--nordic-white);
+        background: var(--nordic-header-bg);
         z-index: 1000;
         padding: 6rem 2rem 2rem;
         flex-direction: column;
@@ -797,7 +810,7 @@ const t = useTranslations(effectiveLang);
 
     </style>
   </head>
-  <body class="min-h-screen flex flex-col bg-[var(--nordic-white)]">
+  <body class="min-h-screen flex flex-col bg-[var(--nordic-background)]">
     <a href="#main-content" class="skip-link">{t.nav.skipLink}</a>
     <div class="nordic-page">
       <header class="nordic-header">
@@ -888,6 +901,20 @@ const t = useTranslations(effectiveLang);
           });
         });
       }
+    </script>
+    <script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const slides = document.querySelectorAll('.nordic-hero-slide');
+        if (slides.length > 1) {
+          let current = 0;
+          setInterval(() => {
+            slides[current].classList.remove('active');
+            current = (current + 1) % slides.length;
+            slides[current].classList.add('active');
+          }, 5000);
+        }
+      });
     </script>
     <script>
       document.addEventListener('DOMContentLoaded', () => {

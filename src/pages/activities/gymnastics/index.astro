@@ -10,13 +10,11 @@ const base = import.meta.env.BASE_URL;
     {
       title: t.activities.posturale.title,
       subtitle: t.activities.posturale.cardSchedule,
-      description: t.activities.posturale.cardDescription,
       link: `${base}activities/gymnastics/posturale`
     },
     {
       title: t.activities.rythmique.title,
       subtitle: t.activities.rythmique.cardSchedule,
-      description: t.activities.rythmique.cardDescription,
       link: `${base}activities/gymnastics/rythmique`
     },
     {
@@ -33,7 +31,9 @@ const base = import.meta.env.BASE_URL;
     <div class="nordic-page-hero-content">
       <span class="nordic-page-kicker">{t.activities.gymnastics.kicker}</span>
       <h1 class="nordic-page-headline">{t.activities.gymnastics.title}</h1>
-      <p class="nordic-page-subtitle">{t.activities.gymnastics.subtitle}</p>
+      <!-- <p class="nordic-page-subtitle">{t.activities.gymnastics.subtitle}</p> -->
+      <p class="nordic-page-subtitle">{t.activities.gymnastics.description}</p>
+
     </div>
   </section>
 

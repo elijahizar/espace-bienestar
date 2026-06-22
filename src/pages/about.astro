@@ -34,7 +34,7 @@ const navBase = `${base}${lang === 'es' ? 'es/' : ''}`;
         <h2 class="nordic-cv-title">Bio</h2>
         <div class="nordic-cv-content">
           {t.about.cv.origines.content.map((paragraph: string) => (
-            <p class="nordic-cv-paragraph">{paragraph}</p>
+            <p class="nordic-cv-paragraph" set:html={paragraph} />
           ))}
         </div>
       </div>
@@ -44,7 +44,7 @@ const navBase = `${base}${lang === 'es' ? 'es/' : ''}`;
         <h2 class="nordic-cv-title">{t.about.cv.parcours.title}</h2>
         <div class="nordic-cv-content">
           {t.about.cv.parcours.content.map((paragraph: string) => (
-            <p class="nordic-cv-paragraph">{paragraph}</p>
+            <p class="nordic-cv-paragraph" set:html={paragraph} />
           ))}
         </div>
       </div>
@@ -54,7 +54,7 @@ const navBase = `${base}${lang === 'es' ? 'es/' : ''}`;
         <h2 class="nordic-cv-title">{t.about.cv.experience.title}</h2>
         <div class="nordic-cv-content">
           {t.about.cv.experience.content.map((paragraph: string) => (
-            <p class="nordic-cv-paragraph">{paragraph}</p>
+            <p class="nordic-cv-paragraph" set:html={paragraph} />
           ))}
         </div>
       </div>
@@ -64,7 +64,7 @@ const navBase = `${base}${lang === 'es' ? 'es/' : ''}`;
         <h2 class="nordic-cv-title">{t.about.cv.philosophieEtEngagement.title}</h2>
         <div class="nordic-cv-content">
           {t.about.cv.philosophieEtEngagement.content.map((paragraph: string) => (
-            <p class="nordic-cv-paragraph">{paragraph}</p>
+            <p class="nordic-cv-paragraph" set:html={paragraph} />
           ))}
         </div>
       </div>
