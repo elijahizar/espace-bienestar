@@ -1,0 +1,30 @@
+---
+import NordicLayout from '../../../../layouts/NordicLayout.astro';
+import { useTranslations } from '../../../../i18n/utils';
+
+const t = useTranslations('es');
+---
+
+<NordicLayout title={t.activities.amateur.title} pageLang="es">
+  <section class="nordic-page-hero theatre">
+    <div class="nordic-page-hero-content">
+      <span class="nordic-page-kicker">{t.activities.amateur.title}</span>
+      <h1 class="nordic-page-headline">{t.activities.amateur.title}</h1>
+    </div>
+  </section>
+
+  <section class="nordic-detail">
+    {t.activities.amateur.paragraphs.map((paragraph) => (
+      <p class="nordic-section-text">{paragraph}</p>
+    ))}
+  </section>
+
+  <section class="nordic-cta theatre">
+    <h2 class="nordic-cta-title">{t.activities.amateur.cta.title}</h2>
+    <p class="nordic-cta-text">{t.activities.amateur.cta.text}</p>
+    <a href={`${import.meta.env.BASE_URL}es/contact`} class="nordic-btn">
+      {t.nav.contact}
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </section>
+</NordicLayout>

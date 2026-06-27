@@ -7,16 +7,16 @@ const base = import.meta.env.BASE_URL;
 
 const stages2026 = [
   { date: "18 Enero", title: "Columna Vertebral", color: "var(--nordic-violet)" },
-  { date: "15 Febrero", title: "Plexo Raíz y Lumbosacro", color: "var(--nordic-frost)" },
+  { date: "15 Febrero", title: "Plexo Raíz y Lombo-sacré", color: "var(--nordic-frost)" },
   { date: "22 Marzo", title: "Plexo Solar y Cardíaco", color: "var(--nordic-violet)" },
   { date: "19 Abril", title: "Plexo Garganta y Frente", color: "var(--nordic-primary)" },
   { date: "10 Mayo", title: "Columna Vertebral", color: "var(--nordic-violet)" },
-  { date: "14 Junio", title: "Plexo Raíz y Lumbosacro", color: "var(--nordic-frost)" },
+  { date: "14 Junio", title: "Plexo Raíz y Lombo-sacré", color: "var(--nordic-frost)" },
   { date: "5 Julio", title: "Plexo Solar y Cardíaco", color: "var(--nordic-violet)" },
 ];
 ---
 
-<NordicLayout title="Horarios" description="Horarios de las actividades en Espace Bienestar" pageLang="es">
+<NordicLayout title={t.schedule.title} pageLang="es">
   <!-- Hero Section -->
   <section class="relative py-20 bg-hero-gradient overflow-hidden">
     <div class="hero-blob"></div>
@@ -24,7 +24,7 @@ const stages2026 = [
     <div class="max-w-6xl mx-auto px-6 relative z-10">
       <div class="animate-on-scroll">
         <p class="text-white/80 uppercase tracking-[0.2em] text-sm mb-4">2026</p>
-        <h1 class="text-5xl md:text-6xl font-bold text-[var(--nordic-primary)] mb-6">Horarios</h1>
+        <h1 class="text-5xl md:text-6xl font-bold text-[var(--nordic-primary)] mb-6">{t.schedule.title}</h1>
         <p class="text-xl text-[var(--nordic-text)]/80 max-w-2xl">Clases semanales y talleres mensuales</p>
       </div>
     </div>
@@ -34,7 +34,7 @@ const stages2026 = [
   <section class="py-16 px-6">
     <div class="max-w-4xl mx-auto">
       <h2 class="text-3xl font-bold text-[var(--nordic-primary)] mb-8 text-center animate-on-scroll">
-        Clases semanales
+        {t.schedule.weekly.title}
       </h2>
 
       <div class="grid md:grid-cols-2 gap-6">
@@ -63,22 +63,22 @@ const stages2026 = [
   <section class="py-16 px-6 bg-[var(--nordic-mist)]">
     <div class="max-w-5xl mx-auto">
       <div class="text-center mb-12 animate-on-scroll">
-        <h2 class="text-3xl font-bold text-[var(--nordic-primary)] mb-4">Talleres mensuales</h2>
+        <h2 class="text-3xl font-bold text-[var(--nordic-primary)] mb-4">{t.schedule.monthly.title}</h2>
         <p class="text-lg text-[var(--nordic-primary)]/70">{t.schedule.monthly.description}</p>
         <p class="text-[var(--nordic-violet)] font-medium mt-2">10h00 - 12h30</p>
       </div>
 
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-        {stages2026.map((stage, index) => (
-          <div
-            class="rounded-2xl p-6 text-center animate-on-scroll {stage.color.includes('nordic-frost') || stage.color.includes('nordic-ice') ? 'text-[var(--nordic-shadow)]' : 'text-white'}"
-            style={`background: ${stage.color}; transition-delay: ${index * 0.05}s`}
-          >
-            <p class="font-bold text-lg">{stage.date}</p>
-            <p class="text-[var(--nordic-shadow)]/90 text-sm mt-2">{stage.title}</p>
-          </div>
-        ))}
-      </div>
+       <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+         {stages2026.map((stage, index) => (
+           <div
+             class="rounded-2xl p-6 text-center animate-on-scroll {stage.color.includes('nordic-frost') || stage.color.includes('nordic-ice') ? 'text-[var(--nordic-shadow)]' : 'text-white'}"
+             style={`background: ${stage.color}; transition-delay: ${index * 0.05}s`}
+           >
+             <p class="font-bold text-lg">{stage.date}</p>
+             <p class="text-[var(--nordic-shadow)]/90 text-sm mt-2">{stage.title}</p>
+           </div>
+         ))}
+       </div>
     </div>
   </section>
 
@@ -103,10 +103,10 @@ const stages2026 = [
       <p class="text-white/70 mb-8">
         Contáctenos para inscribirse a los talleres o clases.
       </p>
-      <a href={`${base}es/contact`} class="btn-pill">
-        {t.nav.contact}
-        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-      </a>
+          <a href={`${base}es/contact`} class="nordic-btn">
+      {t.nav.contact}
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
     </div>
   </section>
 </NordicLayout>

@@ -6,26 +6,223 @@ const t = useTranslations('es');
 const base = import.meta.env.BASE_URL;
 ---
 
-<NordicLayout title="Sobre nosotros" description="Conozca a Sonia Cutri y Espace Bienestar" pageLang="es">
-  <section class="nordic-page-hero about">
-    <div class="nordic-page-hero-content">
-      <span class="nordic-page-kicker">Sobre nosotros</span>
-      <h1 class="nordic-page-headline">Sobre nosotros</h1>
-      <p class="nordic-page-subtitle">Conozca a Sonia Cutri y su enfoque de bienestar</p>
+<NordicLayout title={t.about.title} pageLang="es">
+  <head>
+    <meta name="description" content={t.about.meta.description} />
+  </head>
+
+  <!-- Hero Section -->
+  <section class="nordic-hero">
+    <div class="nordic-hero-left">
+      <span class="nordic-kicker">{t.about.kicker}</span>
+      <h1 class="nordic-headline">{t.about.headline}</h1>
+      <p class="nordic-subtitle">{t.about.subtitle}</p>
+    </div>
+       <div class="nordic-hero-right">
+        <div class="nordic-hero-carousel">
+          <img src={`${base}img/soniacutri1.jpg`} alt="Espace Bienestar atelier" class="nordic-hero-slide active" />
+          <img src={`${base}img/soniacutri2.webp`} alt="Espace Bienestar atelier" class="nordic-hero-slide" />
+          <img src={`${base}img/soniacutri3.jpg`} alt="Espace Bienestar atelier" class="nordic-hero-slide" />
+        </div>
     </div>
   </section>
 
+  <!-- CV Sections -->
   <section class="nordic-section">
     <div class="nordic-section-inner">
-      <h2 class="nordic-section-title">Sonia Cutri</h2>
-      <div class="nordic-section-text">
-        <p><strong>{t.about.sonia.title}</strong> - {t.about.sonia.nationality}</p>
-        <p>{t.about.sonia.intro}</p>
-        {t.about.sonia.bio?.map((paragraph: string) => (
-          <p>{paragraph}</p>
-        ))}
-        <p>{t.about.sonia.approach}</p>
+      <!-- Bio -->
+      <div class="nordic-cv-section animate-on-scroll">
+        <h2 class="nordic-cv-title">{t.about.cv.origines.title}</h2>
+        <div class="nordic-cv-content">
+          {t.about.cv.origines.content.map((paragraph: string) => (
+            <p class="nordic-cv-paragraph" set:html={paragraph} />
+          ))}
+        </div>
+      </div>
+
+      <!-- Parcours Artistique et Corporel -->
+      <div class="nordic-cv-section animate-on-scroll" style="transition-delay: 0.1s">
+        <h2 class="nordic-cv-title">{t.about.cv.parcours.title}</h2>
+        <div class="nordic-cv-content">
+          {t.about.cv.parcours.content.map((paragraph: string) => (
+            <p class="nordic-cv-paragraph" set:html={paragraph} />
+          ))}
+        </div>
+      </div>
+
+      <!-- Expérience Professionnelle -->
+      <div class="nordic-cv-section animate-on-scroll" style="transition-delay: 0.2s">
+        <h2 class="nordic-cv-title">{t.about.cv.experience.title}</h2>
+        <div class="nordic-cv-content">
+          {t.about.cv.experience.content.map((paragraph: string) => (
+            <p class="nordic-cv-paragraph" set:html={paragraph} />
+          ))}
+        </div>
+      </div>
+
+      <!-- Philosophie et Engagement -->
+      <div class="nordic-cv-section nordic-cv-philosophie animate-on-scroll" style="transition-delay: 0.3s">
+        <h2 class="nordic-cv-title">{t.about.cv.philosophieEtEngagement.title}</h2>
+        <div class="nordic-cv-content">
+          {t.about.cv.philosophieEtEngagement.content.map((paragraph: string) => (
+            <p class="nordic-cv-paragraph" set:html={paragraph} />
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="nordic-cta-section">
+    <div class="nordic-cta-inner animate-on-scroll">
+      <h2 class="nordic-cta-title">Descubra nuestros talleres</h2>
+      <p class="nordic-cta-text">Explore las actividades que propongo para su bienestar.</p>
+      <div class="nordic-cta-buttons">
+        <a href={`${base}es/activities/gymnastics`} class="nordic-cta-btn gymnastics">
+          Gimnasias
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+        <a href={`${base}es/activities/theatre`} class="nordic-cta-btn theatre">
+          Teatro
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
       </div>
     </div>
   </section>
 </NordicLayout>
+
+<style>
+  .nordic-cv-section {
+    background: var(--nordic-white);
+    border-radius: 1.25rem;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 12px rgba(44, 62, 80, 0.04);
+    border-top: 3px solid var(--nordic-primary);
+  }
+
+  .nordic-cv-section.nordic-cv-philosophie {
+    border-top: 3px solid var(--nordic-violet);
+    background: linear-gradient(135deg, var(--nordic-frost) 0%, var(--nordic-ice) 100%);
+  }
+
+  .nordic-cv-title {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var(--nordic-shadow);
+    margin-bottom: 1rem;
+  }
+
+  .nordic-cv-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .nordic-cv-paragraph {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-weight: 300;
+    line-height: 1.8;
+    color: var(--nordic-text);
+  }
+
+  .nordic-cta-section {
+    padding: 5rem 4rem;
+    background: var(--nordic-mist);
+    text-align: center;
+  }
+
+  .nordic-cta-inner {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .nordic-cta-title {
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--nordic-shadow);
+    margin-bottom: 1rem;
+  }
+
+  .nordic-cta-text {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--nordic-text);
+    opacity: 0.7;
+    margin-bottom: 2rem;
+  }
+
+  .nordic-cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .nordic-cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    border-radius: 9999px;
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 500;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .nordic-cta-btn.gymnastics {
+    background: var(--nordic-primary);
+    color: var(--nordic-white);
+  }
+
+  .nordic-cta-btn.gymnastics:hover {
+    background: var(--nordic-shadow);
+    transform: translateY(-2px);
+  }
+
+  .nordic-cta-btn.theatre {
+    background: var(--nordic-violet);
+    color: var(--nordic-white);
+  }
+
+  .nordic-cta-btn.theatre:hover {
+    background: var(--nordic-shadow);
+    transform: translateY(-2px);
+  }
+
+  .nordic-cta-btn svg {
+    width: 16px;
+    transition: transform 0.2s;
+  }
+
+  .nordic-cta-btn:hover svg {
+    transform: translateX(4px);
+  }
+
+  @media (max-width: 900px) {
+    .nordic-cta-section {
+      padding: 3rem 1.5rem;
+    }
+
+    .nordic-cta-buttons {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .nordic-cta-btn {
+      width: 100%;
+      max-width: 280px;
+      justify-content: center;
+    }
+  }
+</style>

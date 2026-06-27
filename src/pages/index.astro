@@ -10,26 +10,26 @@ const activities = [
   {
     key: 'gymnastics',
     title: t.activities.gymnastics.title,
-    subtitle: 'Mouvement conscient',
+    subtitle: t.activities.gymnastics.subtitle,
     link: `${base}activities/gymnastics`,
-    cta: 'Découvrir'
+    cta: t.activities.explore
   },
   {
     key: 'theatre',
     title: t.activities.theatre.title,
-    subtitle: 'Expression créative',
+    subtitle: t.activities.theatre.subtitle,
     link: `${base}activities/theatre`,
-    cta: 'Découvrir'
+    cta: t.activities.explore
   }
 ];
 ---
 
-<NordicLayout title="Espace Bienestar – Accueil" pageLang={lang}>
+<NordicLayout title={t.home.meta.title} pageLang={lang}>
   <section class="nordic-hero">
     <div class="nordic-hero-left">
-      <span class="nordic-kicker">Espace Bienestar · Billère 64140 · France</span>
+      <span class="nordic-kicker">{t.home.hero.kicker}</span>
       <h2 class="nordic-headline">
-        L'Art et Le Corps.
+        {t.home.hero.headline}
       </h2>
       <p class="nordic-subtitle">{t.home.introText}</p>
       <ul class="nordic-hero-ateliers">
@@ -44,7 +44,7 @@ const activities = [
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M5 12h14M12 5l7 7-7 7"/>
         </svg>
-        Coordinatrice SONIA CUTRI
+        {t.home.hero.coordinator}
       </a>
     </div>
     <div class="nordic-hero-right">
@@ -56,8 +56,8 @@ const activities = [
     <a href={activities[0].link} class="nordic-activity gymnastics">
       <span class="nordic-activity-label">{activities[0].subtitle}</span>
       <h2 class="nordic-activity-title">{activities[0].title}</h2>
-      <p class="nordic-activity-desc">Gymnastique Posturale Consciente<br>
-Gymnastique Rythmique Expressive</p>
+      <p class="nordic-activity-desc">{t.activities.posturale.title}<br>
+{t.activities.rythmique.title}</p>
       <span class="nordic-activity-cta">
         {activities[0].cta}
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -67,8 +67,8 @@ Gymnastique Rythmique Expressive</p>
     <a href={activities[1].link} class="nordic-activity theatre">
       <span class="nordic-activity-label">{activities[1].subtitle}</span>
       <h2 class="nordic-activity-title">{activities[1].title}</h2>
-      <p class="nordic-activity-desc">Atelier de Théâtre et Bien-Etre<br>
-Atelier de Théâtre Amateur
+      <p class="nordic-activity-desc">{t.activities.bienetre.title}<br>
+{t.activities.amateur.title}
 </p>
       <span class="nordic-activity-cta">
         {activities[1].cta}

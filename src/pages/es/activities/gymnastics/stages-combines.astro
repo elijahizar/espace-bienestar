@@ -1,0 +1,94 @@
+---
+import NordicLayout from '../../../../layouts/NordicLayout.astro';
+import { useTranslations } from '../../../../i18n/utils';
+
+const t = useTranslations('es');
+const lang = 'es';
+const base = import.meta.env.BASE_URL;
+
+const stages2026 = [
+  { date: '18 Enero', theme: 'Columna Vertebral' },
+  { date: '15 Febrero', theme: 'Plexo Raíz y Lombo-sacro' },
+  { date: '22 Marzo', theme: 'Plexo Solar y Cardíaco' },
+  { date: '19 Abril', theme: 'Plexo Garganta y Frente' },
+  { date: '17 Mayo', theme: 'Columna Vertebral' },
+  { date: '14 Junio', theme: 'Plexo Raíz y Lombo-sacro' },
+  { date: '5 Julio', theme: 'Plexo Solar y Cardíaco' }
+];
+
+const stageDetails = [
+  {
+    title: 'Stage Plexo Raíz y Lombo-sacro',
+    subtitle: '« Enraizamiento y Vitalidad »',
+    description: 'En este Stage se utilizará la música del Centro Raíz y Lombo-sacro para movilizar las zonas de nuestro cuerpo en relación con la Tierra y el Agua, buscando activar nuestro anclaje y nuestra vitalidad (el Agua de Vida). Trabajaremos también diferentes posturas de estiramientos y flexibilidad en resonancia con estos Centros Energéticos.'
+  },
+  {
+    title: 'Stage Plexo Solar y Cardíaco',
+    subtitle: '« Las Puertas del Viento y del Sol »',
+    description: 'En este Stage se utilizará la música del Centro Plexo Solar y del Centro Cardíaco para movilizar las zonas de nuestro cuerpo en relación con el Fuego y el Viento, buscando activar nuestro "Pequeño Sonar" y nuestro "Ser en relación".'
+  },
+  {
+    title: 'Stage Plexo Garganta y Frente',
+    subtitle: '« La Voz de la Sabiduría »',
+    description: 'En este Stage se utilizará la música del Centro Garganta para movilizar las zonas de nuestro cuerpo en relación con el Espacio Interior, buscando activar nuestra respiración para purificar nuestra mente.'
+  },
+  {
+    title: 'Stage Descomprimir la Columna Vertebral',
+    subtitle: '« Una necesidad de libertad »',
+    description: 'La Columna Vertebral es nuestro Eje Central, se puede llamar también el Pilar de la Vida que une los extremos de nuestro cuerpo y funciona como un vínculo entre la Tierra y el Cielo. En muchas tradiciones espirituales la Columna Vertebral es mucho más que un eje físico, es un canal donde circula la energía terrestre ligada al anclaje, a las necesidades materiales y a la seguridad y la energía celeste, orientada hacia la creatividad, la espiritualidad y la elevación.'
+  }
+];
+---
+
+<NordicLayout title="Talleres Combinados – Sonia Cutri" pageLang="es">
+  <section class="nordic-page-hero gymnastics">
+    <div class="nordic-page-hero-content">
+      <span class="nordic-page-kicker">{t.stages.title}</span>
+      <h1 class="nordic-page-headline">Gimnasia Rítmica + Postural</h1>
+      <p class="nordic-page-subtitle">
+        Un domingo por la mañana al mes, de 10h a 12h30
+      </p>
+    </div>
+  </section>
+
+  <section class="nordic-detail">
+    <h2 class="nordic-section-title">Calendario 2026</h2>
+    <table class="nordic-schedule">
+      <thead>
+        <tr>
+          <th>Fecha</th>
+          <th>Tema</th>
+        </tr>
+      </thead>
+      <tbody>
+        {stages2026.map((stage) => (
+          <tr>
+            <td>{stage.date}</td>
+            <td>{stage.theme}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+
+    <h2 class="nordic-section-title" style={{ marginTop: '3rem' }}>Contenido de los stages</h2>
+    {stageDetails.map((stage) => (
+      <div style={{ marginBottom: '2.5rem' }}>
+        <h3 class="nordic-section-title" style={{ fontSize: '1.25rem', marginBottom: '0.5rem' }}>{stage.title}</h3>
+        <p class="nordic-detail-quote" style={{ margin: '0 0 1rem' }}>{stage.subtitle}</p>
+        <p class="nordic-section-text">{stage.description}</p>
+        <p class="nordic-section-text">
+          Accesorios como pelotas, ladrillos, cinturones y bolsters serán utilizados para alcanzar un estado de consciencia y fluidez corporal. Se cerrará la sesión con la relajación final y una pequeña infusión.
+        </p>
+      </div>
+    ))}
+  </section>
+
+  <section class="nordic-cta gymnastics">
+    <h2 class="nordic-cta-title">¿Quieres participar?</h2>
+    <p class="nordic-cta-text">Contáctenos para reservar su lugar.</p>
+    <a href={`${base}es/contact`} class="nordic-btn">
+      {t.nav.contact}
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </section>
+</NordicLayout>

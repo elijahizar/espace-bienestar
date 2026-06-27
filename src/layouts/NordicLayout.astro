@@ -907,7 +907,7 @@ const t = useTranslations(effectiveLang);
             </ul>
           </div>
           <div class="nordic-footer-section">
-            <h4>Contact</h4>
+            <h4>{t.footer.contact}</h4>
             <ul>
               <li>
                 <a href={`mailto:${t.contact.email}`}>
@@ -987,11 +987,11 @@ const t = useTranslations(effectiveLang);
         </svg>
       </button>
       <nav>
-        <a href={navBase}>Accueil</a>
-        <a href={`${navBase}activities`}>Activités</a>
-        <a href={`${navBase}about`}>À propos</a>
-        <a href={`${navBase}schedule`}>Horaires</a>
-        <a href={`${navBase}contact`}>Contact</a>
+        <a href={navBase}>{t.nav.home}</a>
+        <a href={`${navBase}activities`}>{t.nav.activities}</a>
+        <a href={`${navBase}about`}>{t.nav.about}</a>
+        <a href={`${navBase}schedule`}>{t.nav.schedule}</a>
+        <a href={`${navBase}contact`}>{t.nav.contact}</a>
       </nav>
        <div class="mobile-lang-switch">
          <a href={base} class={effectiveLang !== 'es' ? 'active' : ''}>FR</a>

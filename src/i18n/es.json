@@ -2,7 +2,13 @@
   "home": {
     "hero": {
       "title": "Espace Bienestar",
-      "subtitle": "Cuerpo y Mente en Armonía"
+      "subtitle": "Cuerpo y Mente en Armonía",
+      "kicker": "Espace Bienestar · Billère 64140 · Francia",
+      "headline": "El Arte y El Cuerpo.",
+      "coordinator": "Coordinadora SONIA CUTRI"
+    },
+    "meta": {
+      "title": "Espace Bienestar – Inicio"
     },
     "activities": {
       "title": "Nuestras Actividades",
@@ -30,7 +36,7 @@
     "gymnastics": {
       "title": "Gimnasias Conscientes",
       "subtitle": "Movimiento consciente",
-      "description": "Las Gimnasias Conscientes le invitan a aprender progresivamente a relajarse y conocer mejor sus recursos corporales. La práctica de diferentes ejercicios de tonicidad, flexibilidad y relajación realizados conscientemente le permitirá corregir sus malas posturas y ampliar sus posibilidades de movimiento.",
+      "description": ["Las <em>Gimnasias Conscientes</em> le invitan a aprender progresivamente a relajarse y conocer mejor sus recursos corporales.", "La práctica de diferentes ejercicios de tonicidad, flexibilidad y relajación realizados conscientemente le permitirá corregir sus malas posturas y ampliar sus posibilidades de movimiento."],
       "cardDescription": "Movimiento consciente y relajación para todos",
       "introTitle": "La Gimnasia Consciente",
       "introParagraphs": [
@@ -45,7 +51,7 @@
       "kicker": "Nuestros talleres"
     },
     "posturale": {
-      "title": "Gimnasia Postural",
+      "title": "Gimnasia Postural Consciente",
       "kicker": "Trabajo postural",
       "subtitle": "Una actividad suave y rigurosa para una práctica corporal sana",
       "description": "Una actividad a la vez suave y rigurosa, esencial para una práctica corporal sana y duradera.",
@@ -74,7 +80,7 @@
       "title": "Gimnasia Consciente",
       "kicker": "Nuestro enfoque",
       "subtitle": "Reconectarse con el cuerpo a través del movimiento consciente",
-      "methodTitle": "El método",
+      "methodTitle": "Donde va la atención, circula la energía; donde circula la energía, surge la creación",
       "methodText": "Se trata de reconectarse con el cuerpo a través de nuestras sensaciones, utilizando nuestra atención \"Ver con el cuerpo\". Esta atención es guiada por el profesor; con el tiempo, esta guía se interioriza y la exploración se vuelve también personal.",
       "metaphorTitle": "Metáforas inspiradoras",
       "metaphorText": ["Los pies como raíces, las piernas como tronco, las caderas como balanza y fuente, los brazos como alas y ramas, los pulmones como flor y pluma, el pecho como cielo y hogar, el corazón como sol, los músculos como elásticos, las articulaciones como aceites, la columna como canal y eje, la distensión muscular como agua.",
@@ -89,11 +95,13 @@
       "description": "El teatro como camino hacia el bienestar. Descubra un enfoque original donde la expresión artística se convierte en soporte psicoterapéutico.",
       "cardDescription": "Expresión creativa y bienestar emocional",
       "kicker": "Nuestros talleres",
-      "introTitle": "",
-      "introParagraphs": [],
-      "introClosing": "",
-      "ctaTitle": "",
-      "ctaText": ""
+      "introTitle": "El Teatro",
+      "introParagraphs": [
+      "Es cierto que en todas las actividades artísticas el inconsciente se expresa y revela la profundidad de la naturaleza humana, pero lo que diferencia el teatro de otros ámbitos de las artes es que en el teatro la presencia corporal en escena, entendida como historia, como subjetividad, como lenguaje, es la materia primera y directa sobre la cual la persona misma trabaja."
+      ],
+      "introClosing": "En las tres dimensiones de la escena, el/la actor/actriz se convierte en artista de sí mismo/a, descubre aptitudes que ignoraba tener y recupera gracias al juego teatral una motivo de alegría.",
+      "ctaTitle": "¿Quieres explorar?",
+      "ctaText": "Descubra el teatro como camino hacia el bienestar."
     },
     "bienetre": {
       "title": "Teatro y Bienestar",
@@ -152,53 +160,41 @@
     "meta": {
       "description": "Descubra el recorrido profesional de Sonia Cutri, directora de escena y monitora de Gimnasia Consciente, combinando teatro, pedagogía corporal y bienestar."
     },
-    "sonia": {
-      "title": "Sonia Cutri",
-      "nationality": "Argentina, nacionalizada española",
-      "intro": "Mi enseñanza corporal incluye una síntesis personal fruto de mi propio recorrido.",
-      "bio": [
-        "Después del Liceo con especialización pedagógica, cursé tres años universitarios en la carrera de Ciencia de la Educación en Buenos Aires y luego aprobé el concurso de acceso a la Escuela de Arte Dramático donde me diplomé como actriz y monitora de Técnica del Movimiento.",
-        "Años después, volví a aprobar el concurso para ser admitida en la carrera de Dirección de Escena, de donde salí diplomada.",
-        "En Argentina, Buenos Aires, trabajé como educadora de teatro en el Instituto para la Vocación Artística (IVA) donde enseñé durante diez años la Educación por Intermedio del Arte. También trabajé como actriz, directora de escena y guionista para televisión.",
-        "En Francia, obtuve el DU/Certificado Internacional de Ecología Humana en la Universidad de Pau y Países del Adour, así como la formación en Sensibilización del Análisis de Grupo y Psicodrama en el IFAG (París-Bordeaux). He interpretado y dirigido numerosas piezas de teatro, performances y recitales poéticos en Francia."
-      ],
-      "approach": "A lo largo de mi parcours de vida y como actriz y directora de escena, me he interesado en experimentar diferentes enfoques de trabajo corporal como el Hatha yoga, la Técnica Alexander, la danza teatro, la técnica mixta de danza clásica, la técnica Graham y Barre à Terre, diferentes tipos de entrenamiento para el actor, especialmente en el Teatro Antropológico, la Técnica Rítmica Expressiva de Centros de energía y el Yoga Iyengar, disciplina que he seguido practicando en Francia. Actualmente también practico Qi-Gong.",
-      "education": {
-        "title": "Formación",
-        "items": [
-          "Especialización pedagógica después del Liceo",
-          "Tres años en Ciencia de la Educación en Buenos Aires",
-          "Diplomada Actuación & Técnica del Movimiento - Escuela de Arte Dramático",
-          "Diplomada Dirección de Escena",
-          "DU/Certificado Internacional de Ecología Humana - Universidad de Pau",
-          "Sensibilización Análisis de Grupo & Psicodrama - IFAG (París-Bordeaux)"
+    "cv": {
+      "origines": {
+        "title": "Bio",
+        "content": [
+          "Me llamo Sonia Cutri, nacida en Argentina y nacionalizada española. Después del Liceo con especialización pedagógica, cursé tres años universitarios en la carrera de Ciencia de la Educación en Buenos Aires. Luego aprobé el concurso de acceso a la Escuela de Arte Dramático, donde me diplomé como actriz y monitora de Técnica del Movimiento. Más tarde, volví a aprobar el concurso para ser admitida en la carrera de Dirección de Escena, de donde salí diplomada.",
+          "En Francia, completé mi formación con el DU/Certificado Internacional de Ecología Humana (Universidad de Pau y Países del Adour, Facultad de Letras y Ciencias Humanas) y una formación en Sensibilización del Análisis de Grupo y Psicodrama (IFAG, París-Bordeaux)."
+        ]
+      },
+      "parcours": {
+        "title": "Recorrido Artístico y Corporal",
+        "content": [
+          "Mi experiencia artística y corporal se extiende sobre varias disciplinas: teatro (actriz, directora de escena y guionista para televisión y piezas), así como una exploración profunda de los métodos corporales.",
+          "He practicado e integrado enfoques variados: Hatha Yoga, Técnica Alexander, danza-teatro, danza clásica (técnica mixta), técnica Graham, Barre à Terre, Teatro Antropológico, Técnica Rítmica Expressiva de Centros de Energía, Yoga Iyengar, práctica continuada en Francia, y actualmente el Qi-Gong. Mi enseñancia corporal sintetiza estos enfoques, fruto de mi experiencia personal y profesional."
         ]
       },
       "experience": {
-        "title": "Experiencia",
-        "items": [
-          "Educadora de teatro en el IVA, Buenos Aires - 10 años",
-          "Actriz, directora de escena y guionista de televisión",
-          "Piezas de teatro, performances y recitales poéticos en Francia",
-          "Interviniente de teatro en escuelas y colegios de la región de Pau",
-          "Talleres de teatro para adultos",
-          "Formadora: AMP, Monitor Educador, Educador Especializado"
+        "title": "Experiencia Profesional",
+        "content": [
+          "En Argentina (Buenos Aires), trabajé como educadora de teatro en el Instituto para la Vocación Artística (IVA), donde enseñé durante 10 años la Educación por el Arte. También trabajé como actriz, directora de escena y guionista para la televisión.",
+          "En Francia, he interpretado y dirigido numerosas piezas de teatro, performances y recitales poéticos. He intervenido como educadora de teatro y directora de escena en diferentes escuelas y colegios de la región de Pau, y he realizado talleres de teatro para adultos en el ámbito liberal.",
+          "También he trabajado como interveniente teatral para la formación de Ayuda Médico-Psicológica, Dinámica Empleo, Monitor Educador y Educador Especializado en el Centro de Formación Desarrollo d'Etcharry, en el Instituto de Trabajo Social (ITS) en Pau, y en la Asociación ATS (A todo Servicio) en Mourenx y Orthez."
         ]
       },
       "currentRole": {
-        "title": "Hoy en el Espace Bienestar",
-        "description": "En el Espace Bienestar, coordino las siguientes actividades para su bienestar:",
-        "activities": [
-          {
-            "name": "Taller de Teatro y Bienestar",
-            "for": "Para personas que sufren de trastornos de ansiedad, fobia social, timidez excesiva, problemas de inserción profesional o burn-out",
-            "focus": "Expresión artística como apoyo psicoterapéutico"
-          },
-          {
-            "name": "Taller de Teatro Amateur",
-            "for": "Para todos los que deseen descubrir la práctica teatral",
-            "focus": "Improvisación, creación de personajes, interpretación y puesta en escena"
-          }
+        "title": "En el Espace Bienestar",
+        "content": [
+          "En el Espace Bienestar, coordino la totalidad de los talleres, tanto en Gimnasia Consciente (Postural y Rítmica Expresiva) como en Teatro (Bien-estar y Amateur).",
+          "Estos talleres se dirigen a personas que sufren de trastornos de ansiedad, fobia social, timidez excesiva, problemas de inserción en el trabajo, agotamiento profesional o burn-out, así como a todos los que deseen descubrir la práctica teatral o la gimnasia consciente."
+        ]
+      },
+      "philosophieEtEngagement": {
+        "title": "Filosofía y Compromiso",
+        "content": [
+          "Mi enseñancia corporal se basa en una síntesis personal fruto de mi recorrido. Me ha permitido, como monitrice, enseñar no solo lo que sé, sino también lo que soy.",
+          "En el ESPACE BIENESTAR coordino la totalidad de las actividades, tanto <b>el Taller de Gimnasia Postural Consciente</b> como <b>el Taller de Gimnasia Rítmica Expresiva</b>, así como <b>el Taller de Teatro Amateur</b> dirigido a los aficionados del Teatro y <b>el Taller de Teatro y Bien-estar</b> dirigido a personas que sufren de trastornos de ansiedad, fobia social, timidez excesiva y agotamiento profesional o burn-out."
         ]
       }
     }
@@ -242,6 +238,7 @@
   },
   "footer": {
     "tagline": "Cuerpo y Mente en Armonía",
-    "copyright": "© 2026 Espace Bienestar. Todos los derechos reservados."
+    "copyright": "© 2026 Espace Bienestar. Todos los derechos reservados.",
+    "contact": "Contacto"
   }
 }

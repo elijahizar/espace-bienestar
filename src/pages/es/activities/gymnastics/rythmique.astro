@@ -1,0 +1,80 @@
+---
+import NordicLayout from '../../../../layouts/NordicLayout.astro';
+import { useTranslations } from '../../../../i18n/utils';
+
+const t = useTranslations('es');
+const lang = 'es';
+const base = import.meta.env.BASE_URL;
+---
+
+<NordicLayout title="Gimnasia Rítmica Expressiva – Sonia Cutri" pageLang="es">
+  <section class="nordic-page-hero gymnastics">
+    <div class="nordic-page-hero-content">
+      <span class="nordic-page-kicker">{t.activities.rythmique.title}</span>
+      <h1 class="nordic-page-headline">Gimnasia Rítmica Expresiva</h1>
+      <p class="nordic-page-subtitle">
+        <em>« Todo lo que no se expresa, deprime »</em>
+      </p>
+    </div>
+  </section>
+
+  <section class="nordic-detail">
+    <div class="nordic-detail-meta">
+      <span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        {t.activities.rythmique.schedule}
+      </span>
+      <span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        Salle du Sporting d'Este, Billère 64140
+      </span>
+    </div>
+
+    <h2 class="nordic-section-title">¿Por qué estos nombres?</h2>
+    <p class="nordic-section-text">
+      <strong>Gimnasia</strong> — porque implica un entrenamiento regular.
+    </p>
+    <p class="nordic-section-text">
+      <strong>Rítmica</strong> — porque se efectúa por el ritmo.
+    </p>
+    <p class="nordic-section-text">
+      <strong>Expresiva</strong> — porque permite expresar su mundo interior.
+    </p>
+
+    <p class="nordic-section-text" style={{ marginTop: '2rem' }}>
+      En esta Gimnasia el grupo trabaja con músicas de diferentes fuentes para ejercitar y movilizar las zonas del cuerpo correspondientes a cada ritmo, buscando descubrir la plasticidad corporal, evitando así la fijación en un solo estado físico-emocional.
+    </p>
+    <p class="nordic-section-text">
+      Gracias a la música, la subjetividad se expresa, permitiendo a las emociones encontrar un canal de comunicación del mundo interior hacia el mundo exterior.
+    </p>
+    <p class="nordic-section-text">
+      Esta actividad trabaja sobre el desarrollo del hemisferio derecho del cerebro, ampliando los registros sensoriales, lúdicos e intuitivos de sí en conexión con los demás.
+    </p>
+    <p class="nordic-section-text">
+      La monitora coordina la sesión por la música, por lo tanto participa físicamente dentro del grupo, sugiriendo a los participantes por su movimiento, diferentes maneras de ampliar sus movimientos.
+    </p>
+    <p class="nordic-section-text">
+      <strong>La palabra no se utiliza durante las clases, pero diferentes formas de liberación vocal sí lo son.</strong>
+    </p>
+
+    <div class="nordic-detail-meta" style={{ marginTop: '2rem', paddingTop: '1.5rem', borderTop: '1px solid var(--nordic-ice)' }}>
+      <span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 6v6l4 2"/><circle cx="12" cy="12" r="10"/></svg>
+        Las clases duran una hora y cuarto
+      </span>
+      <span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        Descalzos con ropa cómoda
+      </span>
+    </div>
+  </section>
+
+  <section class="nordic-cta gymnastics">
+    <h2 class="nordic-cta-title">¿Quieres probar?</h2>
+    <p class="nordic-cta-text">Únase a nosotros para una primera sesión de descubrimiento.</p>
+    <a href={`${base}es/contact`} class="nordic-btn">
+      {t.nav.contact}
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </section>
+</NordicLayout>

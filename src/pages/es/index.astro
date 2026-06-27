@@ -4,71 +4,75 @@ import { useTranslations } from '../../i18n/utils';
 
 const t = useTranslations('es');
 const base = import.meta.env.BASE_URL;
+
+const activities = [
+  {
+    key: 'gymnastics',
+    title: t.activities.gymnastics.title,
+    subtitle: t.activities.gymnastics.subtitle,
+    link: `${base}es/activities/gymnastics`,
+    cta: t.activities.explore
+  },
+  {
+    key: 'theatre',
+    title: t.activities.theatre.title,
+    subtitle: t.activities.theatre.subtitle,
+    link: `${base}es/activities/theatre`,
+    cta: t.activities.explore
+  }
+];
 ---
 
-<NordicLayout title={t.home.hero.title} description={t.home.introText} pageLang="es">
+<NordicLayout title={t.home.meta.title} pageLang="es">
   <section class="nordic-hero">
     <div class="nordic-hero-left">
-      <span class="nordic-kicker">{t.activities.gymnastics.kicker}</span>
-      <h1 class="nordic-headline">t.home.hero.title</h1>
-      <p class="nordic-subtitle">{t.home.hero.subtitle}</p>
-      <a href={`${base}es/activities`} class="nordic-btn">
-        {t.activities.explore}
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M5 12h14M12 5l7 7-7 7"/>
-        </svg>
-      </a>
-    </div>
-    <div class="nordic-hero-right">
-      <div class="nordic-ring"></div>
-      <div class="nordic-ring"></div>
-      <div class="nordic-ring"></div>
-      <div class="nordic-crystal-shape"></div>
-      <div class="nordic-crystal-shape"></div>
-      <div class="nordic-crystal-shape"></div>
-    </div>
-  </section>
-
-  <section class="nordic-activities">
-    <a href={`${base}es/activities/gymnastics`} class="nordic-activity gymnastics">
-      <span class="nordic-activity-label">{t.activities.gymnastics.title}</span>
-      <h2 class="nordic-activity-title">{t.activities.gymnastics.title}</h2>
-      <p class="nordic-activity-desc">{t.activities.gymnastics.cardDescription}</p>
-      <span class="nordic-activity-cta">
-        {t.activities.explore}
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M5 12h14M12 5l7 7-7 7"/>
-        </svg>
-      </span>
-    </a>
-    <a href={`${base}es/activities/theatre`} class="nordic-activity theatre">
-      <span class="nordic-activity-label">{t.activities.theatre.title}</span>
-      <h2 class="nordic-activity-title">{t.activities.theatre.title}</h2>
-      <p class="nordic-activity-desc">{t.activities.theatre.cardDescription}</p>
-      <span class="nordic-activity-cta">
-        {t.activities.explore}
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M5 12h14M12 5l7 7-7 7"/>
-        </svg>
-      </span>
-    </a>
-  </section>
-
-  <section class="nordic-intro">
-    <p class="nordic-intro-text">{t.home.introText}</p>
-    <div class="nordic-intro-links">
+      <span class="nordic-kicker">{t.home.hero.kicker}</span>
+      <h2 class="nordic-headline">
+        {t.home.hero.headline}
+      </h2>
+      <p class="nordic-subtitle">{t.home.introText}</p>
+      <ul class="nordic-hero-ateliers">
+        {t.home.ateliers.map((atelier) => (
+          <li>
+            <span class="nordic-hero-dot" aria-hidden="true"></span>
+            {atelier}
+          </li>
+        ))}
+      </ul>
       <a href={`${base}es/about`} class="nordic-intro-link">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M5 12h14M12 5l7 7-7 7"/>
         </svg>
-        Sobre nosotros
-      </a>
-      <a href={`${base}es/schedule`} class="nordic-intro-link">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/>
-        </svg>
-        Horarios
+        {t.home.hero.coordinator}
       </a>
     </div>
+    <div class="nordic-hero-right">
+         <img src={`${base}img/siluetas.webp`} alt="Espace Bienestar hero" />
+    </div>
+  </section>
+
+  <section class="nordic-activities">
+    <a href={activities[0].link} class="nordic-activity gymnastics">
+      <span class="nordic-activity-label">{activities[0].subtitle}</span>
+      <h2 class="nordic-activity-title">{activities[0].title}</h2>
+      <p class="nordic-activity-desc">{t.activities.posturale.title}<br>
+{t.activities.rythmique.title}</p>
+      <span class="nordic-activity-cta">
+        {activities[0].cta}
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </span>
+    </a>
+
+    <a href={activities[1].link} class="nordic-activity theatre">
+      <span class="nordic-activity-label">{activities[1].subtitle}</span>
+      <h2 class="nordic-activity-title">{activities[1].title}</h2>
+      <p class="nordic-activity-desc">{t.activities.bienetre.title}<br>
+{t.activities.amateur.title}
+</p>
+      <span class="nordic-activity-cta">
+        {activities[1].cta}
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </span>
+    </a>
   </section>
 </NordicLayout>

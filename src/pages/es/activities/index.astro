@@ -1,17 +1,53 @@
 ---
 import NordicLayout from '../../../layouts/NordicLayout.astro';
-import { useTranslations } from '/src/i18n/utils';
+import { useTranslations } from '../../../i18n/utils';
 
 const t = useTranslations('es');
 const base = import.meta.env.BASE_URL;
+
+const gymnasticsActivities = [
+  {
+    title: t.activities.posturale.title,
+    label: 'Lunes 14h30',
+    description: t.activities.posturale.cardDescription,
+    link: `${base}es/activities/gymnastics/posturale`
+  },
+  {
+    title: t.activities.rythmique.title,
+    label: 'Jueves 14h',
+    description: t.activities.rythmique.cardDescription,
+    link: `${base}es/activities/gymnastics/rythmique`
+  },
+  {
+    title: t.stages.title,
+    label: 'Un domingo/mes',
+    description: t.stages.cardDescription,
+    link: `${base}es/activities/gymnastics/stages-combines`
+  }
+];
+
+const theatreActivities = [
+  {
+    title: t.activities.bienetre.title,
+    label: '',
+    description: 'Taller para personas que sufren trastornos de ansiedad, fobia social, timidez excesiva, burn-out.',
+    link: `${base}es/activities/theatre/atelier-bien-etre`
+  },
+  {
+    title: t.activities.amateur.title,
+    label: '',
+    description: 'Iniciación a la práctica teatral: improvisación, creación de personajes, interpretación.',
+    link: `${base}es/activities/theatre/atelier-amateur`
+  }
+];
 ---
 
-<NordicLayout title={t.activities.title} description={t.activities.title} pageLang="es">
-  <section class="nordic-page-hero activities">
+<NordicLayout title={t.nav.activities} pageLang="es">
+  <section class="nordic-page-hero gymnastics">
     <div class="nordic-page-hero-content">
-      <span class="nordic-page-kicker">{t.activities.gymnastics.kicker}</span>
+      <span class="nordic-page-kicker">Nuestros talleres</span>
       <h1 class="nordic-page-headline">{t.activities.title}</h1>
-      <p class="nordic-page-subtitle">{t.home.introText}</p>
+      <p class="nordic-page-subtitle">{t.home.activities.subtitle}</p>
     </div>
   </section>
 
@@ -19,20 +55,24 @@ const base = import.meta.env.BASE_URL;
     <div class="nordic-activity-group-header">
       <div class="nordic-activity-group-icon">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M4.5 12.75l6 6 9-13.5"/>
+          <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 16a1 1 0 1 1 1-1 1 1 0 0 1-1 1zm1-5h-2V7h2z"/>
         </svg>
       </div>
-      <h2 class="nordic-activity-group-title">{t.activities.gymnastics.title}</h2>
+      <h2 class="nordic-activity-group-title">Gimnasia Consciente</h2>
     </div>
     <div class="nordic-subcard-grid gymnastics">
-      <a href={`${base}es/activities/gymnastics`} class="nordic-subcard gymnastics">
-        <span class="nordic-subcard-label">Gimnasias Conscientes</span>
-        <h3 class="nordic-subcard-title">{t.activities.gymnastics.title}</h3>
-        <p class="nordic-subcard-desc">{t.activities.gymnastics.cardDescription}</p>
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="nordic-subcard-arrow">
-          <path d="M5 12h14M12 5l7 7-7 7"/>
-        </svg>
-      </a>
+      {gymnasticsActivities.map((activity) => (
+        <a href={activity.link} class="nordic-subcard gymnastics">
+          <span class="nordic-subcard-label">{activity.label}</span>
+          <h3 class="nordic-subcard-title">{activity.title}</h3>
+          <p class="nordic-subcard-desc">{activity.description}</p>
+          <span class="nordic-subcard-arrow">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </span>
+        </a>
+      ))}
     </div>
   </section>
 
@@ -40,19 +80,34 @@ const base = import.meta.env.BASE_URL;
     <div class="nordic-activity-group-header">
       <div class="nordic-activity-group-icon">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
         </svg>
       </div>
       <h2 class="nordic-activity-group-title">{t.activities.theatre.title}</h2>
     </div>
     <div class="nordic-subcard-grid theatre">
-      <a href={`${base}es/activities/theatre`} class="nordic-subcard theatre">
-        <span class="nordic-subcard-label">Teatro</span>
-        <h3 class="nordic-subcard-title">{t.activities.theatre.title}</h3>
-        <p class="nordic-subcard-desc">{t.activities.theatre.cardDescription}</p>
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="nordic-subcard-arrow">
-          <path d="M5 12h14M12 5l7 7-7 7"/>
-        </svg>
+      {theatreActivities.map((activity) => (
+        <a href={activity.link} class="nordic-subcard theatre">
+          <span class="nordic-subcard-label">{activity.label}</span>
+          <h3 class="nordic-subcard-title">{activity.title}</h3>
+          <p class="nordic-subcard-desc">{activity.description}</p>
+          <span class="nordic-subcard-arrow">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </span>
+        </a>
+      ))}
+    </div>
+  </section>
+
+  <section class="nordic-section nordic-section-alt">
+    <div class="nordic-section-inner" style={{ textAlign: 'center' }}>
+      <h2 class="nordic-section-title" style={{ textAlign: 'center' }}>{t.schedule.title}</h2>
+      <p class="nordic-section-text" style={{ textAlign: 'center', maxWidth: '500px', margin: '0 auto 2rem' }}>Consulte los horarios y fechas de los stages</p>
+      <a href={`${base}es/schedule`} class="nordic-btn" style={{ margin: '0 auto' }}>
+        Ver el calendario
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
       </a>
     </div>
   </section>

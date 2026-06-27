@@ -1,60 +1,68 @@
 ---
 import NordicLayout from '../../../../layouts/NordicLayout.astro';
-import { useTranslations } from '/src/i18n/utils';
+import { useTranslations } from '../../../../i18n/utils';
 
 const t = useTranslations('es');
 const base = import.meta.env.BASE_URL;
+
+  const subActivities = [
+    {
+      title: t.activities.posturale.title,
+      subtitle: t.activities.posturale.cardSchedule,
+      link: `${base}es/activities/gymnastics/posturale`
+    },
+    {
+      title: t.activities.rythmique.title,
+      subtitle: t.activities.rythmique.cardSchedule,
+      link: `${base}es/activities/gymnastics/rythmique`
+    },
+    {
+      title: t.stages.title,
+      subtitle: t.stages.subtitle,
+      description: t.stages.cardDescription,
+      link: `${base}es/activities/gymnastics/stages-combines`
+    }
+  ];
 ---
 
-<NordicLayout title={t.activities.gymnastics.title} description={t.activities.gymnastics.description} pageLang="es">
+<NordicLayout title={t.activities.gymnastics.title} pageLang="es">
   <section class="nordic-page-hero gymnastics">
     <div class="nordic-page-hero-content">
       <span class="nordic-page-kicker">{t.activities.gymnastics.kicker}</span>
       <h1 class="nordic-page-headline">{t.activities.gymnastics.title}</h1>
-      <p class="nordic-page-subtitle">{t.activities.gymnastics.subtitle}</p>
+      {t.activities.gymnastics.description.map((p) => (
+        <p class="nordic-page-subtitle" set:html={p} />
+      ))}
     </div>
     <div class="nordic-page-hero-image">
       <img src={`${base}img/gymnastiques.webp`} alt="Salle de gymnastique Espace Bienestar" />
     </div>
   </section>
 
+  <section class="nordic-activities nordic-activities-3col">
+    {subActivities.map((activity) => (
+      <a href={activity.link} class="nordic-activity gymnastics">
+        <span class="nordic-activity-label">{activity.subtitle}</span>
+        <h2 class="nordic-activity-title">{activity.title}</h2>
+        <p class="nordic-activity-desc">{activity.description}</p>
+        <span class="nordic-activity-cta">
+          {t.activities.explore}
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </span>
+      </a>
+    ))}
+  </section>
+
   <section class="nordic-section">
     <div class="nordic-section-inner">
-      <p class="nordic-section-text">{t.activities.gymnastics.description}</p>
-      <div class="nordic-nav-grid">
-        <a href={`${base}es/activities/gymnastics`} class="nordic-nav-card gymnastics">
-          <span class="nordic-nav-card-title">Gimnasia Consciente</span>
-          <span class="nordic-nav-card-arrow">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
-          </span>
-        </a>
-        <a href={`${base}es/activities/gymnastics`} class="nordic-nav-card gymnastics">
-          <span class="nordic-nav-card-title">Gimnasia Postural</span>
-          <span class="nordic-nav-card-arrow">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
-          </span>
-        </a>
-        <a href={`${base}es/activities/gymnastics`} class="nordic-nav-card gymnastics">
-          <span class="nordic-nav-card-title">Gimnasia Rítmica</span>
-          <span class="nordic-nav-card-arrow">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
-          </span>
-        </a>
-        <a href={`${base}es/activities`} class="nordic-nav-card gymnastics">
-          <span class="nordic-nav-card-title">Talleres Combinados</span>
-          <span class="nordic-nav-card-arrow">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M5 12h14M12 5l7 7-7 7"/>
-            </svg>
-          </span>
-        </a>
-      </div>
+      <h2 class="nordic-section-title">{t.activities.consciente.methodTitle}</h2>
+      <p class="nordic-section-text">{t.activities.consciente.methodText}</p>
+
+      <h2 class="nordic-section-title">{t.activities.consciente.metaphorTitle}</h2>
+        {t.activities.consciente.metaphorText.map((p) => (
+        <p class="nordic-section-text" set:html={p} />
+      ))}
+      <p class="nordic-section-text"><em>{t.activities.consciente.closingText}</em></p>
     </div>
   </section>
 
@@ -62,10 +70,8 @@ const base = import.meta.env.BASE_URL;
     <h2 class="nordic-cta-title">{t.activities.gymnastics.ctaTitle}</h2>
     <p class="nordic-cta-text">{t.activities.gymnastics.ctaText}</p>
     <a href={`${base}es/contact`} class="nordic-btn">
-      Contacto
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M5 12h14M12 5l7 7-7 7"/>
-      </svg>
+      {t.nav.contact}
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </a>
   </section>
 </NordicLayout>

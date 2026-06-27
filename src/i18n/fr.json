@@ -2,7 +2,13 @@
   "home": {
     "hero": {
       "title": "Espace Bienestar",
-      "subtitle": "Corps et Esprit en Harmonie"
+      "subtitle": "Corps et Esprit en Harmonie",
+      "kicker": "Espace Bienestar · Billère 64140 · France",
+      "headline": "L'Art et Le Corps.",
+      "coordinator": "Coordinatrice SONIA CUTRI"
+    },
+    "meta": {
+      "title": "Espace Bienestar – Accueil"
     },
     "activities": {
       "title": "Nos Activités",
@@ -216,6 +222,7 @@
   },
   "footer": {
     "tagline": "Corps et Esprit en Harmonie",
-    "copyright": "© 2026 Espace Bienestar. Tous droits réservés."
+    "copyright": "© 2026 Espace Bienestar. Tous droits réservés.",
+    "contact": "Contact"
   }
 }
