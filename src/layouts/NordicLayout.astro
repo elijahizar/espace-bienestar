@@ -165,9 +165,9 @@ const t = useTranslations(effectiveLang);
       .nordic-btn:hover { background: var(--nordic-shadow); }
       .nordic-btn svg { width: 1rem; }
 
-         .nordic-hero-right {
+        .nordic-hero-right {
           position: relative;
-          min-height: 40vh;
+          min-height: 50vh;
           max-height: 50vh;
           background-color: var(--nordic-secondary);
           display: flex;
@@ -183,6 +183,12 @@ const t = useTranslations(effectiveLang);
          inset: 0;
          background: radial-gradient(circle at 40% 40%, rgba(125, 170, 111, 0.18), transparent 90%);
          pointer-events: none;
+       }
+
+       .nordic-hero-right img {
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
        }
 
        .nordic-hero-carousel {
@@ -222,7 +228,7 @@ const t = useTranslations(effectiveLang);
 
       .nordic-activities { display: grid; grid-template-columns: repeat(2, 1fr); }
       .nordic-activities-3col { display: grid; grid-template-columns: repeat(3, 1fr); }
-      .nordic-activities-3col .nordic-activity:nth-child(1) { background-color: var(--nordic-ice); }
+      .nordic-activities-3col .nordic-activity:nth-child(1) { background-color: #C5E1B5; }
       .nordic-activities-3col .nordic-activity:nth-child(2) { background-color: var(--nordic-primary); }
       .nordic-activities-3col .nordic-activity:nth-child(3) { background-color: #6B9B5B; color: var(--nordic-white); }
       .nordic-activities-3col .nordic-activity:nth-child(3) .nordic-activity-title { color: var(--nordic-white); }
@@ -240,7 +246,7 @@ const t = useTranslations(effectiveLang);
       .nordic-activity {
         position: relative;
         padding: 4rem;
-        min-height: 30vh;
+        min-height: 22vh;
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
@@ -376,7 +382,14 @@ const t = useTranslations(effectiveLang);
         position: relative;
         overflow: hidden;
       }
-      .nordic-page-hero.gymnastics { background-color: var(--nordic-mist); border-left: 4px solid var(--nordic-primary); }
+      .nordic-page-hero.gymnastics {
+        background-color: var(--nordic-mist);
+        border-left: 4px solid var(--nordic-primary);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding: 0;
+        height: 35vh;
+      }
       .nordic-page-hero.theatre { background-color: var(--nordic-mist); border-left: 4px solid var(--nordic-secondary); }
       .nordic-page-hero::before {
         content: '';
@@ -385,7 +398,25 @@ const t = useTranslations(effectiveLang);
         background: none;
       }
       .nordic-page-hero-content { position: relative; z-index: 1; max-width: 600px; }
-      .nordic-page-hero.gymnastics .nordic-page-hero-content { max-width: 100%; width: 100%; }
+      .nordic-page-hero.gymnastics .nordic-page-hero-content {
+        max-width: 100%;
+        width: 100%;
+        padding: 4rem 5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .nordic-page-hero-image {
+        position: relative;
+        overflow: hidden;
+        height: 100%;
+      }
+      .nordic-page-hero-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
       .nordic-page-kicker {
         font-family: 'IBM Plex Sans', sans-serif;
         font-size: 0.7rem;
@@ -593,6 +624,9 @@ const t = useTranslations(effectiveLang);
       /* Responsive */
       @media (max-width: 900px) {
         .nordic-page-hero { padding: 3rem 1.5rem; min-height: 40vh; }
+        .nordic-page-hero.gymnastics { grid-template-columns: 1fr; height: auto; }
+        .nordic-page-hero.gymnastics .nordic-page-hero-content { padding: 3rem 1.5rem; }
+        .nordic-page-hero-image { max-height: 40vh; }
         .nordic-section { padding: 3rem 1.5rem; }
         .nordic-detail { padding: 3rem 1.5rem; }
         .nordic-nav-grid { grid-template-columns: 1fr; }
@@ -797,15 +831,30 @@ const t = useTranslations(effectiveLang);
         .nordic-nav { display: none; }
         .nordic-lang-switch { display: none; }
         .nordic-mobile-toggle { display: block; }
-        .nordic-hero { grid-template-columns: 1fr; }
-        .nordic-hero-left { padding: 5rem 1.5rem 3rem; }
-        .nordic-hero-right { min-height: 40vh; max-height: 50vh; }
+        .nordic-hero { grid-template-columns: 1fr; min-height: auto; max-height: none; }
+        .nordic-hero-left { padding: 5rem 1.5rem 2rem; }
+        .nordic-hero-right { min-height: 28vh; max-height: 35vh; }
         .nordic-activities { grid-template-columns: 1fr; }
-        .nordic-activity { padding: 3rem 1.5rem; }
+        .nordic-activity { padding: 3rem 1.5rem; min-height: 22vh; }
         .nordic-intro { grid-template-columns: 1fr; padding: 4rem 1.5rem; gap: 2rem; }
         .nordic-footer { padding: 2rem 1.5rem; }
         .nordic-footer-grid { grid-template-columns: 1fr; gap: 1.5rem; }
         .nordic-footer-bottom { flex-direction: column; gap: 0.5rem; }
+      }
+
+      @media (max-width: 600px) {
+        .nordic-hero-left { padding: 4.5rem 1.25rem 1.5rem; }
+        .nordic-hero-right { min-height: 22vh; max-height: 28vh; }
+        .nordic-activity { padding: 2.5rem 1.25rem; min-height: 18vh; }
+        .nordic-headline { font-size: 1.75rem; }
+        .nordic-subtitle { font-size: 1rem; }
+        .nordic-intro { padding: 3rem 1.25rem; }
+        .nordic-page-hero { padding: 3rem 1.25rem; min-height: 35vh; }
+        .nordic-page-hero.gymnastics .nordic-page-hero-content { padding: 2rem 1.25rem; }
+        .nordic-page-hero-image { max-height: 30vh; }
+        .nordic-section { padding: 2.5rem 1.25rem; }
+        .nordic-cta { padding: 2.5rem 1.25rem; }
+        .nordic-detail { padding: 2rem 1.25rem; }
       }
 
     </style>

@@ -31,9 +31,12 @@ const base = import.meta.env.BASE_URL;
     <div class="nordic-page-hero-content">
       <span class="nordic-page-kicker">{t.activities.gymnastics.kicker}</span>
       <h1 class="nordic-page-headline">{t.activities.gymnastics.title}</h1>
-      <!-- <p class="nordic-page-subtitle">{t.activities.gymnastics.subtitle}</p> -->
-      <p class="nordic-page-subtitle">{t.activities.gymnastics.description}</p>
-
+      {t.activities.gymnastics.description.map((p) => (
+        <p class="nordic-page-subtitle" set:html={p} />
+      ))}
+    </div>
+    <div class="nordic-page-hero-image">
+      <img src={`${base}img/gymnastiques.webp`} alt="Salle de gymnastique Espace Bienestar" />
     </div>
   </section>
 
@@ -53,17 +56,13 @@ const base = import.meta.env.BASE_URL;
 
   <section class="nordic-section">
     <div class="nordic-section-inner">
-      <h2 class="nordic-section-title">{t.activities.gymnastics.introTitle}</h2>
-      {t.activities.gymnastics.introParagraphs.map((paragraph) => (
-        <p class="nordic-section-text">{paragraph}</p>
-      ))}
-      <p class="nordic-section-text"><strong>{t.activities.gymnastics.introClosing}</strong></p>
-
       <h2 class="nordic-section-title">{t.activities.consciente.methodTitle}</h2>
       <p class="nordic-section-text">{t.activities.consciente.methodText}</p>
 
       <h2 class="nordic-section-title">{t.activities.consciente.metaphorTitle}</h2>
-      <p class="nordic-section-text">{t.activities.consciente.metaphorText}</p>
+        {t.activities.consciente.metaphorText.map((p) => (
+        <p class="nordic-section-text" set:html={p} />
+      ))}
       <p class="nordic-section-text"><em>{t.activities.consciente.closingText}</em></p>
     </div>
   </section>

@@ -30,7 +30,7 @@
     "gymnastics": {
       "title": "Les Gymnastiques",
       "subtitle": "Mouvement conscient",
-      "description": ["La Gymnastique Posturale Consciente ainsi que la Gymnastique Rythmique Expressive sont deux techniques qui stimulent la vitalité, la flexibilité, la tonicité, la souplesse, l’expression et la détente.",
+      "description": ["La <em>Gymnastique Posturale Consciente</em> ainsi que la <em>Gymnastique Rythmique Expressive</em> sont deux techniques qui stimulent la vitalité, la flexibilité, la tonicité, la souplesse, l’expression et la détente.",
 
 "Ces deux gymnastiques tiennent compte de la relation étroite entre le corps et l'esprit, de ce fait elles vous amènent à mieux percevoir et comprendre votre corps comme une entité intégrée.",
 "Lors du temps et avec une pratique consciente et régulière vous allez élargir votre capacité de mouvements, avoir une meilleure posture générale, ainsi qu’une plus grande conscience de vos ressources corporelles.",
@@ -52,7 +52,7 @@
       "kicker": "Nos ateliers"
     },
     "posturale": {
-      "title": "Gymnastique Posturale",
+      "title": "Gymnastique Posturale Consciente",
       "description": "Une activité à la fois douce et rigoureuse, essentielle à une pratique corporelle saine et durable.",
       "cardDescription": "Travail postural pour le dos et les cervicales",
       "schedule": "Lundi 14h30 à 16h",
@@ -70,10 +70,11 @@
       "details": "Développement de l'hémisphère droit du cerveau, élargissement des registres sensoriels, ludiques et intuitifs. 1h, pieds nus."
     },
     "consciente": {
-      "methodTitle": "La méthode",
-      "methodText": "Il s'agit de se reconnecter à son corps par le biais de nos sensations, en utilisant notre attention « Voir avec le corps ». Cette attention est guidée par l'enseignant ; avec le temps, ce guidage s'intériorise et l'exploration devient aussi personnelle.",
-      "metaphorTitle": "Métaphores inspirantes",
-      "metaphorText": "Les pieds comme racines, les jambes comme tronc, les hanches comme balance et source, les bras comme des ailes, les poumons comme fleur et plume, la poitrine comme ciel, le cœur comme soleil, les articulations comme élastiques, la souplesse comme des huiles, la détente musculaire comme de l'eau.",
+      "methodTitle": "Là où va l'attention, l'énergie circule; là où l'énergie circule, la création surgit",
+      "methodText": "Il est question de se reconnecter à son corps par le biais de nos sensations, en utilisant notre attention « Voir avec le corps ». Cette attention est guidée par l'enseignant, avec le temps, ce guidage s'intériorise et l'exploration devient personnelle.",
+      "metaphorTitle": "On utilise aussi des métaphores inspirantes :",
+      "metaphorText": ["Les pieds comme racines, les jambes comme tronc, les hanches comme balance et source, les bras comme des ailes et des branches, les poumons comme des fleurs et des plumes, la poitrine comme ciel et foyer, le cœur comme soleil, les muscles comme des élastiques, les articulations comme des huiles, la colonne comme canal et axe, la détente musculaire comme de l'eau.",
+      "On apprend aussi à différencier la force des tensions, à gérer l'étirement dans la détente, à apprécier les sensations et prendre conscience des changements."],
       "closingText": "Il s'agit surtout d'Être-Là, car tous les moments sont ce moment."
     },
     "theatre": {
